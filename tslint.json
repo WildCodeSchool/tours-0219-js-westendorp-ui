@@ -1,4 +1,14 @@
+
 {
+  "extends": [
+    "tslint-config-airbnb"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "**/src/polyfills.ts",
+      "**/**.spec.**"
+    ]
+  },
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
