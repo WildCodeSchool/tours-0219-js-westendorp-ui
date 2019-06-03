@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 import { Articles } from "src/app/shared/models/articles.model";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class ArticlesService {
   constructor(private http: HttpClient) {}
