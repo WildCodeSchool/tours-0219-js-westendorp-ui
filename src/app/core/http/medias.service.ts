@@ -9,6 +9,7 @@ import { Media } from 'src/app/shared/models/media.model';
   providedIn: 'root',
 })
 export class MediasService {
+  public service: HttpClient;
 
   api = `${environment.apiUrl}`;
   constructor(private http: HttpClient) {
@@ -16,7 +17,7 @@ export class MediasService {
 
   public getMedia(): Observable<Media> {
     const recup: Observable<any> = this.http.get(`${this.api}`);
-    const treatment = (parameters:any) => {
+    const treatment = (parameters: any) => {
       return parameters as Media;
     };
     return recup.pipe(map(treatment));
@@ -30,4 +31,20 @@ export class MediasService {
     return suppr.pipe(map(treatment));
   }
 
+  public getById(id: string): Observable<Media> {
+    const  recup: Observable<any> = this.http.get(`${this.api}/medias/${id}`);
+    const  treatment  = (response: any) => {
+      return  response as Media;
+    };
+    return  recup.pipe(map(treatment));
+
+  }
+  public create (mediaForm: Media) {
+    const  create: Observable<any> = this.service
+    .post(`${this.api}/medias`, mediaForm);
+    const  treatment  = (response: any) => {
+      return  response as Media;
+    };
+    return  create.pipe(map(treatment));
+  }
 }
