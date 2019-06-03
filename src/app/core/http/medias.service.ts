@@ -30,4 +30,12 @@ export class MediasService {
     return suppr.pipe(map(treatment));
   }
 
+  public getMediaByType(type: string): Observable<Media[]> {
+    return this.http.get(`${this.api}/medias/search=${type}`).pipe(
+      map((mediasByType: any) => {
+        return mediasByType as Media[];
+      }),
+    );
+  }
+
 }

@@ -48,4 +48,12 @@ export class ArticlesService {
     return this.http.put<Articles>(`${this.api}/articles/${id}`, articleForm);
   }
 
+  public getArticlesBySections(section: string): Observable<Articles[]> {
+    return this.http.get(`${this.api}/articles/search=${section}`).pipe(
+      map((articlesBysections: any) => {
+        return articlesBysections as Articles[];
+      }),
+    );
+  }
+
 }
