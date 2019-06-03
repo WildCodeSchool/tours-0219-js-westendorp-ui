@@ -6,6 +6,6 @@ export class Articles {
     public date: Date,
     public author: String,
     public section: String,
-    public media: String
+    public media: String,
   ) {}
 }

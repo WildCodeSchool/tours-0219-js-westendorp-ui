@@ -14,7 +14,7 @@ export class ArticlesService {
 
   public api = `${environment.apiUrl}`;
 
-  public getArticle(id) {
+  public getArticle(id: string) {
     const  obs: Observable<any> = this.http
     .get(`${this.api}/articles/${id}`);
     const  treatment  = (response: any) => {
@@ -31,7 +31,7 @@ export class ArticlesService {
     );
   }
 
-  public deleteArticle(id) {
+  public deleteArticle(id: string) {
     const  obs: Observable<any> = this.http
     .delete(`${this.api}/articles/${id}`);
     const  treatment  = (response: any) => {
@@ -44,7 +44,7 @@ export class ArticlesService {
     return this.http.post<Articles>(`${this.api}/articles`, articleForm);
   }
 
-  public updateArticle(articleForm: Articles, id: any): Observable<Articles> {
+  public updateArticle(articleForm: Articles, id: string): Observable<Articles> {
     return this.http.put<Articles>(`${this.api}/articles/${id}`, articleForm);
   }
 
