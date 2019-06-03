@@ -30,4 +30,13 @@ export class ArticlesService {
       }),
     );
   }
+
+  public deleteArticle(id) {
+    const  obs: Observable<any> = this.http
+    .delete(`${this.api}/articles/${id}`);
+    const  treatment  = (response: any) => {
+      return  response as Articles;
+    };
+    return  obs.pipe(map(treatment));
+  }
 }
