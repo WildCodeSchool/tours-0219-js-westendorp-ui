@@ -30,4 +30,13 @@ export class ArticlesService {
       }),
     );
   }
+
+  public createArticle(articleForm: Articles): Observable<Articles> {
+    return this.http.post<Articles>(`${this.api}/articles`, articleForm);
+  }
+
+  public updateArticle(articleForm: Articles, id:any): Observable<Articles> {
+    return this.http.put<Articles>(`${this.api}/articles/${id}`, articleForm);
+  }
+
 }
