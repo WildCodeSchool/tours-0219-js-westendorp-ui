@@ -8,7 +8,7 @@ describe('NavbarAdminComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavbarAdminComponent ]
+      declarations: [NavbarAdminComponent],
     })
     .compileComponents();
   }));
