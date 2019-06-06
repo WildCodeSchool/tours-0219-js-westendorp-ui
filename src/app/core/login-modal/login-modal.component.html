@@ -6,16 +6,20 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body" [hidden]='hidden'>
       <p>Identifiant :</p>
     <input type='text'>
     <p class='pt-4'>Mot de passe :</p>
     <input type='text'>
     <button class='btn btn-outline-primary btnLog'>connexion</button>
-    <button class = 'mdpOublié btn btn-outline-success'>mot de passe oublié ?</button>
+    <button class = 'mdpOublié btn btn-outline-success' (click)="hiddenForm()">mot de passe oublié ?</button>
+  </div>
+  <div class="modal-body" [hidden]='show'>
+      <p>S'il vous plaît, veuillez répondre à la question secrète.</p>
+    <textarea type='text'></textarea>
+    <button class='btn btn-outline-primary btnLog'>Validé</button>
+    <button class = 'retour btn btn-outline-success' (click)="hiddenBack()">retour</button>
   </div>
 </ng-template>
 
 <button class='btn btn-primary' (click)="open(content)">Login</button>
-
-

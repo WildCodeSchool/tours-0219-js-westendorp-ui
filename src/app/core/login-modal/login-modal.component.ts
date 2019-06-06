@@ -8,6 +8,8 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   providers: [NgbModalConfig, NgbModal],
 })
 export class LoginModalComponent implements OnInit {
+  public hidden = false;
+  public show = true;
 
   constructor(config: NgbModalConfig, private modalService: NgbModal) {
     config.backdrop = 'static';
@@ -16,6 +18,16 @@ export class LoginModalComponent implements OnInit {
 
   open(content) {
     this.modalService.open(content);
+  }
+
+  hiddenForm() {
+    this.hidden = true;
+    this.show = false;
+  }
+
+  hiddenBack() {
+    this.hidden = false;
+    this.show = true;
   }
 
   ngOnInit() {
