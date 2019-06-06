@@ -1,3 +1,13 @@
-<p>
-  login-modal works!
-</p>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+      <span aria-hidden="true">&times;</span>
+  </div>
+  <div class="modal-body">
+    <p>Hello, World!</p>
+  </div>
+</ng-template>
+
+<button class='btn btn-primary' (click)="open(content)">Login</button>
+
+
