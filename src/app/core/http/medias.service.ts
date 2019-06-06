@@ -14,10 +14,10 @@ export class MediasService {
   constructor(private http: HttpClient) {
   }
 
-  public getMedia(): Observable<Media> {
+  public getMedia(): Observable<Media[]> {
     const recup: Observable<any> = this.http.get(`${this.api}/medias`);
     const treatment = (parameters: any) => {
-      return parameters as Media;
+      return parameters as Media[];
     };
     return recup.pipe(map(treatment));
   }
