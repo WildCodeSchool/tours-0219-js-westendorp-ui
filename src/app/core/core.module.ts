@@ -4,11 +4,12 @@ import { NavbarAdminComponent } from './navbar-admin/navbar-admin.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
+  declarations: [
     NavbarAdminComponent,
     FooterComponent,
+  ],
+  imports: [
+    CommonModule,
   ],
 })
 export class CoreModule { }

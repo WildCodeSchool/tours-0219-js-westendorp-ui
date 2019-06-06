@@ -4,11 +4,12 @@ import { CardsComponent } from './components/cards/cards.component';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
+  declarations: [
     CardsComponent,
     CarousselComponent,
+  ],
+  imports: [
+    CommonModule,
   ],
 })
 export class SharedModule { }

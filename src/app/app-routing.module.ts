@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginModalComponent } from './features/login-modal/login-modal.component';
 
 const routes: Routes = [
-   { path: '/login', component: LoginModalComponent },
+   { path: 'login', component: LoginModalComponent },
 ];
 
 @NgModule({
