@@ -15,11 +15,7 @@ export class MediasService {
   }
 
   public getMedia(): Observable<Media[]> {
-    const recup: Observable<any> = this.http.get(`${this.api}/medias`);
-    const treatment = (parameters: any) => {
-      return parameters as Media[];
-    };
-    return recup.pipe(map(treatment));
+    return this.http.get<Media[]>(`${this.api}/medias`);
   }
 
   public deleteMedia(id: string): Observable<Media> {

@@ -7,6 +7,7 @@ import { TechnicReglementationComponent } from './features/technic-reglementatio
 import { ProductsComponent } from './features/products/products.component';
 import { ActualityComponent } from './features/actuality/actuality.component';
 import { ActivityComponent } from './features/activity/activity.component';
+import { NavbarAdminComponent } from './core/navbar-admin/navbar-admin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginModalComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'produits', component: ProductsComponent },
   { path: 'actualites', component: ActualityComponent },
   { path: 'activites', component: ActivityComponent },
+  { path : 'auth', component: NavbarAdminComponent },
 ];
 
 @NgModule({
