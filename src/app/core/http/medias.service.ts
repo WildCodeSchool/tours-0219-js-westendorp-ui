@@ -47,7 +47,7 @@ export class MediasService {
 
   }
   public create (mediaForm: Media) {
-    const  create: Observable<any> = this.service
+    const  create: Observable<any> = this.http
     .post(`${this.api}/medias`, mediaForm);
     const  treatment  = (response: any) => {
       return  response as Media;
