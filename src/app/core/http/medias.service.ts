@@ -9,7 +9,6 @@ import { Media } from 'src/app/shared/models/media.model';
   providedIn: 'root',
 })
 export class MediasService {
-  public service: HttpClient;
 
   api = `${environment.apiUrl}`;
   constructor(private http: HttpClient) {

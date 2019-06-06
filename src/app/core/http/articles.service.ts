@@ -3,55 +3,53 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Articles } from 'src/app/shared/models/articles.model';
+import { Article } from 'src/app/shared/models/article.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ArticlesService {
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public api = `${environment.apiUrl}`;
 
-  public getArticle(id: string) {
-    const  obs: Observable<any> = this.http
-    .get(`${this.api}/articles/${id}`);
-    const  treatment  = (response: any) => {
-      return  response as Articles[];
-    };
-    return  obs.pipe(map(treatment));
-  }
-
-  public getArticles(): Observable<Articles[]> {
-    return this.http.get(`${this.api}/articles`).pipe(
-      map((allArticles: any) => {
-        return allArticles as Articles[];
+  public getArticle(id: string): Observable<Article> {
+    return this.http.get(`${this.api}/articles/${id}`).pipe(
+      map((article: any) => {
+        return  article as Article;
       }),
     );
   }
 
-  public deleteArticle(id: string) {
-    const  obs: Observable<any> = this.http
-    .delete(`${this.api}/articles/${id}`);
-    const  treatment  = (response: any) => {
-      return  response as Articles;
-    };
-    return  obs.pipe(map(treatment));
+  public getArticles(): Observable<Article[]> {
+    return this.http.get(`${this.api}/articles`).pipe(
+      map((allArticles: any) => {
+        return allArticles as Article[];
+      }),
+    );
   }
 
-  public createArticle(articleForm: Articles): Observable<Articles> {
-    return this.http.post<Articles>(`${this.api}/articles`, articleForm);
+  public deleteArticle(id: string): Observable<Article> {
+    return this.http.delete(`${this.api}/articles/${id}`).pipe(
+      map((article: any) => {
+        return  article as Article;
+      }),
+    );
   }
 
-  public updateArticle(articleForm: Articles, id: string): Observable<Articles> {
-    return this.http.put<Articles>(`${this.api}/articles/${id}`, articleForm);
+  public createArticle(articleForm: Article): Observable<Article> {
+    return this.http.post<Article>(`${this.api}/articles`, articleForm);
   }
 
-  public getArticlesBySections(section: string): Observable<Articles[]> {
+  public updateArticle(articleForm: Article, id: string): Observable<Article> {
+    return this.http.put<Article>(`${this.api}/articles/${id}`, articleForm);
+  }
+
+  public getArticlesBySections(section: string): Observable<Article[]> {
     return this.http.get(`${this.api}/articles/search=${section}`).pipe(
       map((articlesBysections: any) => {
-        return articlesBysections as Articles[];
+        return articlesBysections as Article[];
       }),
     );
   }

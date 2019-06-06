@@ -1,4 +1,4 @@
-export class Articles {
+export class Article {
   constructor(
     public id: String,
     public title: String,
