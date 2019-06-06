@@ -4,12 +4,14 @@ import { LoginModalComponent } from './features/login-modal/login-modal.componen
 import { HomeComponent } from './features/home/home.component';
 
 const routes: Routes = [
-   { path: 'login', component: LoginModalComponent },
-   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginModalComponent },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+  ],
   exports: [RouterModule],
 
 })
