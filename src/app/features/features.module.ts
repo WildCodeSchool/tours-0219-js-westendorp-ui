@@ -7,7 +7,6 @@ import { ActivityComponent } from './activity/activity.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { HomeComponent } from './home/home.component';
 import { TechnicReglementationComponent } from './technic-reglementation/technic-reglementation.component';
-import { LoginModalComponent } from './login-modal/login-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PresentationComponent,
     HomeComponent,
     TechnicReglementationComponent,
-    LoginModalComponent,
   ],
   imports: [
     NgbModule,

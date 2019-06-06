@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginModalComponent } from './features/login-modal/login-modal.component';
+import { LoginModalComponent } from './core/login-modal/login-modal.component';
 import { HomeComponent } from './features/home/home.component';
 import { PresentationComponent } from './features/presentation/presentation.component';
 import { TechnicReglementationComponent } from './features/technic-reglementation/technic-reglementation.component';
