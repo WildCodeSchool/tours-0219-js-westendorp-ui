@@ -6,6 +6,8 @@ import { CoreModule } from './core/core.module';
 import { FeaturesModule } from './features/features.module';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuard } from './core/guards/auth.guard';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,6 +18,7 @@ import { JwtModule } from '@auth0/angular-jwt';
     CoreModule,
     FeaturesModule,
     HttpClientModule,
+    FormsModule,
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['http://localhost:3000'],
@@ -25,7 +28,7 @@ import { JwtModule } from '@auth0/angular-jwt';
       },
     }),
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -3,12 +3,13 @@
   <a class="closebtn" (click)='closeNav()'>&times;</a>
   <span (click)='openNav()' class='burger'>&#9776;</span>
   <a >Google Analytics</a>
-  <a class="nav-link" [routerLink]="[ '' ]">Accueil</a>
+  <a class="nav-link" [routerLink]="[ 'home' ]">Accueil</a>
   <a class="nav-link" [routerLink]="[ 'presentation' ]">Présentation</a>
   <a class="nav-link" [routerLink]="[ 'activites' ]">Nos activités</a>
   <a class="nav-link" [routerLink]="[ 'produits' ]">Nos Produits</a>
   <a class="nav-link" [routerLink]="[ 'techniques' ]">Techniques et Réglementations</a>
   <a class="nav-link" [routerLink]="[ 'actualites' ]">Actualités</a>
+  <button class='btn btn-primary' (click)="open(content)">Logout</button>
 </div>
 <div id="main" >
   
