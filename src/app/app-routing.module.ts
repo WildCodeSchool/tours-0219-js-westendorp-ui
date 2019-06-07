@@ -8,21 +8,41 @@ import { ProductsComponent } from './features/products/products.component';
 import { ActualityComponent } from './features/actuality/actuality.component';
 import { ActivityComponent } from './features/activity/activity.component';
 import { NavbarAdminComponent } from './core/navbar-admin/navbar-admin.component';
+import { HeaderComponent } from './core/header/header.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginModalComponent },
-  { path: '', component: HomeComponent },
-  { path: 'presentation', component: PresentationComponent },
-  { path: 'techniques', component: TechnicReglementationComponent },
-  { path: 'produits', component: ProductsComponent },
-  { path: 'actualites', component: ActualityComponent },
-  { path: 'activites', component: ActivityComponent },
-  { path : 'auth', component: NavbarAdminComponent },
+
+  {
+    path: 'admin', component: NavbarAdminComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'presentation', component: PresentationComponent },
+      { path: 'techniques', component: TechnicReglementationComponent },
+      { path: 'produits', component: ProductsComponent },
+      { path: 'actualites', component: ActualityComponent },
+      { path: 'activites', component: ActivityComponent },
+    ],
+
+  },
+  {
+    path: '', component: HeaderComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'presentation', component: PresentationComponent },
+      { path: 'techniques', component: TechnicReglementationComponent },
+      { path: 'produits', component: ProductsComponent },
+      { path: 'actualites', component: ActualityComponent },
+      { path: 'activites', component: ActivityComponent },
+      { path: 'login', component: LoginModalComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { enableTracing: true }),
   ],
   exports: [RouterModule],
 
