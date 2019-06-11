@@ -6,13 +6,20 @@
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body" [hidden]='hidden'>
+    <div class="container-fluid modal-body" [hidden]='hidden'>
+      <div class = "row">
+      <img src="https://wallpapercave.com/wp/4gqRdbk.jpg" class="col-6">
+      <div class = "col-6">
       <p>Identifiant :</p>
       <input type='text' email name="email" #email="ngModel" [ngModel]>
       <p class='pt-4'>Mot de passe :</p>
       <input type='text' name="mdp" #mdp="ngModel" [ngModel]>
-      <button class='btn btn-outline-primary btnLog' type="submit">connexion</button>
+      <div>
+      <button class='btn btn-outline-primary login-btn' type="submit">connexion</button>
       <button class='mdpOublié btn btn-outline-success' (click)="hiddenForm()">mot de passe oublié ?</button>
+    </div>
+    </div>
+      </div>
     </div>
   </form>
   <div class="modal-body" [hidden]='show'>

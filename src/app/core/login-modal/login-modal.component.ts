@@ -14,7 +14,7 @@ export class LoginModalComponent implements OnInit {
   public hidden = false;
   public show = true;
   loginForm: NgForm;
-  error: string = '';
+  error = '';
 
   constructor(config: NgbModalConfig, private modalService: NgbModal, private islogin: LoginService, private router: Router) {
     config.backdrop = 'static';
@@ -22,7 +22,7 @@ export class LoginModalComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content);
+    this.modalService.open(content, { size: 'lg' });
   }
 
   hiddenForm() {
