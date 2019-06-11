@@ -1,33 +1,44 @@
 <ng-template #content let-c="close()">
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Connexion</h4>
-      <button type="button" class="close" aria-label="Close" (click)="c">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
     <div class="container-fluid modal-body" [hidden]='hidden'>
-      <div class = "row">
-      <img src="https://wallpapercave.com/wp/4gqRdbk.jpg" class="col-6">
-      <div class = "col-6">
-      <p>Identifiant :</p>
-      <input type='text' email name="email" #email="ngModel" [ngModel]>
-      <p class='pt-4'>Mot de passe :</p>
-      <input type='text' name="mdp" #mdp="ngModel" [ngModel]>
-      <div>
-      <button class='btn btn-outline-primary login-btn' type="submit">connexion</button>
-      <button class='mdpOublié btn btn-outline-success' (click)="hiddenForm()">mot de passe oublié ?</button>
-    </div>
-    </div>
+      <div class = "row fenetre-login">
+        <img src="https://wallpapercave.com/wp/4gqRdbk.jpg" class="col-7">
+        <div class = "col-5">
+          <button type="button" class="close" aria-label="Close" (click)="c">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="modal-basic-title">Connexion</h4>
+          <p>Identifiant :</p>
+          <input type='text' email name="email" #email="ngModel" [ngModel]>
+          <p class='pt-4'>Mot de passe :</p>
+          <input type='text' name="mdp" #mdp="ngModel" [ngModel]>
+          <div>
+            <button class='btn btn-outline-primary login-btn' type="submit">connexion</button>
+            <button class='mdp-oublié btn btn-outline-success' (click)="hiddenForm()">mot de passe oublié ?</button>
+          </div>
+        </div>
       </div>
     </div>
   </form>
-  <div class="modal-body" [hidden]='show'>
-    <p>S'il vous plaît, veuillez répondre à la question secrète.</p>
-    <textarea type='text'></textarea>
-    <button class='btn btn-outline-primary btnLog'>Validé</button>
-    <button class='retour btn btn-outline-success' (click)="hiddenBack()">retour</button>
-  </div>
+  <form>
+      <div class="container-fluid modal-body" [hidden]='show'>
+        <div class = "row fenetre-login">
+          <img src="https://wallpapercave.com/wp/4gqRdbk.jpg" class="col-7">
+          <div class = "col-5">
+            <button type="button" class="close" aria-label="Close" (click)="c">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title" id="modal-basic-title">Mot de passe Oublié ?</h4>
+            <p>Votre e-mail :</p>
+            <input type='text' email name="email" #email="ngModel" [ngModel]>
+            <div>
+              <button class='btn btn-outline-primary login-btn' type="submit">envoyer</button>
+              <button class='retour btn btn-outline-success retour' (click)="hiddenBack()">retour</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
 </ng-template>
 
 <button class='btn btn-primary' (click)="open(content)">Login</button>
