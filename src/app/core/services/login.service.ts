@@ -11,7 +11,6 @@ export class LoginService {
   constructor(private http: HttpClient) { }
   urlApi = `${environment.apiUrl}/auth/signin`;
   public user: boolean;
-  public body: string;
 
   login(email: string, password: string) {
     return this.http.post<any>(this.urlApi, { email, password })

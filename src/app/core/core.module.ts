@@ -9,6 +9,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { NgxEditorModule } from 'ngx-editor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AdminEditorComponent } from './admin-editor/admin-editor.component';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     FooterComponent,
     HeaderComponent,
     LoginModalComponent,
+    AdminEditorComponent,
   ],
   imports: [
     NgbModule,
@@ -28,6 +31,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   exports: [
     HeaderComponent,
     FooterComponent,
+    AdminEditorComponent,
   ],
 })
 export class CoreModule { }

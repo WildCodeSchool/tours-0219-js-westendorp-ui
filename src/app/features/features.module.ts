@@ -8,6 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { TechnicReglementationComponent } from './technic-reglementation/technic-reglementation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarousselComponent } from '../shared/components/caroussel/caroussel.component';
+import { CoreModule } from '../core/core.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -21,6 +23,8 @@ import { CarousselComponent } from '../shared/components/caroussel/caroussel.com
   imports: [
     NgbModule,
     CommonModule,
+    CoreModule,
+    RouterModule,
   ],
 })
 export class FeaturesModule { }

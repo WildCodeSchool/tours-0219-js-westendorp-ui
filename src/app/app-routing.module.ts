@@ -10,7 +10,7 @@ import { ActivityComponent } from './features/activity/activity.component';
 import { NavbarAdminComponent } from './core/navbar-admin/navbar-admin.component';
 import { HeaderComponent } from './core/header/header.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { FooterComponent } from './core/footer/footer.component';
+import { AdminEditorComponent } from './core/admin-editor/admin-editor.component';
 
 const routes: Routes = [
 
@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'produits', component: ProductsComponent, canActivate: [AuthGuard] },
       { path: 'actualites', component: ActualityComponent, canActivate: [AuthGuard] },
       { path: 'activites', component: ActivityComponent, canActivate: [AuthGuard] },
+      { path: 'editor', component: AdminEditorComponent, canActivate: [AuthGuard] },
     ],
 
   },
