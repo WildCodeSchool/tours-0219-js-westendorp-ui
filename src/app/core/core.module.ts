@@ -11,7 +11,6 @@ import { NgxEditorModule } from 'ngx-editor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AdminEditorComponent } from './admin-editor/admin-editor.component';
 
-
 @NgModule({
   declarations: [
     NavbarAdminComponent,
@@ -19,6 +18,7 @@ import { AdminEditorComponent } from './admin-editor/admin-editor.component';
     HeaderComponent,
     LoginModalComponent,
     AdminEditorComponent,
+
   ],
   imports: [
     NgbModule,

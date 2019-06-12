@@ -21,7 +21,10 @@ export class AdminEditorComponent implements OnInit {
     this.article = this.editorService.article;
   }
 
-  updateArticle(content, id){
-    this.articlesService.updateArticle(content, id);
+  updateArticle(id: string, content: Article) {
+    this.articlesService.updateArticle(id, content).subscribe((newArticle: Article) => {
+      this.article = newArticle;
+    });
   }
+
 }

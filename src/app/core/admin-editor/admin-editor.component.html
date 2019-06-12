@@ -1,2 +1,2 @@
 <app-ngx-editor [placeholder]="'Enter text here...'" height="300px" [spellcheck]="true" [(ngModel)]='article.content'></app-ngx-editor>
-<Button class='btn btn-success' (click)='updateArticle(this.article, article._id)'>Modifier</Button>
+<Button class='btn btn-success' (click)='updateArticle( article._id, this.article)'>Modifier</Button>
