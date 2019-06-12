@@ -4,15 +4,27 @@ body {
 
   .sidenav {
     height: 100%;
-    width: 32px;
+    width: 40px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #0681d1;
+    background-image: url('/assets/image/background.jpg');
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+  }
+
+  h2{
+    text-shadow:#e7f6ff 0 -1px 0,
+  #00abf0 1px 1px 0,
+  #0096e4 2px 2px 0,
+  #00ceff 3px 3px 0,
+  #006392 4px 4px 0,
+  #00485b 5px 5px 0,
+  #333 5px 5px 10px;color:white;
+    background-color:transparent;
+    padding: 8px 8px 8px 32px;
   }
 
   .sidenav a {

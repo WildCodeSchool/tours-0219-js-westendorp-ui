@@ -3,7 +3,7 @@
     justify-content: space-around;
 }
 .navbar{
-    background-color: #0681d1;
+    background-image: url('/assets/image/background.jpg');
    
 }
 
@@ -21,13 +21,13 @@
 
 .nav-link-1 {
     transition: 0.3s ease;
-    background: #0681d1;
+    background: transparent;
     color: #ffffff;
     font-weight: bold;
     font-size: 18px;
     text-decoration: none;
-    border-top: 4px solid #0681d1;
-    border-bottom: 4px solid #0681d1;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     padding: 13px 0;
     margin: 0 40px;
   }
