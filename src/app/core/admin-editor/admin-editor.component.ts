@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EditorService } from '../services/editor.service';
 import { Article } from 'src/app/shared/models/article.model';
+import { ArticlesService } from '../http/articles.service';
 
 @Component({
   selector: 'app-admin-editor',
@@ -13,15 +14,14 @@ export class AdminEditorComponent implements OnInit {
 
   constructor(
     private editorService: EditorService,
+    private articlesService: ArticlesService,
   ) { }
 
   ngOnInit() {
-    // this.editorService.contentSubject.subscribe((article: Article) => {
-    //   this.article = article;
-    //   console.log(article);
-    // },
-    // );
     this.article = this.editorService.article;
   }
 
+  updateArticle(content, id){
+    this.articlesService.updateArticle(content, id);
+  }
 }
