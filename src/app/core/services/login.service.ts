@@ -33,6 +33,4 @@ export class LoginService {
     localStorage.clear();
     this.user = false;
   }
-
-
 }
