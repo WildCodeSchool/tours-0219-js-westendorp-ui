@@ -25,6 +25,7 @@
       <h5 class="card-title">{{ article.title }}</h5>
       <p class="card-text">{{ article.content }}</p>
       <p class="card-text">Auteur: {{ article.author }}</p>
+      <button class="btn btn-success" [hidden]='log' (click)='startEdit(article.content)'>Edit</button>
     </div>
   </div>
 </div>

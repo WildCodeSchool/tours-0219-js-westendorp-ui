@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarAdminComponent implements OnInit {
 
+  public body: string = this.loginService.body;
+
   constructor(private loginService: LoginService,
               private router: Router) { }
 

@@ -9,10 +9,12 @@
   <a class="nav-link" [routerLink]="[ 'produits' ]">Nos Produits</a>
   <a class="nav-link" [routerLink]="[ 'techniques' ]">Techniques et Réglementations</a>
   <a class="nav-link" [routerLink]="[ 'actualites' ]">Actualités</a>
-  <a class="nav-link" [routerLink]="[home]" (click)="logout()">Logout</a>
+  <a class="nav-link" [routerLink]="[ 'home' ]" (click)="logout()">Logout</a>
 </div>
 <div id="main" >
-  
+
   <router-outlet></router-outlet>
+<app-ngx-editor [placeholder]="'Enter text here...'" height="300px" [spellcheck]="true" [(ngModel)]="body"></app-ngx-editor>
+<Button class='btn btn-success'>Modifier</Button>
 </div>
 

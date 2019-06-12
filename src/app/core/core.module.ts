@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { NgxEditorModule } from 'ngx-editor';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     CommonModule,
     FormsModule,
+    NgxEditorModule,
+    AngularFontAwesomeModule,
   ],
   exports: [
     HeaderComponent,
