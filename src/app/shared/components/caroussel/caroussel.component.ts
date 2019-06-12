@@ -12,9 +12,9 @@ export class CarousselComponent implements OnInit {
   constructor(private mediasService: MediasService) { }
 
   ngOnInit() {
-    // this.mediasService.getMediaByType('images').subscribe((res: Media[]) => {
-    //   this.images = res;
-    // });
+    this.mediasService.getMediaByType('image').subscribe((res: Media[]) => {
+      this.images = res;
+    });
   }
 
 }
