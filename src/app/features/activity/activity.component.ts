@@ -30,6 +30,7 @@ export class ActivityComponent implements OnInit {
 
   sendActivity(article: Article) {
     this.editorService.contentSubject.next(article);
+    this.editorService.article = article;
     console.log(article);
   }
 

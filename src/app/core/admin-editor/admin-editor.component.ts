@@ -16,11 +16,12 @@ export class AdminEditorComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.editorService.contentSubject.subscribe((article: Article) => {
-      this.article = article;
-      console.log(article);
-    },
-    );
+    // this.editorService.contentSubject.subscribe((article: Article) => {
+    //   this.article = article;
+    //   console.log(article);
+    // },
+    // );
+    this.article = this.editorService.article;
   }
 
 }
