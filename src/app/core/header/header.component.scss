@@ -1,10 +1,10 @@
-#navbarNav{
+#navbar-nav{
     display: flex;
     justify-content: space-around;
 }
 .navbar{
     background-image: url('/assets/image/background.jpg');
-   
+
 }
 
 .navbar-brand{
@@ -14,9 +14,6 @@
 .nav-item {
     cursor:pointer;
 }
-
-
-
 
 
 .nav-link-1 {
@@ -34,5 +31,5 @@
   .nav-link-1:hover {
     border-top: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
-    padding: 6px 0; 
+    padding: 6px 0;
   }

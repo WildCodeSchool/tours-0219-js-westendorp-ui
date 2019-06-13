@@ -14,12 +14,12 @@ export class NavbarAdminComponent implements OnInit {
   ngOnInit() {
 
   } openNav() {
-    document.getElementById('mySidenav').style.width = '250px';
+    document.getElementById('my-side-nav').style.width = '250px';
     document.getElementById('main').style.marginLeft = '250px';
   }
 
   closeNav() {
-    document.getElementById('mySidenav').style.width = '30px';
+    document.getElementById('my-side-nav').style.width = '30px';
     document.getElementById('main').style.marginLeft = '30px';
   }
 
