@@ -1,2 +1,2 @@
-<app-ngx-editor [placeholder]="'Enter text here...'" height="300px" [spellcheck]="true" [(ngModel)]='article.content'></app-ngx-editor>
+<ckeditor [editor]="Editor" [(ngModel)]="article.content"></ckeditor>
 <Button class='btn btn-success' (click)='updateArticle( article._id, this.article)'>Modifier</Button>

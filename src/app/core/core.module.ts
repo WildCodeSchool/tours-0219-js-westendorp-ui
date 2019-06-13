@@ -7,9 +7,10 @@ import { RouterModule } from '@angular/router';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { NgxEditorModule } from 'ngx-editor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AdminEditorComponent } from './admin-editor/admin-editor.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 @NgModule({
   declarations: [
@@ -25,8 +26,8 @@ import { AdminEditorComponent } from './admin-editor/admin-editor.component';
     RouterModule,
     CommonModule,
     FormsModule,
-    NgxEditorModule,
     AngularFontAwesomeModule,
+    CKEditorModule,
   ],
   exports: [
     HeaderComponent,
