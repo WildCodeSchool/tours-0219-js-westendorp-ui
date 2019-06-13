@@ -40,4 +40,13 @@ export class ActivityComponent implements OnInit {
     }
   }
 
+  deleteActivity(id, index) {
+    this.articlesService.deleteArticle(id).subscribe(
+      (articles) => {
+        this.articlesList.splice(index, 1);
+      },
+    );
+  }
+
+
 }
