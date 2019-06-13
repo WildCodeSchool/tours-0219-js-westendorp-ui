@@ -8,6 +8,7 @@ import { Article } from 'src/app/shared/models/article.model';
 export class EditorService {
 
   public article: Article;
+  typeOfContent: string;
 
   constructor() { }
 

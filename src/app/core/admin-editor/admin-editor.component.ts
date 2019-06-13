@@ -12,6 +12,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export class AdminEditorComponent implements OnInit {
   public Editor = ClassicEditor;
   article: Article;
+  type: string;
 
   constructor(
     private editorService: EditorService,
@@ -20,11 +21,13 @@ export class AdminEditorComponent implements OnInit {
 
   ngOnInit() {
     this.article = this.editorService.article;
+    this.type = this.editorService.typeOfContent;
   }
 
   updateArticle(id: string, content: Article) {
     this.articlesService.updateArticle(id, content).subscribe((newArticle: Article) => {
       this.article = newArticle;
+      console.log(this.article);
     });
   }
 

@@ -3,7 +3,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-activity',
@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class ActivityComponent implements OnInit {
 
+
+  htmlStr: string;
   public log = !this.service.isLogin();
 
   articlesList: Article[] = [];
@@ -28,10 +30,14 @@ export class ActivityComponent implements OnInit {
     });
   }
 
-  sendActivity(article: Article) {
+  sendActivity(article: Article, type: string) {
     this.editorService.contentSubject.next(article);
     this.editorService.article = article;
-    console.log(article);
+    if (type === 'title') {
+      this.editorService.typeOfContent = 'title';
+    } else {
+      this.editorService.typeOfContent = 'content';
+    }
   }
 
 }

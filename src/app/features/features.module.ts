@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarousselComponent } from '../shared/components/caroussel/caroussel.component';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
+import { EscapeHtmlPipe } from '../shared/pipes/keep-html.pipe';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     TechnicReglementationComponent,
     CarousselComponent,
+    EscapeHtmlPipe,
   ],
   imports: [
     NgbModule,
