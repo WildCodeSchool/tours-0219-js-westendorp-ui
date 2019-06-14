@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ArticlesService } from 'src/app/core/http/articles.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { LoginService } from 'src/app/core/services/login.service';
@@ -13,8 +13,13 @@ export class CardsComponent implements OnInit {
 
   htmlStr: string;
   public log = !this.service.isLogin();
-  newArticle: Article= new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '')
   articlesList: Article[] = [];
+
+  @Input() public article: Article;
+  @Input() public index;
+
+  @Output()
+  deleteCard: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private articlesService: ArticlesService,
@@ -42,15 +47,11 @@ export class CardsComponent implements OnInit {
   deleteActivity(id, index) {
     this.articlesService.deleteArticle(id).subscribe(
       (articles) => {
-        this.articlesList.splice(index, 1);
+        this.deleteCard.emit(index);
+        // this.articlesList.splice(index, 1);
+        console.log(index);
       },
     );
-  }
-
-  createActivity() {
-    this.editorService.article = this.newArticle;
-    this.editorService.typeOfContent = 'title';
-    this.editorService.typeEdition = true;
   }
 
 }

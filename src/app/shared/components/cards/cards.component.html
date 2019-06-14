@@ -1,8 +1,3 @@
-<a routerLink="/admin/editor">
-  <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
-</a>
-
-<div *ngFor="let article of articlesList; let i = index">
   <div class="card">
     <div class="card-body">
         <a routerLink="/admin/editor">
@@ -13,7 +8,6 @@
       <a routerLink="/admin/editor">
         <button class="btn btn-primary" [hidden]='log' (click)='sendActivity(article, "body")'>Edit</button>
       </a>
-      <button class="btn btn-danger" [hidden]='log' (click)='deleteActivity(article._id, i)'>Supprimer</button>
+      <button class="btn btn-danger" [hidden]='log' (click)='deleteActivity(article._id, index)'>Supprimer</button>
     </div>
   </div>
-</div>
