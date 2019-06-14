@@ -1,3 +1,19 @@
-<p>
-  cards works!
-</p>
+<a routerLink="/admin/editor">
+  <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
+</a>
+
+<div *ngFor="let article of articlesList; let i = index">
+  <div class="card">
+    <div class="card-body">
+        <a routerLink="/admin/editor">
+          <i class="fa fa-edit" (click)='sendActivity(article, "title")' [hidden]='log'></i></a>
+      <h5 class="card-title" [innerHTML]=" article.title | keepHtml">
+        </h5>
+      <p class="card-text" [innerHTML]=" article.content | keepHtml"></p>
+      <a routerLink="/admin/editor">
+        <button class="btn btn-primary" [hidden]='log' (click)='sendActivity(article, "body")'>Edit</button>
+      </a>
+      <button class="btn btn-danger" [hidden]='log' (click)='deleteActivity(article._id, i)'>Supprimer</button>
+    </div>
+  </div>
+</div>
