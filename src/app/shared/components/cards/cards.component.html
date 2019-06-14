@@ -8,6 +8,6 @@
       <a routerLink="/admin/editor">
         <button class="btn btn-primary" [hidden]='log' (click)='sendActivity(article, "body")'>Edit</button>
       </a>
-      <button class="btn btn-danger" [hidden]='log' (click)='deleteActivity(article._id, index)'>Supprimer</button>
+      <button class="btn btn-danger" [hidden]='log' (click)='deleteActivity(article._id)'>Supprimer</button>
     </div>
   </div>

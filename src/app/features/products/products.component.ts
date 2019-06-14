@@ -37,8 +37,8 @@ export class ProductsComponent implements OnInit {
     this.editorService.typeEdition = true;
   }
 
-  deleteCard(index) {
-    this.articlesList.splice(index, 1);
+  deleteCard(id) {
+    this.articlesList.splice(this.articlesList.findIndex(a => a._id === id), 1);
   }
 
 }

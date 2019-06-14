@@ -44,12 +44,10 @@ export class CardsComponent implements OnInit {
     this.editorService.typeEdition = false;
   }
 
-  deleteActivity(id, index) {
+  deleteActivity(id) {
     this.articlesService.deleteArticle(id).subscribe(
       (articles) => {
-        this.deleteCard.emit(index);
-        // this.articlesList.splice(index, 1);
-        console.log(index);
+        this.deleteCard.emit(id);
       },
     );
   }

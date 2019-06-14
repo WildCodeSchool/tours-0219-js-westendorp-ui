@@ -13,7 +13,6 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { BrowserModule } from '@angular/platform-browser';
 
-
 @NgModule({
   declarations: [
     NavbarAdminComponent,
