@@ -26,7 +26,7 @@ export class AdminEditorComponent implements OnInit {
   ngOnInit() {
     this.article = this.editorService.article;
     this.type = this.editorService.typeOfContent;
-    if(this.editorService.typeEdition){
+    if (this.editorService.typeEdition) {
       this.hideModif = true;
       this.hideCreate = false;
       this.hideSubmit = true;
@@ -59,9 +59,23 @@ export class AdminEditorComponent implements OnInit {
   }
 
   createArticle(article) {
-    this.articlesService.createArticle(article).subscribe((article) => {});
+    this.articlesService.createArticle(article).subscribe((article) => { });
     console.log(this.article);
     this.backClick();
+  }
+
+  onFilesAdded(files: File[]) {
+    console.log(files);
+    files.forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = (e: ProgressEvent) => {
+        const content = (e.target as FileReader).result;
+      };
+    });
+  }
+
+  onFilesRejected(files: File[]) {
+    console.log(files);
   }
 
 }
