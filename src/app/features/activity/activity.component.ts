@@ -7,9 +7,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivityComponent implements OnInit {
 
-  constructor() { }
+  htmlStr: string;
+  public log = !this.service.isLogin();
+  newArticle: Article;
+  articlesList: Article[] = [];
+
+  constructor(
+    private articlesService: ArticlesService,
+    private service: LoginService,
+    private editorService: EditorService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  createActivity(){
+    this.newArticle.title = 'nouveau titre';
+    this.newArticle.content = 'nouvel article';
+    this.editorService.article = this.newArticle;
+    this.editorService.typeOfContent = 'title';
   }
 
 }
