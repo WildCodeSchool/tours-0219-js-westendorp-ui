@@ -28,8 +28,8 @@ export class LoginService {
   }
 
   logout() {
-    localStorage.removeItem('token');
+    // localStorage.removeItem('token');
+    localStorage.clear();
     this.user = false;
   }
-
 }

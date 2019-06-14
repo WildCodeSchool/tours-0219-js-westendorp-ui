@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
 import { ActualityComponent } from './actuality/actuality.component';
 import { ProductsComponent } from './products/products.component';
 import { ActivityComponent } from './activity/activity.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { HomeComponent } from './home/home.component';
 import { TechnicReglementationComponent } from './technic-reglementation/technic-reglementation.component';
-import { LoginModalComponent } from './login-modal/login-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarousselComponent } from '../shared/components/caroussel/caroussel.component';
+import { CoreModule } from '../core/core.module';
+import { RouterModule } from '@angular/router';
+import { EscapeHtmlPipe } from '../shared/pipes/keep-html.pipe';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -16,12 +19,14 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
     PresentationComponent,
     HomeComponent,
     TechnicReglementationComponent,
-    LoginModalComponent,
+    CarousselComponent,
+    EscapeHtmlPipe,
   ],
-
   imports: [
+    NgbModule,
     CommonModule,
-    SharedModule,
+    CoreModule,
+    RouterModule,
   ],
 })
 export class FeaturesModule { }

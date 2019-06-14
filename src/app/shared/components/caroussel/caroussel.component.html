@@ -1,3 +1,29 @@
-<p>
-  caroussel works!
-</p>
+<ngb-carousel *ngIf="images" >
+  <ng-template ngbSlide>
+    <div class="carousel-page">
+    <img [src]="images[0].url" alt="Random first slide" class="img01">
+    </div>
+    <div class="carousel-caption">
+      <h3></h3>
+      <p></p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="carousel-page">
+    <img [src]="images[1].url" alt="Random second slide" class="img02">
+    </div>
+    <div class="carousel-caption">
+      <h3></h3>
+      <p></p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="carousel-page">
+    <img [src]="images[2].url" alt="Random third slide" class="img03">
+    </div>
+    <div class="carousel-caption">
+      <h3></h3>
+      <p></p>
+    </div>
+  </ng-template>
+</ngb-carousel> 

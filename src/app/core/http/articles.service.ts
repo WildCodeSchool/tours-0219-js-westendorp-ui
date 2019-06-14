@@ -42,7 +42,7 @@ export class ArticlesService {
     return this.http.post<Article>(`${this.api}/articles`, articleForm);
   }
 
-  public updateArticle(articleForm: Article, id: string): Observable<Article> {
+  public updateArticle(id: string, articleForm: Article): Observable<Article> {
     return this.http.put<Article>(`${this.api}/articles/${id}`, articleForm);
   }
 
