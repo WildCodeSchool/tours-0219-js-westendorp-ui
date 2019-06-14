@@ -15,7 +15,6 @@ html, body {
 
 .footer {
   width: 100%;
-  display: inline-block;
   margin: 2em 0;
   height: 50px;
   background-image: url('/assets/image/background.jpg');
@@ -31,7 +30,7 @@ html, body {
   }
 }
 .footer .copyright p {
-  
+
   color: white;
   font-size: 0.7em;
   text-transform: capitalize;
@@ -86,4 +85,7 @@ html, body {
   width: 10%;
 }
 
-
+app-login-modal{
+  margin-top: 7px;
+  margin-right: 1%;
+}
