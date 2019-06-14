@@ -30,9 +30,7 @@ export class AdminEditorComponent implements OnInit {
       console.log(this.article);
     });
   }
-  deleteArticle(id: string){
+  deleteArticle(id: string) {
     this.articlesService.deleteArticle(id);
   }
-
-
 }

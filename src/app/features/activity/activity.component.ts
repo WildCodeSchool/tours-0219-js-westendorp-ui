@@ -4,14 +4,12 @@ import { Article } from 'src/app/shared/models/article.model';
 import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
 
-
 @Component({
   selector: 'app-activity',
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.scss'],
 })
 export class ActivityComponent implements OnInit {
-
 
   htmlStr: string;
   public log = !this.service.isLogin();
@@ -47,6 +45,5 @@ export class ActivityComponent implements OnInit {
       },
     );
   }
-
 
 }

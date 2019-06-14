@@ -11,7 +11,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AdminEditorComponent } from './admin-editor/admin-editor.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
-
 @NgModule({
   declarations: [
     NavbarAdminComponent,
