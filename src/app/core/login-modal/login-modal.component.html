@@ -1,17 +1,24 @@
-<ng-template #content let-c="close()">
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<ng-template #content let-closeModal="close()">
+  <form (ngSubmit)="f.valid && onSubmit(f)" #f="ngForm">
     <div class="container-fluid modal-body" [hidden]='hidden'>
-      <div class = "row fenetre-login">
+      <div class="row fenetre-login">
         <img src="/assets/image/login.jpg" class="col-7">
-        <div class = "col-5">
-          <button type="button" class="close" aria-label="Close" (click)="c">
+        <div class="col-5">
+          <button type="button" class="close" aria-label="Close" (click)="closeModal">
             <span aria-hidden="true">&times;</span>
           </button>
           <h4 class="modal-title" id="modal-basic-title">Connexion</h4>
           <p>Identifiant :</p>
-          <input type='text' email name="email" #email="ngModel" [ngModel]>
+          <input type='text' email name="email" #email="ngModel" [ngModel] required>
+          <div *ngIf="email.errors && f.submitted">
+            <span *ngIf="email.errors.required">Le champ "Email" est requis</span>
+            <span *ngIf="email.errors.e-mail">L'adresse email doit être valide</span>
+          </div>
           <p class='pt-4'>Mot de passe :</p>
-          <input type='text' name="mdp" #mdp="ngModel" [ngModel]>
+          <input type='text' name="mdp" #mdp="ngModel" [ngModel] required>
+          <div *ngIf="mdp.errors && f.submitted">
+            <span class="text-danger text-center" *ngIf="mdp.errors.required">Le champs "Mot de passe" est requis</span>
+          </div>
           <div>
             <button class='btn btn-outline-primary login-btn' type="submit">connexion</button>
             <button class='mdp-oublié btn btn-outline-success' (click)="hiddenForm()">mot de passe oublié ?</button>
@@ -21,24 +28,24 @@
     </div>
   </form>
   <form>
-      <div class="container-fluid modal-body" [hidden]='show'>
-        <div class = "row fenetre-login">
-          <img src="/assets/image/login.jpg" class="col-7">
-          <div class = "col-5">
-            <button type="button" class="close" aria-label="Close" (click)="c">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title" id="modal-basic-title">Mot de passe Oublié ?</h4>
-            <p>Votre e-mail :</p>
-            <input type='text' email name="email" #email="ngModel" [ngModel]>
-            <div>
-              <button class='btn btn-outline-primary login-btn' type="submit">envoyer</button>
-              <button class='retour btn btn-outline-success retour' (click)="hiddenBack()">retour</button>
-            </div>
+    <div class="container-fluid modal-body" [hidden]='show'>
+      <div class="row fenetre-login">
+        <img src="/assets/image/login.jpg" class="col-7">
+        <div class="col-5">
+          <button type="button" class="close" aria-label="Close" (click)="closeModal">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="modal-basic-title">Mot de passe Oublié ?</h4>
+          <p>Votre e-mail :</p>
+          <input type='text' email name="email" #email="ngModel" [ngModel]>
+          <div>
+            <button class='btn btn-outline-primary login-btn' type="submit">envoyer</button>
+            <button class='retour btn btn-outline-success retour' (click)="hiddenBack()">retour</button>
           </div>
         </div>
       </div>
-    </form>
+    </div>
+  </form>
 </ng-template>
 
 <button class='btn btn-primary' (click)="open(content)">Login</button>

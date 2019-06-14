@@ -8,7 +8,7 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { AdminEditorComponent } from './admin-editor/admin-editor.component';
+import { AdminEditorComponent } from '../features/admin-editor/admin-editor.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 @NgModule({

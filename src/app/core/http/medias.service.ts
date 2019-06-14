@@ -27,11 +27,7 @@ export class MediasService {
   }
 
   public getMediaByType(type: string): Observable<Media[]> {
-    return this.http.get(`${this.api}/medias/search?type=${type}`).pipe(
-      map((mediasByType: any) => {
-        return mediasByType as Media[];
-      }),
-    );
+    return this.http.get<Media[]>(`${this.api}/medias/search?type=${type}`);
   }
 
   public getById(id: string): Observable<Media> {
