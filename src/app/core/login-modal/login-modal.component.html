@@ -1,5 +1,5 @@
 <ng-template #content let-closeModal="close()">
-  <form (ngSubmit)="f.valid && onSubmit(f)" #f="ngForm">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="container-fluid modal-body" [hidden]='hidden'>
       <div class="row fenetre-login">
         <img src="/assets/image/login.jpg" class="col-7">
@@ -12,7 +12,6 @@
           <input type='text' email name="email" #email="ngModel" [ngModel] required>
           <div *ngIf="email.errors && f.submitted">
             <span *ngIf="email.errors.required">Le champ "Email" est requis</span>
-            <span *ngIf="email.errors.e-mail">L'adresse email doit être valide</span>
           </div>
           <p class='pt-4'>Mot de passe :</p>
           <input type='text' name="mdp" #mdp="ngModel" [ngModel] required>

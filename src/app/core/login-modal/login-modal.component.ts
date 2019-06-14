@@ -40,9 +40,6 @@ export class LoginModalComponent implements OnInit {
         (data) => {
           this.router.navigateByUrl('admin');
           this.modalService.dismissAll();
-        },
-        (error) => {
-          this.error = error;
         });
   }
 

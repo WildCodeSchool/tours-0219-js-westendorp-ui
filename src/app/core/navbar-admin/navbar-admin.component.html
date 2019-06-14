@@ -1,8 +1,8 @@
 
-<div id="my-side-nav" class="side-nav">
+<div class="side-nav" [ngClass]="{'sideNaveOpen': openNav, 'sideNaveClose': closeNav}">
   <h2>Administrateur</h2>
-  <a class="close-btn" (click)='closeNav()'>&times;</a>
-  <span (click)='openNav()' class='burger'>&#9776;</span>
+  <a class="close-btn" (click)='onCloseNav()'>&times;</a>
+  <span (click)='onOpenNav()' class='burger'>&#9776;</span>
   <a >Google Analytics</a>
   <a class="nav-link" [routerLink]="[ 'home' ]">Accueil</a>
   <a class="nav-link" [routerLink]="[ 'presentation' ]">Présentation</a>
@@ -12,9 +12,8 @@
   <a class="nav-link" [routerLink]="[ 'actualites' ]">Actualités</a>
   <a class="nav-link" [routerLink]="[ 'home' ]" (click)="logout()">Logout</a>
 </div>
-<div id="main" >
 
+<div [ngClass]="{'mainClose': closeNav, 'mainOpen': openNav}">
   <router-outlet></router-outlet>
-
 </div>
 

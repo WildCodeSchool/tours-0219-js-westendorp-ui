@@ -8,19 +8,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarAdminComponent implements OnInit {
 
-  constructor(private loginService: LoginService,
-              private router: Router) { }
+  openNav = false;
+  closeNav = true;
+  constructor(
+    private loginService: LoginService,
+    private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { }
 
-  } openNav() {
-    document.getElementById('my-side-nav').style.width = '250px';
-    document.getElementById('main').style.marginLeft = '250px';
+  onOpenNav() {
+    this.openNav = true;
+    this.closeNav = false;
   }
 
-  closeNav() {
-    document.getElementById('my-side-nav').style.width = '30px';
-    document.getElementById('main').style.marginLeft = '30px';
+  onCloseNav() {
+    this.openNav = false;
+    this.closeNav = true;
   }
 
   logout() {
