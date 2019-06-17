@@ -20,7 +20,15 @@ h2 {
 }
 
 
-.side-nav a {
+.side-nav  a  {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+i{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
