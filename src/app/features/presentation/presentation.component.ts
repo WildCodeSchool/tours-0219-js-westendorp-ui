@@ -38,7 +38,7 @@ export class PresentationComponent implements OnInit {
   }
 
   deleteCard(id) {
-    this.articlesList.splice(this.articlesList.findIndex(a => a._id === id), 1);
+    this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
   }
 
 }
