@@ -15,11 +15,7 @@ export class MediasService {
   }
 
   public getMedia(): Observable<Media[]> {
-    const recup: Observable<any> = this.http.get(`${this.api}/medias`);
-    const treatment = (parameters: any) => {
-      return parameters as Media[];
-    };
-    return recup.pipe(map(treatment));
+    return this.http.get<Media[]>(`${this.api}/medias`);
   }
 
   public deleteMedia(id: string): Observable<Media> {
@@ -31,11 +27,7 @@ export class MediasService {
   }
 
   public getMediaByType(type: string): Observable<Media[]> {
-    return this.http.get(`${this.api}/medias/search=${type}`).pipe(
-      map((mediasByType: any) => {
-        return mediasByType as Media[];
-      }),
-    );
+    return this.http.get<Media[]>(`${this.api}/medias/search?type=${type}`);
   }
 
   public getById(id: string): Observable<Media> {
