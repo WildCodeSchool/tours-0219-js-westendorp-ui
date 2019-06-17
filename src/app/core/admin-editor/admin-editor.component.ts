@@ -17,6 +17,7 @@ export class AdminEditorComponent implements OnInit {
   hideModif: boolean;
   hideCreate: boolean;
   hideSubmit: boolean;
+  hiddenBtn = true;
 
   constructor(
     private editorService: EditorService,
@@ -35,6 +36,14 @@ export class AdminEditorComponent implements OnInit {
       this.hideCreate = true;
       this.hideModif = false;
       this.hideSubmit = true;
+    }
+  }
+
+  enableNextStep() {
+    if (this.article.section !== '') {
+      this.hiddenBtn = false;
+    } else if (this.article.section === '') {
+      this.hiddenBtn = true;
     }
   }
 
