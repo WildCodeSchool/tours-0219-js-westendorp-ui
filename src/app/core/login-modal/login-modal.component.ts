@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class LoginModalComponent implements OnInit {
   public hidden = false;
   public show = true;
-  loginForm: NgForm;
   error = '';
 
   constructor(config: NgbModalConfig, private modalService: NgbModal, private islogin: LoginService, private router: Router) {
@@ -41,9 +40,6 @@ export class LoginModalComponent implements OnInit {
         (data) => {
           this.router.navigateByUrl('admin');
           this.modalService.dismissAll();
-        },
-        (error) => {
-          this.error = error;
         });
   }
 

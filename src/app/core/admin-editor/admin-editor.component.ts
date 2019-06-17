@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EditorService } from '../services/editor.service';
+import { EditorService } from '../../core/services/editor.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { ArticlesService } from '../http/articles.service';
 
