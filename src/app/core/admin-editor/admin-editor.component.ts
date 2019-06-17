@@ -28,7 +28,7 @@ export class AdminEditorComponent implements OnInit {
   ngOnInit() {
     this.article = this.editorService.article;
     this.type = this.editorService.typeOfContent;
-    if (this.editorService.typeOfContent) {
+    if (this.editorService.typeEdition) {
       this.hideModif = true;
       this.hideCreate = false;
       this.hideSubmit = true;
