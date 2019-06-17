@@ -22,12 +22,8 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      for (let i = 0; i < articles.length; i += 1) {
-        if (articles[i].section === 'products') {
-          this.articlesList.push(articles[i]);
-        }
-      }
+    this.articlesService.getArticlesBySections('products').subscribe((articles: Article[]) => {
+      this.articlesList = articles;
     });
   }
 
