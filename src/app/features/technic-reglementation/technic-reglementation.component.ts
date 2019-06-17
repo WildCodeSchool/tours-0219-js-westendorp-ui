@@ -22,12 +22,8 @@ export class TechnicReglementationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      for (let i = 0; i < articles.length; i += 1) {
-        if (articles[i].section === 'technic-reglementation') {
-          this.articlesList.push(articles[i]);
-        }
-      }
+    this.articlesService.getArticlesBySections('technic-reglementation').subscribe((articles: Article[]) => {
+      this.articlesList = articles;
     });
   }
 
