@@ -1,10 +1,12 @@
 <h1>Présentation</h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-USy-vHr-pw" frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <a routerLink="/admin/editor">
   <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
-<app-cards class="presentation" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+  <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
 </div>
 
 
