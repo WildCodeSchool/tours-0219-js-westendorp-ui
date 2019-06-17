@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AdminEditorComponent } from './admin-editor/admin-editor.component';
 import { CKEditorModule } from 'ckeditor4-angular';
-import { NgxDropzoneModule } from 'ngx-dropzone';
 import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { BrowserModule } from '@angular/platform-browser';
     FormsModule,
     AngularFontAwesomeModule,
     BrowserModule,
-    NgxDropzoneModule,
     CKEditorModule,
 
   ],

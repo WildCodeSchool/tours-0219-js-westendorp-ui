@@ -27,7 +27,7 @@ export class AdminEditorComponent implements OnInit {
   ngOnInit() {
     this.article = this.editorService.article;
     this.type = this.editorService.typeOfContent;
-    if (this.editorService.typeEdition) {
+    if (this.editorService.typeOfContent) {
       this.hideModif = true;
       this.hideCreate = false;
       this.hideSubmit = true;
@@ -60,7 +60,7 @@ export class AdminEditorComponent implements OnInit {
   }
 
   createArticle(article) {
-    this.articlesService.createArticle(article).subscribe((article) => { });
+    this.articlesService.createArticle(article).subscribe(() => { });
     console.log(this.article);
     this.backClick();
   }
