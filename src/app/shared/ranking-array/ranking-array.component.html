@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="text-center">Ordre d'apparition des articles</h1>
+<div class="table-responsive m-3">
+<table class="table table-bordered table-striped" [hidden]='log'>
+  <thead>
+    <tr>
+      <th scope="col">Titre de l'article</th>
+      <th scope="col">Contenu de l'article</th>
+      <th scope="col">Ordre d'apparition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let article of articlesList">
+      <th class="title"scope="row" [innerHTML]=" article.title | keepHtml"></th>
+      <td class="content" [innerHTML]=" article.content | keepHtml"></td>
+      <td class="rank text-center align-middle">
+       <input type="number" name="rank"> {{article.rank}}</td>
+    </tr>
+  </tbody>
+  <button (click)="changeRank" >Modifier l'ordre</button>
+</table>
+</div>
+</div>

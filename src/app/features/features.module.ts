@@ -12,6 +12,7 @@ import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { EscapeHtmlPipe } from '../shared/pipes/keep-html.pipe';
 import { CardsComponent } from '../shared/components/cards/cards.component';
+import { RankingArrayComponent } from '../shared/ranking-array/ranking-array.component';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -23,6 +24,7 @@ import { CardsComponent } from '../shared/components/cards/cards.component';
     CarousselComponent,
     CardsComponent,
     EscapeHtmlPipe,
+    RankingArrayComponent,
   ],
   imports: [
     NgbModule,
