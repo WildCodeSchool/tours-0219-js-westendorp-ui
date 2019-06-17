@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardsComponent } from './components/cards/cards.component';
-import { CarousselComponent } from './components/caroussel/caroussel.component';
+import { FeaturesModule } from '../features/features.module';
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
+  declarations: [
     CardsComponent,
-    CarousselComponent,
+  ],
+  imports: [
+    FeaturesModule,
+    CommonModule,
+  ],
+  exports: [
+    CardsComponent,
   ],
 })
 export class SharedModule { }

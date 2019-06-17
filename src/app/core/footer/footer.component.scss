@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+/* Colors */
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Raleway, sans-serif;
+  background-color: #fff;
+}
+
+.footer {
+  width: 100%;
+  margin: 2em 0;
+  height: 50px;
+  background-image: url('/assets/image/background.jpg');
+  margin-bottom: auto;
+}
+.footer .copyright {
+  width: 50%;
+  float: left;
+}
+@media (max-width: 600px) {
+  footer .copyright {
+    width: 100%;
+  }
+}
+.footer .copyright p {
+
+  color: white;
+  font-size: 0.7em;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+  .footer .copyright p {
+    text-align: left;
+    padding: 0;
+  }
+}
+.footer .social {
+  width: 50%;
+  float: right;
+}
+@media (max-width: 600px) {
+  .footer .social {
+    width: 100%;
+  }
+}
+.footer .social a {
+  float: left;
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+.footer .social a:hover {
+  background-color: #222;
+  -moz-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  -webkit-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
+
+
+.face {
+  background-color: #3D5B94;
+  font-size: 1.2em;
+  width: 10%;
+}
+
+.tweet {
+  background-color: #3DACDD;
+  font-size: 1.2em;
+  width: 10%;
+}
+
+app-login-modal{
+  margin-top: 7px;
+  margin-right: 1%;
+}

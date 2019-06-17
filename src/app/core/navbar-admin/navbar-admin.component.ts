@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar-admin',
   templateUrl: './navbar-admin.component.html',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarAdminComponent implements OnInit {
 
-  constructor() { }
+  openNav = false;
+  closeNav = true;
+  constructor(
+    private loginService: LoginService,
+    private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onOpenNav() {
+    this.openNav = true;
+    this.closeNav = false;
+  }
+
+  onCloseNav() {
+    this.openNav = false;
+    this.closeNav = true;
+  }
+
+  logout() {
+    this.loginService.logout();
+    this.router.navigateByUrl('/');
   }
 
 }
