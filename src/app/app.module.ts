@@ -29,7 +29,7 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
       },
     }),
   ],
-  providers: [AuthGuard,
+  providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

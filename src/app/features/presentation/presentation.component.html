@@ -1,7 +1,148 @@
 <h1>Présentation</h1>
+
 <a routerLink="/admin/editor">
   <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
-<app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+<app-cards class="presentation" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
 </div>
+
+
+
+<section class="timeline">
+  <div class="container">
+    <div class="timeline-item">
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content">
+          <div class="timeline-img-header">
+            </div>
+          <div *ngFor="let article of articlesList; let i = index">
+              <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+              </div>
+        <div class="date">1 MAY 2016</div>
+        <a class="bnt-more" href="javascript:void(0)">More</a>
+      </div>
+    </div> 
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card">
+        <div class="timeline-img-header">
+        </div>
+        <div *ngFor="let article of articlesList; let i = index">
+            <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+            </div>
+        <div class="date">25 MAY 2016</div>
+        <a class="bnt-more" href="javascript:void(0)">More</a>
+      </div>
+
+    </div>   
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content">
+          <div *ngFor="let article of articlesList; let i = index">
+              <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+              </div>
+        <div class="date">3 JUN 2016</div>
+      </div>
+    </div>   
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content">
+          <div *ngFor="let article of articlesList; let i = index">
+              <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+              </div>
+        <div class="date">22 JUN 2016</div>
+        <a class="bnt-more" href="javascript:void(0)">More</a>
+      </div>
+    </div>   
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card">
+        <div class="timeline-img-header">
+        </div>
+        <div *ngFor="let article of articlesList; let i = index">
+            <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+            </div>
+        <div class="date">10 JULY 2016</div>
+        <a class="bnt-more" href="javascript:void(0)">More</a>
+      </div>
+    </div>   
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card">
+        <div class="timeline-img-header">
+        </div>
+        <div *ngFor="let article of articlesList; let i = index">
+            <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+            </div>
+        <div class="date">30 JULY 2016</div>
+        <a class="bnt-more" href="javascript:void(0)">More</a>
+      </div>
+    </div>  
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content">
+          <div *ngFor="let article of articlesList; let i = index">
+              <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+              </div>
+        <div class="date">5 AUG 2016</div>
+      </div>
+    </div>   
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content timeline-card">
+        <div class="timeline-img-header">
+        </div>
+        <div *ngFor="let article of articlesList; let i = index">
+            <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+            </div>
+        <div class="date">19 AUG 2016</div>
+        <a class="bnt-more" href="javascript:void(0)">More</a>
+      </div>
+    </div>  
+
+    <div class="timeline-item">
+
+      <div class="timeline-img"></div>
+
+      <div class="timeline-content">
+          <div *ngFor="let article of articlesList; let i = index">
+              <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+              </div>
+        <div class="date">1 SEP 2016</div>
+        <a class="bnt-more" href="javascript:void(0)">More</a>
+      </div>
+    </div>   
+  </div>
+</section>
+
+<a routerLink="/admin/editor">
+  <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
+</a>
+<div *ngFor="let article of articlesList; let i = index">
+<app-cards class="presentation" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+</div>
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2677.9470893313082!2d1.709756615555622!3d47.84061837920099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e4ec900c541595%3A0x8eb2a96fec1240c1!2sWestendorp!5e0!3m2!1sfr!2sfr!4v1560764726677!5m2!1sfr!2sfr" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>

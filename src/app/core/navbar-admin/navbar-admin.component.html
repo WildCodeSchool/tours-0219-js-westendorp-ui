@@ -1,20 +1,19 @@
 
-<div id="my-side-nav" class="side-nav">
-  <h2>Administrateur</h2>
-  <a class="close-btn" (click)='closeNav()'>&times;</a>
-  <span (click)='openNav()' class='burger'>&#9776;</span>
-  <a >Google Analytics</a>
-  <a class="nav-link" [routerLink]="[ 'home' ]">Accueil</a>
-  <a class="nav-link" [routerLink]="[ 'presentation' ]">Présentation</a>
-  <a class="nav-link" [routerLink]="[ 'activites' ]">Nos activités</a>
-  <a class="nav-link" [routerLink]="[ 'produits' ]">Nos Produits</a>
-  <a class="nav-link" [routerLink]="[ 'techniques' ]">Techniques et Réglementations</a>
-  <a class="nav-link" [routerLink]="[ 'actualites' ]">Actualités</a>
-  <a class="nav-link" [routerLink]="[ 'home' ]" (click)="logout()">Logout</a>
+<div class="side-nav" [ngClass]="{'sideNaveOpen': openNav, 'sideNaveClose': closeNav}">
+  <h2>Administrator</h2>
+  <a class="close-btn" (click)='onCloseNav()'>&times;</a>
+  <span (click)='onOpenNav()' class='burger'>&#9776;</span>
+  <i class="fa fa-area-chart" aria-hidden="true"><a >Google Analytics</a></i>
+  <i class="fa fa-home" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'home' ]">Accueil</a></i>
+  <i class="fa fa-id-card-o" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'presentation' ]">Présentation</a></i>
+  <i class="fa fa-users" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'activites' ]">Nos activités</a></i>
+  <i class="fa fa-industry" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'produits' ]">Nos Produits</a></i>
+  <i class="fa fa-info-circle" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'techniques' ]">Techniques et Réglementations</a></i>
+  <i class="fa fa-newspaper-o" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'actualites' ]">Actualités</a></i>
+  <i class="fa fa-sign-out" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'home' ]" (click)="logout()">Déconnexion</a></i>
 </div>
-<div id="main" >
 
+<div [ngClass]="{'mainClose': closeNav, 'mainOpen': openNav}">
   <router-outlet></router-outlet>
-
 </div>
 

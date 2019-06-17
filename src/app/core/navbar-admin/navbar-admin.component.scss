@@ -15,12 +15,20 @@ body {
   padding-top: 60px;
 }
 
-h2{
+h2 {
   padding: 8px 8px 8px 32px;
 }
 
 
-.side-nav a {
+.side-nav  a  {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+i{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -31,7 +39,7 @@ h2{
 
 .side-nav a:hover {
   color: #f1f1f1;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .side-nav .close-btn {
@@ -40,19 +48,20 @@ h2{
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  cursor:pointer;
+  cursor: pointer;
 }
-.burger{
+
+.burger {
   color: white;
-  font-size:30px;
-  cursor:pointer;
+  font-size: 30px;
+  cursor: pointer;
   margin-left: 5%;
 }
 
-span{
+span {
   color: #0681d1;
-  font-size:15px;
-  cursor:pointer;
+  font-size: 15px;
+  cursor: pointer;
 
 }
 
@@ -63,11 +72,26 @@ span{
 }
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 16px;}
-  .sidenav a {font-size: 15px;}}
+  .sidenav {
+    padding-top: 16px;
+  }
 
+  .sidenav a {
+    font-size: 15px;
+  }
+}
 
+.sideNaveOpen {
+  width: 250px;
+}
+.mainOpen {
+  margin-left: 250px;
+}
 
+.sideNaveClose {
+  width: 30px;
+}
 
-
-
+.mainClose {
+  margin-left: 40px;
+}
