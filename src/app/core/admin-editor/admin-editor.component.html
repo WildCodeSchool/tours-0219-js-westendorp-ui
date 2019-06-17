@@ -13,7 +13,3 @@
     <option value="technic-reglementation">Technique et réglementation</option>
 </select>
 <Button class='btn btn-success' [hidden]='hideModif' (click)='updateArticle( this.article._id, this.article)'>Modifier</Button>
-<ngx-dropzone [showPreviews]="true" #dropzone (filesAdded)="onFilesAdded($event)"
-(filesRejected)="onFilesRejected($event)"></ngx-dropzone>
-<button (click)="dropzone.reset()">Reset</button>
-<button (click)="dropzone.showFileSelector()">Sélectionner photos</button>
