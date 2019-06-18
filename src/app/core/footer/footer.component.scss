@@ -13,11 +13,12 @@ html, body {
   background-color: #fff;
 }
 
-.footer {
+footer {
   width: 100%;
   margin: 2em 0;
-  height: 50px;
-  background-image: url('/assets/image/background.jpg');
+  height: auto;
+  background-image: url('/assets/image/test.jpg'); 
+  background-size: 100%;
   margin-bottom: auto;
 }
 .footer .copyright {
@@ -73,19 +74,21 @@ html, body {
 
 
 
-.face {
-  background-color: #3D5B94;
-  font-size: 1.2em;
-  width: 10%;
+
+.link {
+  text-align: left;
 }
 
-.tweet {
-  background-color: #3DACDD;
-  font-size: 1.2em;
-  width: 10%;
+p {
+  text-align: center;
 }
 
-app-login-modal{
-  margin-top: 7px;
-  margin-right: 1%;
+a {
+  color: white;
+  cursor: pointer;
 }
+
+.login{
+  text-align: right;
+}
+

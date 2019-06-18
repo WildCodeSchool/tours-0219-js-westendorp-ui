@@ -1,10 +1,12 @@
-#navbar-nav {
+.navbar-nav  {
   display: flex;
   justify-content: space-around;
 }
 
 .navbar {
-  background-image: url('/assets/image/background.jpg');
+  background-image: url('/assets/image/test2.jpg');
+  background-size: 100%;
+  opacity: 0.8;
 }
 
 .navbar-brand {
@@ -35,3 +37,5 @@
   border-bottom: 3px solid #ffffff;
   padding: 6px 0;
 }
+
+
