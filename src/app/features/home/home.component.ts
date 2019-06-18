@@ -22,12 +22,8 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      for (let i = 0; i < articles.length; i += 1) {
-        if (articles[i].section === 'home') {
-          this.articlesList.push(articles[i]);
-        }
-      }
+    this.articlesService.getArticlesBySections('home').subscribe((articles: Article[]) => {
+      this.articlesList = articles;
     });
   }
 

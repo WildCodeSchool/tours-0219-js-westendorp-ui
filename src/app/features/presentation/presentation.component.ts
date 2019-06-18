@@ -22,12 +22,8 @@ export class PresentationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      for (let i = 0; i < articles.length; i += 1) {
-        if (articles[i].section === 'presentation') {
-          this.articlesList.push(articles[i]);
-        }
-      }
+    this.articlesService.getArticlesBySections('presentation').subscribe((articles: Article[]) => {
+      this.articlesList = articles;
     });
   }
 
