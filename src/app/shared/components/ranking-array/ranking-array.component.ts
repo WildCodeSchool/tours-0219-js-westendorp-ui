@@ -24,14 +24,14 @@ export class RankingArrayComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeRank(articles) {
+  changeRank(articles: Article[]) {
     this.serviceArticles.updateArticlesRanking(articles).subscribe((newArticle: Article[]) => {
       this.articles = newArticle;
     });
     this.articles.sort(this.compare);
   }
 
-  compare(a, b) {
+  compare(a: Article, b: Article) {
     let comparison = 0;
     if (a.rank > b.rank) {
       comparison = 1;
