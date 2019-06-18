@@ -4,5 +4,5 @@
   <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
-<app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+<app-cards-accueil [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards-accueil>
 </div>

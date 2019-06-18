@@ -1,5 +1,7 @@
 
-<ckeditor [(ngModel)]=article[type] ></ckeditor>
+
+
+<ckeditor name="editor1" [(ngModel)]="article[type]"></ckeditor>
 <div [ngClass]="{'btn-cache': hiddenBtn}">
 <Button class='btn btn-primary' [hidden]='hideCreate' (click)='goToContent()'>Modifier contenu</Button>
 </div>
