@@ -3,7 +3,7 @@
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <a routerLink="/admin/editor">
-  <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
+  <button class="btn btn-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
   <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
@@ -25,7 +25,7 @@
         <div class="date">1 MAY 2016</div>
         <a class="bnt-more" href="javascript:void(0)">More</a>
       </div>
-    </div> 
+    </div>
 
     <div class="timeline-item">
 
@@ -41,7 +41,7 @@
         <a class="bnt-more" href="javascript:void(0)">More</a>
       </div>
 
-    </div>   
+    </div>
 
     <div class="timeline-item">
 
@@ -53,7 +53,7 @@
               </div>
         <div class="date">3 JUN 2016</div>
       </div>
-    </div>   
+    </div>
 
     <div class="timeline-item">
 
@@ -66,7 +66,7 @@
         <div class="date">22 JUN 2016</div>
         <a class="bnt-more" href="javascript:void(0)">More</a>
       </div>
-    </div>   
+    </div>
 
     <div class="timeline-item">
 
@@ -81,7 +81,7 @@
         <div class="date">10 JULY 2016</div>
         <a class="bnt-more" href="javascript:void(0)">More</a>
       </div>
-    </div>   
+    </div>
 
     <div class="timeline-item">
 
@@ -96,7 +96,7 @@
         <div class="date">30 JULY 2016</div>
         <a class="bnt-more" href="javascript:void(0)">More</a>
       </div>
-    </div>  
+    </div>
 
     <div class="timeline-item">
 
@@ -108,7 +108,7 @@
               </div>
         <div class="date">5 AUG 2016</div>
       </div>
-    </div>   
+    </div>
 
     <div class="timeline-item">
 
@@ -123,7 +123,7 @@
         <div class="date">19 AUG 2016</div>
         <a class="bnt-more" href="javascript:void(0)">More</a>
       </div>
-    </div>  
+    </div>
 
     <div class="timeline-item">
 
@@ -136,12 +136,12 @@
         <div class="date">1 SEP 2016</div>
         <a class="bnt-more" href="javascript:void(0)">More</a>
       </div>
-    </div>   
+    </div>
   </div>
 </section>
 
 <a routerLink="/admin/editor">
-  <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
+  <button class="btn btn-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
 <app-cards class="presentation" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>

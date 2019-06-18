@@ -11,7 +11,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 })
 export class TechnicReglementationComponent implements OnInit {
 
-  public log = !this.service.isLogin();
+  isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '');
   articlesList: Article[] = [];
 
