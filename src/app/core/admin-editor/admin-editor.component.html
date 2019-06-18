@@ -2,13 +2,20 @@
 
 
 <ckeditor name="editor1" [(ngModel)]="article[type]"></ckeditor>
-<div [ngClass]="{'btn-cache': hiddenBtn}">
-<Button class='btn btn-primary' [hidden]='hideCreate' (click)='goToContent()'>Modifier contenu</Button>
+<div class='container'>
+  <div class='row'>
+    <div class='col-3' [hidden]='hideSubmit'>
+<Button class='btn btn-success mt-3'  (click)='createArticle(this.article)'>Enregistrer</Button>
 </div>
-<Button class='btn btn-success' [hidden]='hideSubmit' (click)='createArticle(this.article)'>Enregistrer</Button>
-<Button class='btn btn-danger' (click)='backClick()'>Annuler</Button>
-<label for="section-select" [hidden]='hideCreate'>Choisissez une section:</label>
-<select id="section-select" [hidden]='hideCreate' [(ngModel)]="article.section" (change)="enableNextStep()">
+<div [ngClass]="{'btn-cache': hiddenBtn}" class='col-3' [hidden]='hideCreate'>
+<Button class='btn btn-primary mt-3'  (click)='goToContent()'>Modifier contenu</Button>
+</div>
+<div class='col-2'>
+<Button class='btn btn-danger mt-3' (click)='backClick()'>Annuler</Button>
+</div>
+<div class='col-6 mt-4' [hidden]='hideCreate'>
+<label class='list-section' for="section-select" >Choisissez une section:</label>
+<select id="section-select" [(ngModel)]="article.section" (change)="enableNextStep()">
     <option value=""> Quelle section ?</option>
     <option value="activity">Activité</option>
     <option value="actuality">Actualité</option>
@@ -17,5 +24,8 @@
     <option value="products">Produits</option>
     <option value="technic-reglementation">Technique et réglementation</option>
 </select>
+</div>
+</div>
+</div>
 <Button class='btn btn-success' [hidden]='hideModif' (click)='updateArticle( this.article._id, this.article)'>Modifier</Button>
 
