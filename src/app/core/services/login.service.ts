@@ -10,6 +10,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
   urlApi = `${environment.apiUrl}/auth/signin`;
+  urlReset = `${environment.apiUrl}/auth/forget`;
   public user: boolean;
 
   login(email: string, password: string) {
@@ -30,5 +31,8 @@ export class LoginService {
   logout() {
     localStorage.clear();
     this.user = false;
+  }
+  resetPass() {
+    return this.http.post<any>(this.urlReset, {});
   }
 }

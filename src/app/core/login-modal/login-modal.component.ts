@@ -15,7 +15,11 @@ export class LoginModalComponent implements OnInit {
   public show = true;
   error = '';
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private islogin: LoginService, private router: Router) {
+  constructor(config: NgbModalConfig,
+              private modalService: NgbModal,
+              private islogin: LoginService,
+              private router: Router,
+              private urlReset: LoginService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -41,6 +45,12 @@ export class LoginModalComponent implements OnInit {
           this.router.navigateByUrl('admin');
           this.modalService.dismissAll();
         });
+  }
+
+  sendPass () {
+    this.islogin.resetPass().subscribe(u => {
+      this.urlReset = u;
+    });
   }
 
   ngOnInit() {
