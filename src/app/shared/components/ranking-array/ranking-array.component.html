@@ -17,8 +17,10 @@
             <input class="text-center" name="article-{{i}}" type="number" [(ngModel)]="article.rank"></td>
         </tr>
       </tbody>
-      <button (click)="changeRank(articles)">Modifier l'ordre</button>
     </table>
+    <div class="modifyBtn">
+      <button class="btn btn-outline-primary"(click)="changeRank(articles)">Modifier l'ordre</button>
+    </div>
   </div>
 </div> 
 

@@ -27,7 +27,17 @@ export class RankingArrayComponent implements OnInit {
   changeRank(articles) {
     this.serviceArticles.updateArticlesRanking(articles).subscribe((newArticle: Article[]) => {
       this.articles = newArticle;
-      console.log(this.articles);
     });
+    this.articles.sort(this.compare);
+  }
+
+  compare(a, b) {
+    let comparison = 0;
+    if (a.rank > b.rank) {
+      comparison = 1;
+    } else if (a.rank < b.rank) {
+      comparison = -1;
+    }
+    return comparison;
   }
 }
