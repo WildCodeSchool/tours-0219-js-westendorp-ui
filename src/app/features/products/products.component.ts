@@ -12,7 +12,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 export class ProductsComponent implements OnInit {
 
   public log = !this.service.isLogin();
-  newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '');
+  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
 
   constructor(
