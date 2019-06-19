@@ -17,8 +17,9 @@ footer {
   width: 100%;
   margin: 2em 0;
   height: 120px;
-  background-image: url('/assets/image/test2.jpg');
+  background-color: #262626;
   background-size: 100%;
+  opacity: 0.8;
   margin-bottom: auto;
   text-align: center;
 }
@@ -87,4 +88,12 @@ app-login-modal{
 
 .address{
   margin-top: 1.5%;
+}
+
+p  {
+  color: white;
+}
+a{
+  color: white;
+  text-decoration: underline;
 }

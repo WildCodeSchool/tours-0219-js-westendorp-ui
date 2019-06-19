@@ -1,8 +1,8 @@
 .card{
-    border: solid 2px;
     text-align: center;
     width: 100%;
-    background-color: rgb(114, 190, 235);
+    background-color: rgba(35, 30, 36,0.5);
+    box-shadow: 1px 10px 12px #555;
 }
 
 .edit-btn{
@@ -20,4 +20,6 @@
 .no-border {
   border: none;
   background-color: transparent;
+  box-shadow: none;
 }
+
