@@ -19,19 +19,19 @@ export class LoginService {
     return this.http.post<any>(this.urlApi, { email, password })
       .pipe(tap((user) => {
         if (user) {
-          this.user = true; localStorage.setItem('token', user.token);
+          this.user = true; sessionStorage.setItem('token', user.token);
         }
       }));
   }
 
   isLogin() {
-    if (localStorage.getItem('token')) {
+    if (sessionStorage.getItem('token')) {
       return true;
     }
   }
 
   logout() {
-    localStorage.clear();
+    sessionStorage.clear();
     this.user = false;
   }
 
