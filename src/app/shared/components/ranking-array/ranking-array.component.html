@@ -1,26 +1,22 @@
-<div class="container-fluid" [hidden]='log'>
-  <h1 class="text-center">Ordre d'apparition des articles</h1>
-  <div class="table-responsive m-3">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Titre de l'article</th>
-          <th scope="col">Contenu de l'article</th>
-          <th scope="col">Ordre d'apparition</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let article of articles; let i = index">
-          <th class="title" scope="row" [innerHTML]="article.title | keepHtml"></th>
-          <td class="content" [innerHTML]=" article.content | keepHtml"></td>
-          <td class="rank text-center align-middle">
-            <input class="text-center" name="article-{{i}}" type="number" [(ngModel)]="article.rank"></td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="modifyBtn">
+<div [hidden]='log' class="container-fluid "> 
+<h1 class="text-center">Ordre d'apparition des articles</h1>
+<table class="table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Titre de l'article</th>
+        <th scope="col">Contenu de l'article</th>
+        <th scope="col">Ordre d'apparition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles; let i = index">
+        <th scope="row" [innerHTML]="article.title | keepHtml"></th>
+        <td [innerHTML]=" article.content | keepHtml"></td>
+        <td><input class="text-center" name="article-{{i}}" type="number" [(ngModel)]="article.rank"></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="modifyBtn">
       <button class="btn btn-outline-primary"(click)="changeRank(articles)">Modifier l'ordre</button>
     </div>
   </div>
-</div> 
-
