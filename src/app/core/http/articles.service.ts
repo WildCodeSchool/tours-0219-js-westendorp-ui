@@ -47,11 +47,16 @@ export class ArticlesService {
   }
 
   public getArticlesBySections(section: string): Observable<Article[]> {
-    return this.http.get(`${this.api}/articles/search=${section}`).pipe(
+    return this.http.get(`${this.api}/articles/search?section=${section}`).pipe(
       map((articlesBysections: any) => {
         return articlesBysections as Article[];
       }),
     );
+  }
+
+  public updateArticlesRanking(articlesArray: Article[]): Observable<Article[]> {
+    console.log(articlesArray);
+    return this.http.put<Article[]>(`${this.api}/articles`, articlesArray);
   }
 
 }

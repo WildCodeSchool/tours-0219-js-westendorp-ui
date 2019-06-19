@@ -11,8 +11,8 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 })
 export class ActivityComponent implements OnInit {
 
-  isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '');
+  public log = !this.service.isLogin();
+  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
 
   constructor(
@@ -22,12 +22,8 @@ export class ActivityComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      for (let i = 0; i < articles.length; i += 1) {
-        if (articles[i].section === 'activity') {
-          this.articlesList.push(articles[i]);
-        }
-      }
+    this.articlesService.getArticlesBySections('activity').subscribe((articles: Article[]) => {
+      this.articlesList = articles;
     });
   }
 

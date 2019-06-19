@@ -1,10 +1,12 @@
 
 <ckeditor [(ngModel)]=article[type] ></ckeditor>
+<div [ngClass]="{'btn-cache': hiddenBtn}">
 <Button class='btn btn-primary' [hidden]='hideCreate' (click)='goToContent()'>Modifier contenu</Button>
+</div>
 <Button class='btn btn-success' [hidden]='hideSubmit' (click)='createArticle(this.article)'>Enregistrer</Button>
 <Button class='btn btn-danger' (click)='backClick()'>Annuler</Button>
 <label for="section-select" [hidden]='hideCreate'>Choisissez une section:</label>
-<select id="section-select" [hidden]='hideCreate' [(ngModel)]="article.section">
+<select id="section-select" [hidden]='hideCreate' [(ngModel)]="article.section" (change)="enableNextStep()">
     <option value=""> Quelle section ?</option>
     <option value="activity">Activité</option>
     <option value="actuality">Actualité</option>
@@ -14,3 +16,4 @@
     <option value="technic-reglementation">Technique et réglementation</option>
 </select>
 <Button class='btn btn-success' [hidden]='hideModif' (click)='updateArticle( this.article._id, this.article)'>Modifier</Button>
+
