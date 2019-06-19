@@ -63,14 +63,12 @@ export class AdminEditorComponent implements OnInit {
 
   goToContent() {
     this.type = 'content';
-    console.log(this.article);
     this.hideSubmit = false;
     this.hideCreate = true;
   }
 
   createArticle(article) {
     this.articlesService.createArticle(article).subscribe(() => { });
-    console.log(this.article);
     this.backClick();
   }
 
@@ -82,10 +80,6 @@ export class AdminEditorComponent implements OnInit {
         const content = (e.target as FileReader).result;
       };
     });
-  }
-
-  onFilesRejected(files: File[]) {
-    console.log(files);
   }
 
 }
