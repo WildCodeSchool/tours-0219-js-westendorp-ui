@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
+import { Login } from 'src/app/shared/models/login.model';
+import { count } from 'rxjs/operators';
 
 @Component({
   selector: 'app-mon-compte',
@@ -25,10 +27,10 @@ export class MonCompteComponent implements OnInit {
   }
 
   newMdp(f) {
-    console.log(f);
-    this.service.login(f.value.email, f.value.mdp)
+    this.service.login(f.value.email, f.value.password)
       .subscribe((data) => {
         if (data) {
+          console.log(f, f.value, f.value.mdp);
           if (this.countMdp === 0) {
             this.hiddenFormMdp = true;
             this.nextFormMdp = false;
@@ -36,18 +38,21 @@ export class MonCompteComponent implements OnInit {
           } else if (this.countMdp === 1) {
             this.nextFormMdp = true;
             this.submitFormMdp = false;
+            this.countMdp += 1;
           }
         }
       });
   }
 
-  registerMdp() {
-
+  updatePassWord(id: string, content: Login) {
+    console.log(id, content);
+    this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
+    });
   }
 
   newId(g) {
     console.log(g);
-    this.service.login(g.value.email, g.value.mdp)
+    this.service.login(g.value.email, g.value.password)
       .subscribe((data) => {
         if (data) {
           this.hiddenFormId = true;
@@ -56,7 +61,9 @@ export class MonCompteComponent implements OnInit {
       });
   }
 
-  registerID() {
-
+  updateId(id: string, content: Login) {
+    console.log(id, content);
+    this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
+    });
   }
 }
