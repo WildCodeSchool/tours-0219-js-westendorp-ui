@@ -11,7 +11,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 })
 export class PresentationComponent implements OnInit {
 
-  public log = !this.service.isLogin();
+  public isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
 
