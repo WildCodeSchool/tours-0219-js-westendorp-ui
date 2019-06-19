@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoginService } from 'src/app/core/services/login.service';
 
 @Component({
   selector: 'app-mon-compte',
@@ -13,28 +13,47 @@ export class MonCompteComponent implements OnInit {
   hiddenFormId = false;
   showFormId = true;
 
-  constructor() { }
+  id: string;
+  mdp: string;
+  countMdp = 0;
+
+  constructor(
+    public service: LoginService,
+    ) { }
 
   ngOnInit() {
   }
 
-  nextMdp() {
-    this.hiddenFormMdp = true;
-    this.nextFormMdp = false;
-  }
-
-  validMdp() {
-    this.nextFormMdp = true;
-    this.submitFormMdp = false;
+  newMdp(f) {
+    console.log(f);
+    this.service.login(f.value.email, f.value.mdp)
+      .subscribe((data) => {
+        if (data) {
+          if (this.countMdp === 0) {
+            this.hiddenFormMdp = true;
+            this.nextFormMdp = false;
+            this.countMdp += 1;
+          } else if (this.countMdp === 1) {
+            this.nextFormMdp = true;
+            this.submitFormMdp = false;
+          }
+        }
+      });
   }
 
   registerMdp() {
 
   }
 
-  nextId() {
-    this.hiddenFormId = true;
-    this.showFormId = false;
+  newId(g) {
+    console.log(g);
+    this.service.login(g.value.email, g.value.mdp)
+      .subscribe((data) => {
+        if (data) {
+          this.hiddenFormId = true;
+          this.showFormId = false;
+        }
+      });
   }
 
   registerID() {
