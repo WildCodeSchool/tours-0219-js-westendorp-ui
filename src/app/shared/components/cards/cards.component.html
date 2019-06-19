@@ -1,13 +1,13 @@
   <div class="card">
     <div class="card-body">
         <a routerLink="/admin/editor">
-          <i class="fa fa-edit" (click)='sendActivity(article, "title")' [hidden]='log'></i></a>
+          <i class="fa fa-edit" (click)='sendActivity(article, "title")' [hidden]='isLogin'></i></a>
       <h5 class="card-title" [innerHTML]=" article.title | keepHtml">
         </h5>
       <p class="card-text" [innerHTML]=" article.content | keepHtml"></p>
       <a routerLink="/admin/editor">
-        <button class="btn btn-primary" [hidden]='log' (click)='sendActivity(article, "body")'>Edit</button>
+        <button class="btn btn-primary" [hidden]='isLogin' (click)='sendActivity(article, "body")'>Edit</button>
       </a>
-      <button class="btn btn-danger" [hidden]='log' (click)='deleteActivity(article._id)'>Supprimer</button>
+      <button class="btn btn-danger" [hidden]='isLogin' (click)='deleteActivity(article._id)'>Supprimer</button>
     </div>
   </div>

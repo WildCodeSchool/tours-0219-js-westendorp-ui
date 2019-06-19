@@ -73,7 +73,6 @@ export class AdminEditorComponent implements OnInit {
   }
 
   onFilesAdded(files: File[]) {
-    console.log(files);
     files.forEach((file) => {
       const reader = new FileReader();
       reader.onload = (e: ProgressEvent) => {
@@ -81,5 +80,4 @@ export class AdminEditorComponent implements OnInit {
       };
     });
   }
-
 }
