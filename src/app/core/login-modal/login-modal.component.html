@@ -1,10 +1,10 @@
-<ng-template #content let-closeModal="close()">
+<ng-template #content>
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="container-fluid modal-body" [hidden]='hidden'>
       <div class="row fenetre-login">
         <img src="/assets/image/login2.jpg" class="col-7">
         <div class="col-5">
-          <button type="button" class="close" aria-label="Close" (click)="closeModal">
+          <button type="button" class="close" aria-label="Close" (click)="close(content)">
             <span aria-hidden="true">&times;</span>
           </button>
           <h4 class="modal-title" id="modal-basic-title">Connexion</h4>
@@ -31,7 +31,7 @@
       <div class="row fenetre-login">
         <img src="/assets/image/login2.jpg" class="col-7">
         <div class="col-5">
-          <button type="button" class="close" aria-label="Close" (click)="closeModal">
+          <button type="button" class="close" aria-label="Close" (click)="close(content)">
             <span aria-hidden="true">&times;</span>
           </button>
           <h4 class="modal-title" id="modal-basic-title">Mot de passe Oublié ?</h4>
@@ -39,7 +39,7 @@
           <input type='text' email name="email" #email="ngModel" [ngModel]>
           <div>
             <button class='btn btn-outline-primary login-btn' type="submit">envoyer</button>
-            <button class='retour btn btn-outline-success' (click)="hiddenBack()">retour</button>
+            <button class='retour btn btn-outline-success' (click)="hiddenForm()">retour</button>
           </div>
         </div>
       </div>

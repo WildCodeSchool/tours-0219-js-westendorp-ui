@@ -5,3 +5,4 @@
 <div *ngFor="let article of articlesList; let i = index" class="cards1"> 
 <app-cards-accueil class="m-5" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"[ngClass]="{ 'no-border': article.rank===1}"></app-cards-accueil>
 </div>
+<app-ranking-array [articles]='articlesList'></app-ranking-array>

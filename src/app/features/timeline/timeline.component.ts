@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticlesService } from 'src/app/core/http/articles.service';
+import { Article } from 'src/app/shared/models/article.model';
 import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
-import { Article } from 'src/app/shared/models/article.model';
-import { ArticlesService } from 'src/app/core/http/articles.service';
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'],
+  selector: 'app-timeline',
+  templateUrl: './timeline.component.html',
+  styleUrls: ['./timeline.component.scss'],
 })
-export class ProductsComponent implements OnInit {
+export class TimelineComponent implements OnInit {
 
-  public log = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
+  isLogin = !this.service.isLogin();
+  newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
 
   constructor(
@@ -22,8 +22,12 @@ export class ProductsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticlesBySections('products').subscribe((articles: Article[]) => {
-      this.articlesList = articles;
+    this.articlesService.getArticles().subscribe((articles) => {
+      for (let i = 0; i < articles.length; i += 1) {
+        if (articles[i].section === 'presentation') {
+          this.articlesList.push(articles[i]);
+        }
+      }
     });
   }
 

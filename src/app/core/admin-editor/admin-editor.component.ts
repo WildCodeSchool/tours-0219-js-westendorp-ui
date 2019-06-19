@@ -79,8 +79,4 @@ export class AdminEditorComponent implements OnInit {
       };
     });
   }
-
-  onFilesRejected(files: File[]) {
-  }
-
 }
