@@ -11,6 +11,8 @@ import { CarousselComponent } from '../shared/components/caroussel/caroussel.com
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { EscapeHtmlPipe } from '../shared/pipes/keep-html.pipe';
+import { CardsComponent } from '../shared/components/cards/cards.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -20,7 +22,9 @@ import { EscapeHtmlPipe } from '../shared/pipes/keep-html.pipe';
     HomeComponent,
     TechnicReglementationComponent,
     CarousselComponent,
+    CardsComponent,
     EscapeHtmlPipe,
+    TimelineComponent,
   ],
   imports: [
     NgbModule,

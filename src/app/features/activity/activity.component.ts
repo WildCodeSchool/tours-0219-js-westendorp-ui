@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesService } from 'src/app/core/http/articles.service';
-import { Article } from 'src/app/shared/models/article.model';
 import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
+import { Article } from 'src/app/shared/models/article.model';
+import { ArticlesService } from 'src/app/core/http/articles.service';
 
 @Component({
   selector: 'app-activity',
@@ -11,39 +11,34 @@ import { EditorService } from 'src/app/core/services/editor.service';
 })
 export class ActivityComponent implements OnInit {
 
-  htmlStr: string;
-  public log = !this.service.isLogin();
-
+  isLogin = !this.service.isLogin();
+  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '');
   articlesList: Article[] = [];
 
   constructor(
-    private articlesService: ArticlesService,
     private service: LoginService,
     private editorService: EditorService,
+    private articlesService: ArticlesService,
   ) { }
 
   ngOnInit() {
     this.articlesService.getArticles().subscribe((articles) => {
-      this.articlesList = articles;
+      for (let i = 0; i < articles.length; i += 1) {
+        if (articles[i].section === 'activity') {
+          this.articlesList.push(articles[i]);
+        }
+      }
     });
   }
 
-  sendActivity(article: Article, type: string) {
-    this.editorService.contentSubject.next(article);
-    this.editorService.article = article;
-    if (type === 'title') {
-      this.editorService.typeOfContent = 'title';
-    } else {
-      this.editorService.typeOfContent = 'content';
-    }
+  createActivity() {
+    this.editorService.article = this.newArticle;
+    this.editorService.typeOfContent = 'title';
+    this.editorService.typeEdition = true;
   }
 
-  deleteActivity(id, index) {
-    this.articlesService.deleteArticle(id).subscribe(
-      (articles) => {
-        this.articlesList.splice(index, 1);
-      },
-    );
+  deleteCard(id) {
+    this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
   }
 
 }

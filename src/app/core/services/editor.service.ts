@@ -9,6 +9,7 @@ export class EditorService {
 
   public article: Article;
   typeOfContent: string;
+  typeEdition: boolean;
 
   constructor() { }
 

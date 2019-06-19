@@ -10,7 +10,7 @@ import { ActivityComponent } from './features/activity/activity.component';
 import { NavbarAdminComponent } from './core/navbar-admin/navbar-admin.component';
 import { HeaderComponent } from './core/header/header.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { AdminEditorComponent } from './features/admin-editor/admin-editor.component';
+import { AdminEditorComponent } from './core/admin-editor/admin-editor.component';
 
 const routes: Routes = [
 

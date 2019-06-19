@@ -8,8 +8,9 @@ import { LoginModalComponent } from './login-modal/login-modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { AdminEditorComponent } from '../features/admin-editor/admin-editor.component';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { AdminEditorComponent } from './admin-editor/admin-editor.component';
+import { CKEditorModule } from 'ckeditor4-angular';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,11 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     CommonModule,
     FormsModule,
     AngularFontAwesomeModule,
+    BrowserModule,
     CKEditorModule,
+
   ],
+
   exports: [
     HeaderComponent,
     FooterComponent,
