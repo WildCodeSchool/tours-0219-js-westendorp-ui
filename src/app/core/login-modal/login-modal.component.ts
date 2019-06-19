@@ -3,6 +3,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-modal',
@@ -19,7 +20,8 @@ export class LoginModalComponent implements OnInit {
               private modalService: NgbModal,
               private islogin: LoginService,
               private router: Router,
-              private urlReset: LoginService) {
+              private urlReset: LoginService,
+              private toastr: ToastrService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -48,9 +50,15 @@ export class LoginModalComponent implements OnInit {
   }
 
   sendPass () {
-    this.islogin.resetPass().subscribe(u => {
+    this.islogin.resetPass().subscribe((u) => {
       this.urlReset = u;
     });
+  }
+  showSuccess() {
+    this.toastr.success('Email envoyé !', 'Message');
+  }
+  errorSuccess() {
+    this.toastr.success('Mauvais email, veuillez entrer une adresse valide');
   }
 
   ngOnInit() {

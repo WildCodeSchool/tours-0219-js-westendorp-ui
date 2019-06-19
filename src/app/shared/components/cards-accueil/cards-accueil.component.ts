@@ -7,7 +7,7 @@ import { EditorService } from 'src/app/core/services/editor.service';
 @Component({
   selector: 'app-cards-accueil',
   templateUrl: './cards-accueil.component.html',
-  styleUrls: ['./cards-accueil.component.scss']
+  styleUrls: ['./cards-accueil.component.scss'],
 })
 export class CardsAccueilComponent implements OnInit {
 
@@ -51,6 +51,5 @@ export class CardsAccueilComponent implements OnInit {
       },
     );
   }
-
 
 }
