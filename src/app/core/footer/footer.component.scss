@@ -17,10 +17,10 @@ footer {
   width: 100%;
   margin: 2em 0;
   height: auto;
-  background-image: url('/assets/image/test.jpg'); 
+  background-image: url('/assets/image/test2.jpg');
   background-size: 100%;
-  height: 50px;
   margin-bottom: auto;
+  text-align: center;
 }
 .footer .copyright {
   width: 50%;
@@ -45,7 +45,7 @@ footer {
   }
 }
 .footer .social {
-  width: 50%;
+  // width: 50%;
   float: right;
 }
 @media (max-width: 600px) {
@@ -73,23 +73,12 @@ footer {
   transition: all, 0.3s;
 }
 
-
-
-
-.link {
-  text-align: left;
+app-login-modal{
+  margin-top: 1.5%;
+  padding-left: 20%;
 }
 
-p {
-  text-align: center;
+.link{
+  margin-top: 1%;
+  padding-right: 12%;
 }
-
-a {
-  color: white;
-  cursor: pointer;
-}
-
-.login{
-  text-align: right;
-}
-
