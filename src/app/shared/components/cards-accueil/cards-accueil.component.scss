@@ -1,6 +1,8 @@
 .card{
-    border: none;
+    border: solid 2px;
     text-align: center;
+    width: 100%;
+    background-color: rgb(114, 190, 235);
 }
 
 .edit-btn{
@@ -12,4 +14,10 @@
 .del-btn{
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+
+.no-border {
+  border: none;
+  background-color: transparent;
 }

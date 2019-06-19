@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" [ngClass]="{'no-border': article.rank===1}">
   <div class="card-body">
       <a routerLink="/admin/editor">
         <i class="fa fa-edit" (click)='sendActivity(article, "title")' [hidden]='log'>Ajouter/modifier un titre</i></a>
