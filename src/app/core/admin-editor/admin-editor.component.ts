@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 
 export class AdminEditorComponent implements OnInit {
-  public editorValue: '';
+  public editorValue = '';
   article: Article;
   type: string;
   hideModif: boolean;
@@ -62,29 +62,22 @@ export class AdminEditorComponent implements OnInit {
 
   goToContent() {
     this.type = 'content';
-    console.log(this.article);
     this.hideSubmit = false;
     this.hideCreate = true;
   }
 
   createArticle(article) {
     this.articlesService.createArticle(article).subscribe(() => { });
-    console.log(this.article);
     this.backClick();
   }
 
   onFilesAdded(files: File[]) {
-    console.log(files);
     files.forEach((file) => {
       const reader = new FileReader();
       reader.onload = (e: ProgressEvent) => {
         const content = (e.target as FileReader).result;
       };
     });
-  }
-
-  onFilesRejected(files: File[]) {
-    console.log(files);
   }
 
 }

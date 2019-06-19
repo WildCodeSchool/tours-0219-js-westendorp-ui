@@ -44,6 +44,7 @@ import { ToastrModule } from 'ngx-toastr';
     HeaderComponent,
     FooterComponent,
     AdminEditorComponent,
+    FormsModule,
   ],
 })
 export class CoreModule { }

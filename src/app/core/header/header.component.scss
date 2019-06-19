@@ -1,16 +1,18 @@
-#navbar-nav {
+.navbar-nav  {
   display: flex;
   justify-content: space-around;
 }
 
 .navbar {
-  background-image: url('/assets/image/background.jpg');
-  padding-bottom: 11px;
+  background-color: #262626;
+  background-size: 100%;
+  opacity: 0.8;
+  padding-bottom: 5px;
 }
 
 .navbar-brand {
   height: 5%;
-  width: 5%;
+  width: 2.1%;
 }
 
 .nav-item {
@@ -43,4 +45,15 @@
 
 .navbar-brand{
   cursor: pointer;
+}
+
+.active-nav{
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding: 6px 0;
+}
+
+img{
+  vertical-align: middle;
+    border-style: none;
 }

@@ -54,4 +54,9 @@ export class ArticlesService {
     );
   }
 
+  public updateArticlesRanking(articlesArray: Article[]): Observable<Article[]> {
+    console.log(articlesArray);
+    return this.http.put<Article[]>(`${this.api}/articles`, articlesArray);
+  }
+
 }

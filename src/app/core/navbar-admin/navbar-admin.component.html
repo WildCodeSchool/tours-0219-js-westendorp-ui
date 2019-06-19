@@ -1,16 +1,16 @@
 
 <div class="side-nav" [ngClass]="{'sideNaveOpen': openNav, 'sideNaveClose': closeNav}">
-  <h2>Administrator</h2>
   <a class="close-btn" (click)='onCloseNav()'>&times;</a>
   <span (click)='onOpenNav()' class='burger'>&#9776;</span>
-  <i class="fa fa-area-chart" aria-hidden="true"><a >Google Analytics</a></i>
-  <i class="fa fa-home" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'home' ]">Accueil</a></i>
-  <i class="fa fa-id-card-o" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'presentation' ]">Présentation</a></i>
-  <i class="fa fa-users" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'activites' ]">Nos activités</a></i>
-  <i class="fa fa-industry" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'produits' ]">Nos Produits</a></i>
-  <i class="fa fa-info-circle" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'techniques' ]">Techniques et Réglementations</a></i>
-  <i class="fa fa-newspaper-o" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'actualites' ]">Actualités</a></i>
-  <i class="fa fa-sign-out" aria-hidden="true"><a class="nav-link" [routerLink]="[ 'home' ]" (click)="logout()">Déconnexion</a></i>
+  <a href="https://analytics.google.com/analytics/web/#/realtime/rt-overview/a141895583w203051338p196722481/"><i class="fa fa-area-chart font" aria-hidden="true">&nbsp;&nbsp;Google Analytics</i></a>
+  <i class="fa fa-home font nav-link" aria-hidden="true" [routerLink]="[ 'home' ]">&nbsp;&nbsp;&nbsp;Accueil</i>
+  <i class="fa fa-id-card-o font nav-link" aria-hidden="true" [routerLink]="[ 'presentation' ]"> &nbsp;&nbsp;Présentation</i>
+  <i class="fa fa-users font nav-link" aria-hidden="true" [routerLink]="[ 'activites' ]"> &nbsp;&nbsp;Nos activités</i>
+  <i class="fa fa-industry font nav-link" aria-hidden="true" [routerLink]="[ 'produits' ]"> &nbsp;&nbsp;Nos Produits</i>
+  <i class="fa fa-info-circle font nav-link" aria-hidden="true" [routerLink]="[ 'techniques' ]"> &nbsp;&nbsp;Techniques et &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Réglementations</i>
+  <i class="fa fa-newspaper-o font nav-link" aria-hidden="true" [routerLink]="[ 'actualites' ]"> &nbsp;&nbsp;Actualités</i>
+  <i class="fa fa-user font nav-link" aria-hidden="true" [routerLink]="[ 'profile' ]"> &nbsp;&nbsp;Mon compte</i>
+  <i class="fa fa-sign-out font nav-link" aria-hidden="true" [routerLink]="[ 'home' ]" (click)="logout()"> &nbsp;&nbsp;Déconnexion</i>
 </div>
 
 <div [ngClass]="{'mainClose': closeNav, 'mainOpen': openNav}">
