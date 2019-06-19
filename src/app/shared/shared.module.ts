@@ -7,12 +7,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { EscapeHtmlPipe } from './pipes/keep-html.pipe';
 import { CarousselComponent } from './components/caroussel/caroussel.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardsAccueilComponent } from './components/cards-accueil/cards-accueil.component';
 @NgModule({
   declarations: [
     EscapeHtmlPipe,
     CarousselComponent,
     CardsComponent,
     RankingArrayComponent,
+    CardsAccueilComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CarousselComponent,
     CardsComponent,
     RankingArrayComponent,
+    CardsAccueilComponent,
   ],
 })
 export class SharedModule { }

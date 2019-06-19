@@ -7,9 +7,9 @@ import { NG_VALIDATORS } from '@angular/forms';
 })
 export class RankingValidatorDirective {
 
-  validate(control: AbstractControl): {[key: string]: any} | null {
-    return this.forbiddenName ? forbiddenNameValidator(new RegExp(this.forbiddenName, 'i'))(control)
-                              : null;
-  }
+  // validate(control: AbstractControl): {[key: string]: any} | null {
+  //   return this.forbiddenName ? forbiddenNameValidator(new RegExp(this.forbiddenName, 'i'))(control)
+  //                             : null;
+  // }
 
 }

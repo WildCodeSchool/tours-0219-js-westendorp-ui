@@ -10,6 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { MonCompteComponent } from './mon-compte/mon-compte.component';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -18,6 +19,7 @@ import { SharedModule } from '../shared/shared.module';
     PresentationComponent,
     HomeComponent,
     TechnicReglementationComponent,
+    MonCompteComponent,
   ],
   imports: [
     SharedModule,

@@ -12,7 +12,7 @@ import { EditorService } from 'src/app/core/services/editor.service';
 export class TimelineComponent implements OnInit {
 
   isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '');
+  newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
 
   constructor(
