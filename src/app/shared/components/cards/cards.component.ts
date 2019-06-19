@@ -12,7 +12,7 @@ import { EditorService } from 'src/app/core/services/editor.service';
 export class CardsComponent implements OnInit {
 
   htmlStr: string;
-  isLogin = !this.service.isLogin();
+  log = !this.service.isLogin();
   articlesList: Article[] = [];
 
   @Input() public article: Article;
