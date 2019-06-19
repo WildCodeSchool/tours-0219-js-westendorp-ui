@@ -6,8 +6,10 @@
         </h5>
       <p class="card-text" [innerHTML]=" article.content | keepHtml"></p>
       <a routerLink="/admin/editor">
-        <button class="btn btn-primary edit-btn" [hidden]='log' (click)='sendActivity(article, "body")'>Edit le contenu</button>
+        <button  class="btn btn-outline-info edit-btn" [hidden]='log' (click)='sendActivity(article, "body")'>Editer le contenu </button>
       </a>
-      <button class="btn btn-danger" [hidden]='log' (click)='deleteActivity(article._id)'>Supprimer l'article</button>
+      <button  class="btn btn-outline-danger del-btn" [hidden]='log' (click)='deleteActivity(article._id)'>Supprimer l'article</button>
     </div>
   </div>
+
+ 

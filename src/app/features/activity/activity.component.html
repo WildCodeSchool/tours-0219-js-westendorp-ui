@@ -1,6 +1,6 @@
-<h1>Nos activités</h1>
+
 <a routerLink="/admin/editor">
-  <button class="btn btn-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
+  <button  class="btn btn-outline-warning" [hidden]='log' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
 <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>

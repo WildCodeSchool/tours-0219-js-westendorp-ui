@@ -36,6 +36,7 @@ import { BrowserModule } from '@angular/platform-browser';
     HeaderComponent,
     FooterComponent,
     AdminEditorComponent,
+    FormsModule,
   ],
 })
 export class CoreModule { }
