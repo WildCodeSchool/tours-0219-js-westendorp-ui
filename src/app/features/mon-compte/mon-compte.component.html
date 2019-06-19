@@ -1,75 +1,37 @@
 
 <form>
+  <h2>Modifier votre mot de passe</h2>
+  <div class="form-row">
+    <div class="col-md-6">
 
-    <div class="form-row">
-
-      <div class="col-md-6">
-
-        <div class="md-form form-group">
-          <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Email">
-          <label for="inputEmail4MD">Email</label>
-        </div>
+      <div class="md-form form-group">
+        <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel">
+        <input mdbInput type="email" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormMdp" placeholder="Tapez votre mot de passe actuel">
+        <input mdbInput type="email" class="form-control" id="inputEmail4MD" [hidden]="nextFormMdp" placeholder="Vérification, veuillez ressaisir votre mot de passe actuel">
+        <input mdbInput type="password" class="form-control" id="inputPassword4MD" [hidden]="submitFormMdp" placeholder="Tapez votre nouveau mot de passe">
+        <label for="inputEmail4MD"></label>
       </div>
-
-
-
-      <div class="col-md-6">
-
-        <div class="md-form form-group">
-          <input mdbInput type="password" class="form-control" id="inputPassword4MD" placeholder="Password">
-          <label for="inputPassword4MD">Password</label>
-        </div>
-      </div>
-
+      <button class='btn btn-primary' [hidden]="hiddenFormMdp" (click)='nextMdp()'>Suivant</button>
+      <button class='btn btn-success'[hidden]="nextFormMdp" (click)='validMdp()'>Validé</button>
+      <button class='btn btn-warning' [hidden]="submitFormMdp" (click)='registerMdp()'>Enregistrer votre nouveau mot de passe</button>
     </div>
+  </div>
+</form>
 
 
+<form>
+  <h2>Modifier votre identifiant</h2>
+  <div class="form-row">
+    <div class="col-md-6">
 
-    <div class="row">
-
-      <div class="col-md-12">
-
-        <div class="md-form form-group">
-          <input mdbInput type="text" class="form-control" id="inputAddressMD" placeholder="1234 Main St">
-          <label for="inputAddressMD">Address</label>
-        </div>
+      <div class="md-form form-group">
+        <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel">
+        <input mdbInput type="email" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormId" placeholder="Vérification de votre identifiant actuel">
+        <input mdbInput type="password" class="form-control" id="inputPassword4MD" [hidden]="showFormId" placeholder="Tapez votre nouvel identifiant">
+        <label for="inputEmail4MD"></label>
       </div>
-
-
-
-      <div class="col-md-12">
-
-        <div class="md-form form-group">
-          <input mdbInput type="text" class="form-control" id="inputAddress2MD" placeholder="Apartment, studio, or floor">
-          <label for="inputAddress2MD">Address 2</label>
-        </div>
-      </div>
-
+      <button class='btn btn-primary' [hidden]="hiddenFormId" (click)='nextId()'>Suivant</button>
+      <button class='btn btn-warning' [hidden]="showFormId" (click)='registerID()'>Enregistrer votre nouvel identifiant</button>
     </div>
-
-
-
-    <div class="form-row">
-
-      <div class="col-md-6">
-
-        <div class="md-form form-group">
-          <input mdbInput type="text" class="form-control" id="inputCityMD" placeholder="New York City">
-          <label for="inputCityMD">City</label>
-        </div>
-      </div>
-
-
-
-      <div class="col-md-6">
-
-        <div class="md-form form-group">
-          <input mdbInput type="text" class="form-control" id="inputZipMD" placeholder="11206-1117">
-          <label for="inputZipMD">Zip</label>
-        </div>
-      </div>
-
-    </div>
-
-    <button type="submit" class="btn btn-primary btn-md">Sign in</button>
-  </form>
+  </div>
+</form>
