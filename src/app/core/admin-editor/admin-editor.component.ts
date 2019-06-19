@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 
 export class AdminEditorComponent implements OnInit {
-  public editorValue: string = '';
+  public editorValue = '';
   article: Article;
   type: string;
   hideModif: boolean;
@@ -79,4 +79,5 @@ export class AdminEditorComponent implements OnInit {
       };
     });
   }
+
 }

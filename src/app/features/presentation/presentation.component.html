@@ -2,8 +2,8 @@
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/-USy-vHr-pw" frameborder="0"
   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<a routerLink="/admin/editor" [hidden]='log'>
-  <button  class="btn btn-outline-warning" [hidden]='log' (click)='createActivity()'>Créer un article</button>
+<a routerLink="/admin/editor" [hidden]='isLogin'>
+  <button  class="btn btn-outline-warning" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
     <app-cards-accueil class="m-5" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"[ngClass]="{ 'no-border': article.rank===1}"></app-cards-accueil>
@@ -139,7 +139,7 @@
 </section>
 </div>
 
-<a routerLink="/admin/editor" [hidden]='log'>
+<a routerLink="/admin/editor" [hidden]='isLogin'>
   <button class="btn btn-success"  (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
