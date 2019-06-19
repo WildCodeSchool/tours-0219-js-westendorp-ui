@@ -1,8 +1,9 @@
 <app-caroussel></app-caroussel>
 <h1>Accueil</h1>
 <a routerLink="/admin/editor">
-  <button class="btn btn-success" [hidden]='log' (click)='createActivity()'>Créer un article</button>
+  <button class="btn btn-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
 <app-cards-accueil [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards-accueil>
 </div>
+<app-ranking-array [articles]='articlesList'></app-ranking-array>

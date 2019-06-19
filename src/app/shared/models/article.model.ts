@@ -7,5 +7,6 @@ export class Article {
     public author: string,
     public section: string,
     public media: string,
+    public rank: number,
   ) {}
 }

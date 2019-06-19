@@ -7,12 +7,10 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { HomeComponent } from './home/home.component';
 import { TechnicReglementationComponent } from './technic-reglementation/technic-reglementation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarousselComponent } from '../shared/components/caroussel/caroussel.component';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
-import { EscapeHtmlPipe } from '../shared/pipes/keep-html.pipe';
-import { CardsComponent } from '../shared/components/cards/cards.component';
-import { CardsAccueilComponent } from '../shared/components/cards-accueil/cards-accueil.component';
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   declarations: [ActualityComponent,
     ProductsComponent,
@@ -20,12 +18,9 @@ import { CardsAccueilComponent } from '../shared/components/cards-accueil/cards-
     PresentationComponent,
     HomeComponent,
     TechnicReglementationComponent,
-    CarousselComponent,
-    CardsComponent,
-    CardsAccueilComponent,
-    EscapeHtmlPipe,
   ],
   imports: [
+    SharedModule,
     NgbModule,
     CommonModule,
     CoreModule,

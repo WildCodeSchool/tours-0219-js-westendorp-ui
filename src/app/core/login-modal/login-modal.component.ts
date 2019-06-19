@@ -24,14 +24,13 @@ export class LoginModalComponent implements OnInit {
     this.modalService.open(content, { size: 'lg' });
   }
 
-  hiddenForm() {
-    this.hidden = true;
-    this.show = false;
+  close(content) {
+    this.modalService.dismissAll(content);
   }
 
-  hiddenBack() {
-    this.hidden = false;
-    this.show = true;
+  hiddenForm() {
+    this.hidden = !this.hidden;
+    this.show = !this.show;
   }
 
   onSubmit(f: NgForm) {
