@@ -6,7 +6,6 @@ import { CoreModule } from './core/core.module';
 import { FeaturesModule } from './features/features.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
-import { AuthGuard } from './core/guards/auth.guard';
 import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 @NgModule({
