@@ -11,6 +11,7 @@ import { NavbarAdminComponent } from './core/navbar-admin/navbar-admin.component
 import { HeaderComponent } from './core/header/header.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AdminEditorComponent } from './core/admin-editor/admin-editor.component';
+import { MonCompteComponent } from './features/mon-compte/mon-compte.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'actualites', component: ActualityComponent, canActivate: [AuthGuard] },
       { path: 'activites', component: ActivityComponent, canActivate: [AuthGuard] },
       { path: 'editor', component: AdminEditorComponent, canActivate: [AuthGuard] },
+      { path: 'profile', component: MonCompteComponent, canActivate: [AuthGuard] },
     ],
 
   },
