@@ -11,6 +11,7 @@
 <div *ngIf="isSameRank" class="text-center alert alert-danger" role="alert">
   2 articles ne peuvent pas avoir le même ordre d'apparition
 </div>
+<div toastContainer></div>
 </div>
 <app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">
 </app-ranking-button>
