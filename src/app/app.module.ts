@@ -8,6 +8,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,11 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
     FeaturesModule,
     HttpClientModule,
     FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 2500,
+      positionClass: 'toast-top-center',
+      preventDuplicates: false,
+    }),
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['http://localhost:3000'],

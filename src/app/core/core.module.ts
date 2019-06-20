@@ -12,7 +12,6 @@ import { AdminEditorComponent } from './admin-editor/admin-editor.component';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,11 +31,6 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserModule,
     CKEditorModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot({
-      timeOut: 2500,
-      positionClass: 'toast-top-center',
-      preventDuplicates: false,
-    }),
 
   ],
 
