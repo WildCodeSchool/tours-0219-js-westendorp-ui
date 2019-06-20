@@ -3,6 +3,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-modal',
@@ -15,7 +16,11 @@ export class LoginModalComponent implements OnInit {
   public show = true;
   error = '';
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private islogin: LoginService, private router: Router) {
+  constructor(config: NgbModalConfig,
+              private modalService: NgbModal,
+              private islogin: LoginService,
+              private router: Router,
+              private toastr: ToastrService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -37,9 +42,18 @@ export class LoginModalComponent implements OnInit {
     this.islogin.login(f.value.email, f.value.mdp)
       .subscribe(
         (data) => {
+          this.showSuccessLog();
           this.router.navigateByUrl('admin');
           this.modalService.dismissAll();
-        });
+        }, (error: any) => { this.showError(); });
+  }
+
+  showSuccessLog() {
+    this.toastr.success('Vous êtes connecté(e)');
+  }
+
+  showError() {
+    this.toastr.error('Vos identifiants ne correspondent pas');
   }
 
   ngOnInit() {
