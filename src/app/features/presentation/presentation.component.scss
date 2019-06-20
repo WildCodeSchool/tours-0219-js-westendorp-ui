@@ -17,6 +17,10 @@ section {
     border: none;
 }
 
+.video{
+	border: solid #C5CAE9 4px;
+}
+
 html, body {
   overflow-x: hidden;
 }
@@ -151,6 +155,10 @@ header {
 			background-size: cover;
 		}
 }
+h2{
+	font-style: italic;
+	font-size: 28px;
+}
 
 .timeline-img-header {
 
@@ -236,11 +244,12 @@ blockquote {
 
 .carte-cible{
   max-height: 350px;
-  padding: 0px
+  padding: 0px;
 }
 
 .map-google{
-  padding: 0px
+  padding: 0px;
+  box-shadow: 7px 11px 22px #aaa;
 }
 
 .cartes-bas-page{

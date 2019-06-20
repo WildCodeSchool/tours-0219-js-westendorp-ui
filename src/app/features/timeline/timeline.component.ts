@@ -24,7 +24,7 @@ export class TimelineComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getArticles().subscribe((articles) => {
       for (let i = 0; i < articles.length; i += 1) {
-        if (articles[i].section === 'presentation') {
+        if (articles[i].section === 'timeline') {
           this.articlesList.push(articles[i]);
         }
       }
