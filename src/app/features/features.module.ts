@@ -10,6 +10,7 @@ import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { MonCompteComponent } from './mon-compte/mon-compte.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -19,6 +20,7 @@ import { MonCompteComponent } from './mon-compte/mon-compte.component';
     HomeComponent,
     TechnicReglementationComponent,
     MonCompteComponent,
+    TimelineComponent,
   ],
   imports: [
     SharedModule,
