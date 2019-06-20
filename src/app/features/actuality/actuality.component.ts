@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { ArticlesService } from 'src/app/core/http/articles.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-actuality',
@@ -21,6 +22,7 @@ export class ActualityComponent implements OnInit {
     private service: LoginService,
     private editorService: EditorService,
     private articlesService: ArticlesService,
+    private toastrService: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -44,16 +46,25 @@ export class ActualityComponent implements OnInit {
   }
 
   onUpdateRank($event) {
-    this.isSameRank = false;
     for (let i = 0; i < $event.length; i = i + 1) {
       for (let j = i + 1; j < $event.length; j = j + 1) {
         if ($event[i].rank === $event[j].rank) {
+          this.toastrService.warning(
+            `Plusieurs articles ne peuvent pas partager le même ordre d'apparition`, 'Erreur',
+            {
+              positionClass: 'toast-top-center',
+              timeOut: 3000,
+            });
           return this.isSameRank = true;
         }
-        this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
-          this.articlesList = newArticle;
-        });
+        this.isSameRank = false;
       }
+    }
+    if (!this.isSameRank) {
+      this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
+        this.articlesList = newArticle;
+        this.isSameRank = false;
+      });
     }
   }
 
