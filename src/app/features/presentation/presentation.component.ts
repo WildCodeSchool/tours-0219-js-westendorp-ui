@@ -14,6 +14,7 @@ export class PresentationComponent implements OnInit {
   public isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
+  public isSameRank = false;
 
   constructor(
     private service: LoginService,
@@ -38,9 +39,17 @@ export class PresentationComponent implements OnInit {
   }
 
   onUpdateRank($event) {
-    this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
-      this.articlesList = newArticle;
-    });
+    this.isSameRank = false;
+    for (let i = 0; i < $event.length; i = i + 1) {
+      for (let j = i + 1; j < $event.length; j = j + 1) {
+        if ($event[i].rank === $event[j].rank) {
+          return this.isSameRank = true;
+        }
+        this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
+          this.articlesList = newArticle;
+        });
+      }
+    }
   }
 
 }
