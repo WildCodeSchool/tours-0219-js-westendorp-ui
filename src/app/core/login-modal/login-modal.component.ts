@@ -53,7 +53,7 @@ export class LoginModalComponent implements OnInit {
   }
 
   showError() {
-    this.toastr.error('Vos identifiants ne correspondent pas');
+    this.toastr.error('identifiants incorrects');
   }
 
   ngOnInit() {

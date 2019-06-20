@@ -7,5 +7,10 @@
   <app-cards-accueil class="m-5" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"
     [ngClass]="{ 'no-border': article.rank===1}"></app-cards-accueil>
 </div>
+<h2 class="d-flex justify-content-center m-5">Rejoignez notre réseau !</h2>
+<div class="d-flex justify-content-around">
+<a href="https://www.linkedin.com/company/constructions-electriques-westendorp/?viewAsMember=true"><i class="fa fa-linkedin-square" aria-hidden="true" style="font-size:65px"></i></a>
+</div>
+
 <app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">
 </app-ranking-button>
