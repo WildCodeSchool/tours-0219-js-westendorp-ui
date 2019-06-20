@@ -9,7 +9,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-image: url('/assets/image/test3.png');
+  background-color: #262626;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -42,18 +42,9 @@ i{
   cursor: pointer;
 }
 
-.side-nav .close-btn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  cursor: pointer;
-}
-
 .burger {
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   cursor: pointer;
   margin-left: 5%;
 }
@@ -82,14 +73,10 @@ span {
 }
 
 .sideNaveOpen {
-  width: 250px;
+  width: 270px;
 }
 .mainOpen {
   margin-left: 250px;
-}
-
-.sideNaveClose {
-  width: 30px;
 }
 
 .mainClose {
@@ -97,7 +84,7 @@ span {
 }
 
 .font{
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .fa{
