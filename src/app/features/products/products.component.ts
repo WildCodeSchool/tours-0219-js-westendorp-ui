@@ -37,4 +37,10 @@ export class ProductsComponent implements OnInit {
     this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
   }
 
+  onUpdateRank($event) {
+    this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
+      this.articlesList = newArticle;
+    });
+  }
+
 }
