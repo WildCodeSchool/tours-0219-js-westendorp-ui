@@ -14,6 +14,8 @@ export class MonCompteComponent implements OnInit {
   hiddenFormMdp = false;
   nextFormMdp = true;
   submitFormMdp = true;
+  hiddId = false;
+  hiddMdp = false;
   hiddenFormId = false;
   showFormId = true;
 
@@ -42,22 +44,34 @@ export class MonCompteComponent implements OnInit {
           } else if (this.countMdp === 1) {
             this.nextFormMdp = true;
             this.submitFormMdp = false;
+            this.hiddId = true;
             this.countMdp += 1;
           }
         }
-      });
+      },
+      (error: any) => {
+        this.showError();
+    });
   }
 
   updatePassWord(id: string, content: Login) {
     console.log(id, content);
     this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
-      this.showSuccess();
+      this.showSuccessMdp();
       this.router.navigateByUrl('admin');
     });
   }
 
-  showSuccess() {
-    this.toastr.success('Le nouveau mot de passe a été changé');
+  showSuccessMdp() {
+    this.toastr.success('Votre mot de passe a été modifié');
+  }
+
+  showError() {
+    this.toastr.error('Vos identifiants ne correspondent pas');
+  }
+
+  showSuccessId() {
+    this.toastr.success('Votre identifiant a été modifié');
   }
 
   newId(g) {
@@ -67,13 +81,19 @@ export class MonCompteComponent implements OnInit {
         if (data) {
           this.hiddenFormId = true;
           this.showFormId = false;
+          this.hiddMdp = true;
         }
-      });
+      },
+      (error: any) => {
+        this.showError();
+    });
   }
 
   updateId(id: string, content: Login) {
     console.log(id, content);
     this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
+      this.showSuccessId();
+      this.router.navigateByUrl('admin');
     });
   }
 }
