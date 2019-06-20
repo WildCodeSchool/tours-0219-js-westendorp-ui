@@ -7,11 +7,5 @@
   <app-cards-accueil class="m-5" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"
     [ngClass]="{ 'no-border': article.rank===1}"></app-cards-accueil>
 </div>
-<div class="d-flex justify-content-center">
-<div *ngIf="isSameRank" class="text-center alert alert-danger" role="alert">
-  2 articles ne peuvent pas avoir le même ordre d'apparition
-</div>
-<div toastContainer></div>
-</div>
 <app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">
 </app-ranking-button>
