@@ -50,14 +50,14 @@ export class MonCompteComponent implements OnInit {
 
   updatePassWord(id: string, content: Login) {
     console.log(id, content);
-    this.service.updatePassWord(id, content).subscribe((newPass) => {
+    this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
       this.showSuccess();
       this.router.navigateByUrl('admin');
     });
   }
 
   showSuccess() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    this.toastr.success('Le nouveau mot de passe a été changé');
   }
 
   newId(g) {
