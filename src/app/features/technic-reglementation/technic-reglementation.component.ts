@@ -15,6 +15,7 @@ export class TechnicReglementationComponent implements OnInit {
   newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
   public isSameRank = false;
+  topArticleIndex: number;
 
   constructor(
     private service: LoginService,
@@ -25,6 +26,10 @@ export class TechnicReglementationComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getArticlesBySections('technic-reglementation').subscribe((articles: Article[]) => {
       this.articlesList = articles;
+      this.topArticleIndex = this.articlesList.findIndex(a => a.rank === 1);
+      if (this.topArticleIndex < 0 && this.articlesList.length > 0) {
+        this.topArticleIndex = 0;
+      }
     });
   }
 
