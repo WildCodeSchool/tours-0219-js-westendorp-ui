@@ -29,7 +29,7 @@ body {
   font-family: 'Roboto';
   font-size: 17px;
   font-weight: 400;
-  background-color: #eee;
+  background-image: url("/assets/image/blur2.png");
 }
 
 
@@ -249,7 +249,7 @@ blockquote {
 
 .map-google{
   padding: 0px;
-  box-shadow: 7px 11px 22px #aaa;
+  box-shadow: 7px 11px 22px black;
 }
 
 .cartes-bas-page{
@@ -258,7 +258,7 @@ blockquote {
 }
 
 
-  
+
 h1{
   text-align: center;
   padding-top: 20px;

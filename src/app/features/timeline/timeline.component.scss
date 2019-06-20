@@ -50,7 +50,9 @@ header {
 .timeline {
 
 	position: relative;
-	box-shadow: 7px 11px 22px #aaa;
+  box-shadow: 7px 11px 22px black;
+  border-radius: 30px;
+  background-color: #7B7D7D;
 
 
 	&::before {
