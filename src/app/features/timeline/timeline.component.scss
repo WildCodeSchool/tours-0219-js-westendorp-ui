@@ -52,12 +52,12 @@ header {
 	position: relative;
   box-shadow: 7px 11px 22px black;
   border-radius: 30px;
-  background-color: #7B7D7D;
+  background-color: #B3B6B7  ;
 
 
 	&::before {
-		content: '';
-		background: $light-primary;
+    content: '';
+		background: white  ;
 		width: 5px;
 		height: 90%;
 		position: absolute;
@@ -126,8 +126,8 @@ header {
 
 .timeline-img {
 	width: 30px;
-	height: 30px;
-	background: $primary;
+  height: 30px;
+	background: #3498DB;
 	border-radius: 50%;
 	position: absolute;
 	left: 50%;
