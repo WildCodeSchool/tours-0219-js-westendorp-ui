@@ -14,7 +14,7 @@
             <span class="text-danger text-center" *ngIf="mail.errors.required">Le champs "Email" est requis</span>
           </div>
           <p class='pt-4'>Mot de passe :</p>
-          <input type='text' name="mdp" #mdp="ngModel" [ngModel] required>
+          <input type='password' name="mdp" #mdp="ngModel" [ngModel] required>
           <div *ngIf="mdp.errors && f.submitted">
             <span class="text-danger text-center" *ngIf="mdp.errors.required">Le champs "Mot de passe" est requis</span>
           </div>

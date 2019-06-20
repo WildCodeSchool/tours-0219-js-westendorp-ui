@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-navbar-admin',
   templateUrl: './navbar-admin.component.html',
@@ -12,7 +13,8 @@ export class NavbarAdminComponent implements OnInit {
   closeNav = true;
   constructor(
     private loginService: LoginService,
-    private router: Router) { }
+    private router: Router,
+    private toastr: ToastrService) { }
 
   ngOnInit() { }
 
@@ -24,6 +26,11 @@ export class NavbarAdminComponent implements OnInit {
   logout() {
     this.loginService.logout();
     this.router.navigateByUrl('/');
+    this.showSuccessLogout();
+  }
+
+  showSuccessLogout() {
+    this.toastr.success('Vous êtes déconnecté(e)');
   }
 
 }
