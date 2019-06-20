@@ -14,6 +14,7 @@ export class TimelineComponent implements OnInit {
   isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
+  topArticleIndex: number;
 
   constructor(
     private service: LoginService,
