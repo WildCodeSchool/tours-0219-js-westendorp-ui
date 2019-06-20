@@ -1,13 +1,12 @@
 <div class="card" [ngClass]="{'no-border': article.rank===1}">
   <div class="card-body">
-    <a routerLink="/admin/editor">
-      <i class="fa fa-edit" (click)='sendActivity(article, "title")' [hidden]='log'>Ajouter/modifier un titre</i></a>
+      <a routerLink="/admin/editor" >
+        <i class="fa fa-edit"  [hidden]='log' (click)='sendActivity(article, "title")'>Ajouter/modifier un titre</i></a>
     <h5 class="card-title" [innerHTML]=" article.title | keepHtml">
     </h5>
     <p class="card-text" [innerHTML]=" article.content | keepHtml"></p>
     <a routerLink="/admin/editor">
-      <button class="btn btn-outline-info edit-btn" [hidden]='log' (click)='sendActivity(article, "body")'>Editer le
-        contenu </button>
+       <button  class="btn btn-outline-dark edit-btn" [hidden]='log' (click)='sendActivity(article, "body")'>Editer le contenu </button>
     </a>
     <button class="btn btn-outline-danger del-btn" [hidden]='log' (click)='deleteActivity(article._id)'>Supprimer
       l'article</button>

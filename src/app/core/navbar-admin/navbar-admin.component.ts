@@ -17,13 +17,8 @@ export class NavbarAdminComponent implements OnInit {
   ngOnInit() { }
 
   onOpenNav() {
-    this.openNav = true;
-    this.closeNav = false;
-  }
-
-  onCloseNav() {
-    this.openNav = false;
-    this.closeNav = true;
+    this.openNav = !this.openNav;
+    this.closeNav = !this.closeNav;
   }
 
   logout() {
