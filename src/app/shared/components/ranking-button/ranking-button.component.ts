@@ -5,7 +5,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 @Component({
   selector: 'app-ranking-button',
   templateUrl: './ranking-button.component.html',
-  styleUrls: ['./ranking-button.component.scss']
+  styleUrls: ['./ranking-button.component.scss'],
 })
 export class RankingButtonComponent implements OnInit {
 
@@ -19,7 +19,6 @@ export class RankingButtonComponent implements OnInit {
   }
 
   changeRank(articles: Article[]) {
-    console.log('here', articles);
     this.updateRank.emit(articles);
   }
 

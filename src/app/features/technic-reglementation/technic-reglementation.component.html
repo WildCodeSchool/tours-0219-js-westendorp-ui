@@ -1,8 +1,13 @@
-
 <a routerLink="/admin/editor">
-  <button  class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
+  <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
 <div *ngFor="let article of articlesList; let i = index">
-<app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+  <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
 </div>
-<app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>
+<div class="d-flex justify-content-center">
+  <div *ngIf="isSameRank" class="text-center alert alert-danger" role="alert">
+    2 articles ne peuvent pas avoir le même ordre d'apparition
+  </div>
+</div>
+<app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">
+</app-ranking-button>

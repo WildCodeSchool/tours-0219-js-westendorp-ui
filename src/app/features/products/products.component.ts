@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
   public isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
+  public isSameRank = false;
   topArticleIndex: number;
 
   constructor(
@@ -27,7 +28,7 @@ export class ProductsComponent implements OnInit {
       this.articlesList = articles;
 
       this.topArticleIndex = this.articlesList.findIndex(a => a.rank === 1);
-      
+
       if (this.topArticleIndex < 0 && this.articlesList.length > 0) {
         this.topArticleIndex = 0;
       }
@@ -45,9 +46,17 @@ export class ProductsComponent implements OnInit {
   }
 
   onUpdateRank($event) {
-    this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
-      this.articlesList = newArticle;
-    });
+    this.isSameRank = false;
+    for (let i = 0; i < $event.length; i = i + 1) {
+      for (let j = i + 1; j < $event.length; j = j + 1) {
+        if ($event[i].rank === $event[j].rank) {
+          return this.isSameRank = true;
+        }
+        this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
+          this.articlesList = newArticle;
+        });
+      }
+    }
   }
 
 }
