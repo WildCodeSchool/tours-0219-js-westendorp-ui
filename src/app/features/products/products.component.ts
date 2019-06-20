@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
   public isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
+  topArticleIndex: number;
 
   constructor(
     private service: LoginService,
@@ -24,6 +25,12 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getArticlesBySections('products').subscribe((articles: Article[]) => {
       this.articlesList = articles;
+
+      this.topArticleIndex = this.articlesList.findIndex(a => a.rank === 1);
+      
+      if (this.topArticleIndex < 0 && this.articlesList.length > 0) {
+        this.topArticleIndex = 0;
+      }
     });
   }
 
