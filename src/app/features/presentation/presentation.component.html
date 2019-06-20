@@ -18,4 +18,4 @@
 <img class='col-6 carte-cible' src='assets/image/payscible.png'>
   </div>
 </div>
-<app-ranking-button [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>
+<app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>

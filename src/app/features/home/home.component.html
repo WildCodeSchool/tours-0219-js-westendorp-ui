@@ -6,5 +6,5 @@
   <app-cards-accueil class="m-5" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"
     [ngClass]="{ 'no-border': article.rank===1}"></app-cards-accueil>
 </div>
-<app-ranking-button [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>
+<app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>
 
