@@ -48,10 +48,7 @@ export class MonCompteComponent implements OnInit {
             this.countMdp += 1;
           }
         }
-      },
-      (error: any) => {
-        this.showError();
-    });
+      },         (error: any) => { this.showError(); });
   }
 
   updatePassWord(id: string, content: Login) {
@@ -83,10 +80,7 @@ export class MonCompteComponent implements OnInit {
           this.showFormId = false;
           this.hiddMdp = true;
         }
-      },
-      (error: any) => {
-        this.showError();
-    });
+      },         (error: any) => { this.showError(); });
   }
 
   updateId(id: string, content: Login) {
