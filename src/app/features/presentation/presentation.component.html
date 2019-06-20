@@ -151,4 +151,4 @@
 <img class='col-6 carte-cible' src='assets/image/payscible.png'>
   </div>
 </div>
-<app-ranking-array [articles]='articlesList'></app-ranking-array>
+<app-ranking-button [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>

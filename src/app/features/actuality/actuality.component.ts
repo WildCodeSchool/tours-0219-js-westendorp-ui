@@ -37,4 +37,10 @@ export class ActualityComponent implements OnInit {
     this.articlesList.splice(index, 1);
   }
 
+  onUpdateRank($event) {
+    this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
+      this.articlesList = newArticle;
+    });
+  }
+
 }

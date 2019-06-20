@@ -5,4 +5,4 @@
 <div *ngFor="let article of articlesList; let i = index">
 <app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
 </div>
-<app-ranking-array [articles]='articlesList'></app-ranking-array>
+<app-ranking-button [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>

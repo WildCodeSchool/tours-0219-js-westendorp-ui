@@ -28,9 +28,6 @@ export class CardsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      this.articlesList = articles;
-    });
   }
 
   sendActivity(article: Article, type: string) {

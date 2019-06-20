@@ -10,6 +10,10 @@
       </a>
       <button  class="btn btn-outline-danger del-btn" [hidden]='log' (click)='deleteActivity(article._id)'>Supprimer l'article</button>
     </div>
+    <label class="text-center" for="rank-{{index}}">Article n°</label>
+    <div class="d-flex justify-content-center">
+      <input class="text-center" name="article-{{i}}" type="number" id="rank-{{index}}" [(ngModel)]="article.rank">
+    </div>
   </div>
 
  

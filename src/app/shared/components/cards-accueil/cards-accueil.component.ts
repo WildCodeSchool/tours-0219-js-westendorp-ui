@@ -27,11 +27,7 @@ export class CardsAccueilComponent implements OnInit {
     private editorService: EditorService,
   ) { }
 
-  ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      this.articlesList = articles;
-    });
-  }
+  ngOnInit() {}
 
   sendActivity(article: Article, type: string) {
     this.editorService.contentSubject.next(article);
@@ -51,6 +47,5 @@ export class CardsAccueilComponent implements OnInit {
       },
     );
   }
-
 
 }

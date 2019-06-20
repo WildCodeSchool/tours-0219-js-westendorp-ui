@@ -12,7 +12,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 export class HomeComponent implements OnInit {
 
   public isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
+  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
   articlesList: Article[] = [];
 
   constructor(
@@ -37,4 +37,9 @@ export class HomeComponent implements OnInit {
     this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
   }
 
+  onUpdateRank($event) {
+    this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
+      this.articlesList = newArticle;
+    });
+  }
 }
