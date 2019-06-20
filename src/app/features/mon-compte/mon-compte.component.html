@@ -13,7 +13,7 @@
         </div>
         <button class='btn btn-primary' [hidden]="hiddenFormMdp" type="submit">Suivant</button>
         <button class='btn btn-success'[hidden]="nextFormMdp" type="submit">Validé</button>
-        <button class='btn btn-warning' [hidden]="submitFormMdp" (click)='updatePassWord(f.value.email, f.value)'>Enregistrer votre nouveau mot de passe</button>
+        <button class='btn btn-warning' [hidden]="submitFormMdp" (click)='updatePassWord(f.value.email, f.value)'>Enregistrer</button>
       </div>
     </div>
   </form>
@@ -31,7 +31,7 @@
           <label for="inputEmail4MD"></label>
         </div>
         <button class='btn btn-primary' [hidden]="hiddenFormId" type='submit'>Suivant</button>
-        <button class='btn btn-warning' [hidden]="showFormId" (click)='updateId(g.value.password, g.value)'>Enregistrer votre nouvel identifiant</button>
+        <button class='btn btn-warning' [hidden]="showFormId" (click)='updateId(g.value.password, g.value)'>Enregistrer</button>
       </div>
     </div>
   </form>
