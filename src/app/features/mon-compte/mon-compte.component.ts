@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
 import { Login } from 'src/app/shared/models/login.model';
 import { count } from 'rxjs/operators';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mon-compte',
@@ -21,6 +23,8 @@ export class MonCompteComponent implements OnInit {
 
   constructor(
     public service: LoginService,
+    private toastr: ToastrService,
+    private router: Router,
     ) { }
 
   ngOnInit() {
@@ -46,8 +50,14 @@ export class MonCompteComponent implements OnInit {
 
   updatePassWord(id: string, content: Login) {
     console.log(id, content);
-    this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
+    this.service.updatePassWord(id, content).subscribe((newPass) => {
+      this.showSuccess();
+      this.router.navigateByUrl('admin');
     });
+  }
+
+  showSuccess() {
+    this.toastr.success('Hello world!', 'Toastr fun!');
   }
 
   newId(g) {
