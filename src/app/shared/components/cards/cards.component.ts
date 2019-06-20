@@ -12,7 +12,7 @@ import { EditorService } from 'src/app/core/services/editor.service';
 export class CardsComponent implements OnInit {
 
   htmlStr: string;
-  log = !this.service.isLogin();
+  isLogin = !this.service.isLogin();
   articlesList: Article[] = [];
 
   @Input() public article: Article;
@@ -28,9 +28,6 @@ export class CardsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticles().subscribe((articles) => {
-      this.articlesList = articles;
-    });
   }
 
   sendActivity(article: Article, type: string) {
