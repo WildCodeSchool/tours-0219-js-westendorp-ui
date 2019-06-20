@@ -18,7 +18,7 @@ section {
 }
 
 .video{
-	border: solid #C5CAE9 4px;
+	border: solid 30px transparent;
 }
 
 html, body {
@@ -29,7 +29,8 @@ body {
   font-family: 'Roboto';
   font-size: 17px;
   font-weight: 400;
-  background-image: url("/assets/image/blur2.png");
+  background-image: url("/assets/image/essaiflou.png");
+  background-position: top right;
 }
 
 
@@ -244,7 +245,7 @@ blockquote {
 
 .carte-cible{
   max-height: 350px;
-  padding: 0px;
+  padding: 9px;
 }
 
 .map-google{
