@@ -23,7 +23,7 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
       config: {
         whitelistedDomains: ['http://localhost:3000'],
         tokenGetter: () => {
-          return localStorage.getItem('token');
+          return sessionStorage.getItem('token');
         },
       },
     }),

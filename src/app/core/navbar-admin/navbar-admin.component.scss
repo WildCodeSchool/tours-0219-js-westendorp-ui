@@ -3,13 +3,13 @@ body {
 }
 
 .side-nav {
-  height: 100%;
+  min-height: 100%;
   width: 40px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-image: url('/assets/image/background.jpg');
+  background-color: #262626;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -23,7 +23,7 @@ h2 {
 .side-nav  a  {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: #ffffff;
   display: block;
   transition: 0.3s;
@@ -42,18 +42,9 @@ i{
   cursor: pointer;
 }
 
-.side-nav .close-btn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-  cursor: pointer;
-}
-
 .burger {
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   cursor: pointer;
   margin-left: 5%;
 }
@@ -82,16 +73,20 @@ span {
 }
 
 .sideNaveOpen {
-  width: 250px;
+  width: 270px;
 }
 .mainOpen {
   margin-left: 250px;
 }
 
-.sideNaveClose {
-  width: 30px;
-}
-
 .mainClose {
   margin-left: 40px;
+}
+
+.font{
+  font-size: 18px;
+}
+
+.fa{
+  cursor: pointer;
 }

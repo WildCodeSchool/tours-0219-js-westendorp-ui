@@ -9,9 +9,16 @@ $accent: #FF4081;
 section {
   padding: 100px 0;
 }
+.box{
+	text-align: center;
+}
 
 .presentation {
     border: none;
+}
+
+.video{
+	border: solid #C5CAE9 4px;
 }
 
 html, body {
@@ -25,12 +32,7 @@ body {
   background-color: #eee;
 }
 
-h1 {
-  font-size: 200%;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-weight: 400;
-}
+
 
 header {
 	background: $primary;
@@ -99,6 +101,7 @@ header {
 }
 
 
+
 .timeline-content {
 	position: relative;
 	width: 45%;
@@ -131,25 +134,8 @@ header {
 	margin-left: -15px;
 }
 
-a {
-	background: $primary;
-	color: $text;
-	padding: 8px 20px;
-	text-transform: uppercase;
-	font-size: 14px;
-	margin-bottom: 20px;
-	margin-top: 10px;
-	display: inline-block;
-	border-radius: 2px;
-	box-shadow: 0 1px 3px -1px rgba(0, 0, 0, .6);
 
-	&:hover, &:active, &:focus {
-		background: darken($primary, 10%);
-		color: $text;
-		text-decoration: none;
-	}
 
-}
 
 .timeline-card {
 	padding: 0!important;
@@ -168,6 +154,10 @@ a {
 			background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('https://picsum.photos/1000/800/?random') center center no-repeat;
 			background-size: cover;
 		}
+}
+h2{
+	font-style: italic;
+	font-size: 28px;
 }
 
 .timeline-img-header {
@@ -254,14 +244,28 @@ blockquote {
 
 .carte-cible{
   max-height: 350px;
-  padding: 0px
+  padding: 0px;
 }
 
 .map-google{
-  padding: 0px
+  padding: 0px;
+  box-shadow: 7px 11px 22px #aaa;
 }
 
 .cartes-bas-page{
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+
+  
+h1{
+  text-align: center;
+  padding-top: 20px;
+}
+
+button{
+  margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }

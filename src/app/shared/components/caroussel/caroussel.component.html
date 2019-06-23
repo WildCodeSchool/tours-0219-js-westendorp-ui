@@ -1,7 +1,7 @@
 <ngb-carousel *ngIf="images" >
   <ng-template ngbSlide>
     <div class="carousel-page">
-    <img src="{{images[0]?.url}}" alt="Random first slide" class="img01">
+    <img [src]="images[0]?.url" alt="Random first slide" class="img01">
     </div>
     <div class="carousel-caption">
       <h3></h3>

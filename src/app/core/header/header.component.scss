@@ -1,15 +1,18 @@
-#navbar-nav {
+.navbar-nav  {
   display: flex;
   justify-content: space-around;
 }
 
 .navbar {
-  background-image: url('/assets/image/background.jpg');
+  background-color: #262626;
+  background-size: 100%;
+  opacity: 0.8;
 }
 
 .navbar-brand {
   height: 5%;
-  width: 5%;
+  width: 5.1%;
+  margin-right: 6%;
 }
 
 .nav-item {
@@ -22,7 +25,7 @@
   background: transparent;
   color: #ffffff;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
   text-decoration: none;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
@@ -34,4 +37,23 @@
   border-top: 3px solid #ffffff;
   border-bottom: 3px solid #ffffff;
   padding: 6px 0;
+}
+
+.back-nav-bar{
+  height: 55px;
+}
+
+.navbar-brand{
+  cursor: pointer;
+}
+
+.active-nav{
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding: 6px 0;
+}
+
+img{
+  vertical-align: middle;
+    border-style: none;
 }

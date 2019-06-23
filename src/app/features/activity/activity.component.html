@@ -1,9 +1,30 @@
-<h1>Activités</h1>
-<a routerLink="/admin/editor">
-  <button class="btn btn-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
-</a>
-<div *ngFor="let article of articlesList; let i = index">
-<app-cards [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
-</div>
-<app-ranking-array [articles]='articlesList'></app-ranking-array>
 
+<div class="d-flex justify-content-around m-5">
+<i class="fa fa-tags" aria-hidden="true" style="font-size:65px"></i>
+<i class="fa fa-handshake-o" aria-hidden="true" style="font-size:65px"></i>
+<i class="fa fa-wrench" aria-hidden="true" style="font-size:65px"></i>
+
+</div>
+
+
+<a routerLink="/admin/editor">
+  <button  class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
+</a>
+<div class="card-deck">
+    <div class="card">
+  <div>
+      <app-cards [article]='articlesList[3]'  [index]='i'  (deleteCard)="deleteCard($event)"></app-cards>
+  </div>
+    </div>
+  <div class="card">
+    <div >
+        <app-cards [article]='articlesList[1]'  [index]='i'  (deleteCard)="deleteCard($event)"></app-cards>
+    </div>
+  </div>
+  <div class="card">
+    <div>
+        <app-cards [article]='articlesList[2]'  [index]='i'  (deleteCard)="deleteCard($event)"></app-cards>
+    </div>
+  </div>
+</div>
+<app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)"></app-ranking-button>

@@ -6,10 +6,11 @@ import { ActivityComponent } from './activity/activity.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { HomeComponent } from './home/home.component';
 import { TechnicReglementationComponent } from './technic-reglementation/technic-reglementation.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { MonCompteComponent } from './mon-compte/mon-compte.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -18,10 +19,11 @@ import { SharedModule } from '../shared/shared.module';
     PresentationComponent,
     HomeComponent,
     TechnicReglementationComponent,
+    MonCompteComponent,
+    TimelineComponent,
   ],
   imports: [
     SharedModule,
-    NgbModule,
     CommonModule,
     CoreModule,
     RouterModule,

@@ -11,7 +11,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 })
 export class TechnicReglementationComponent implements OnInit {
 
-  public log = !this.service.isLogin();
+  public isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
 
@@ -35,6 +35,12 @@ export class TechnicReglementationComponent implements OnInit {
 
   deleteCard(id) {
     this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
+  }
+
+  onUpdateRank($event) {
+    this.articlesService.updateArticlesRanking($event).subscribe((newArticle: Article[]) => {
+      this.articlesList = newArticle;
+    });
   }
 
 }

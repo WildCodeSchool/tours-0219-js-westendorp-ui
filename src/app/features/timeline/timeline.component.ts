@@ -12,7 +12,7 @@ import { EditorService } from 'src/app/core/services/editor.service';
 export class TimelineComponent implements OnInit {
 
   isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '');
+  newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined ,  '', '',  '', null);
   articlesList: Article[] = [];
 
   constructor(
@@ -24,7 +24,7 @@ export class TimelineComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getArticles().subscribe((articles) => {
       for (let i = 0; i < articles.length; i += 1) {
-        if (articles[i].section === 'presentation') {
+        if (articles[i].section === 'timeline') {
           this.articlesList.push(articles[i]);
         }
       }

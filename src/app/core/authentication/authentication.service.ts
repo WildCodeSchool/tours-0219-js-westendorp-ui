@@ -6,7 +6,7 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthenticationService {
 
   public getToken(): string {
-    return localStorage.getItem('token');
+    return sessionStorage.getItem('token');
   }
 
   public isAuthenticated(): boolean {

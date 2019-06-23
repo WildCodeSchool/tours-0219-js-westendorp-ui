@@ -1,27 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-  <img src="/assets/image/logo.png" class="navbar-brand" [routerLink]="[ '' ]">
+<div class='back-nav-bar'></div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <img src="/assets/image/newLogo.png" class="navbar-brand" [routerLink]="[ '' ]">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbar-nav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link-1" [routerLink]="[ '' ]">Accueil<span class="sr-only">(current)</span></a>
+        <a class="nav-link-1" [routerLink]="[ '/home' ]" routerLinkActive="active-nav">Accueil<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link-1" [routerLink]="[ '/presentation' ]">Présentation</a>
+        <a class="nav-link-1" [routerLink]="[ '/presentation' ]" routerLinkActive="active-nav">Présentation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link-1" [routerLink]="[ '/activites' ]">Nos activités</a>
+        <a class="nav-link-1" [routerLink]="[ '/activites' ]" routerLinkActive="active-nav">Nos activités</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link-1" [routerLink]="[ '/produits' ]">Nos Produits</a>
+          <a class="nav-link-1" [routerLink]="[ '/produits' ]" routerLinkActive="active-nav">Nos Produits</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link-1" [routerLink]="[ '/techniques' ]">Techniques et réglementations</a>
+          <a class="nav-link-1" [routerLink]="[ '/techniques' ]" routerLinkActive="active-nav">Techniques et réglementations</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link-1" [routerLink]="[ '/actualites' ]">Actualité</a>
+            <a class="nav-link-1" [routerLink]="[ '/actualites' ]" routerLinkActive="active-nav">Actualité</a>
           </li>
     </ul>
   </div>
