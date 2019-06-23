@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-modal',
@@ -15,7 +16,13 @@ export class LoginModalComponent implements OnInit {
   public show = true;
   error = '';
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private islogin: LoginService, private router: Router) {
+  constructor(config: NgbModalConfig,
+              private modalService: NgbModal,
+              private islogin: LoginService,
+              private router: Router,
+              private urlReset: LoginService,
+              private toastr: ToastrService,
+              private checkemail: LoginService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -24,13 +31,14 @@ export class LoginModalComponent implements OnInit {
     this.modalService.open(content, { size: 'lg' });
   }
 
-  close(content) {
-    this.modalService.dismissAll(content);
+  hiddenForm() {
+    this.hidden = true;
+    this.show = false;
   }
 
-  hiddenForm() {
-    this.hidden = !this.hidden;
-    this.show = !this.show;
+  hiddenBack() {
+    this.hidden = false;
+    this.show = true;
   }
 
   onSubmit(f: NgForm) {
@@ -40,6 +48,37 @@ export class LoginModalComponent implements OnInit {
           this.router.navigateByUrl('admin');
           this.modalService.dismissAll();
         });
+  }
+
+  checkMail(g) {
+    console.log('cococo');
+    this.islogin.checkemail(g.value.email)
+    .subscribe(
+      (data: string) => {
+        if (data) {
+          this.checkemail.checkemail(data);
+          this.sendPass();
+          this.showSuccess();
+        }
+      },
+      (error: any) => {
+        this.errorSuccess();
+      },
+    );
+
+  }
+
+  sendPass() {
+    this.islogin.resetPass().subscribe((u) => {
+      this.urlReset = u;
+    });
+  }
+  showSuccess() {
+    this.toastr.success('Email envoyé !', 'Message');
+  }
+
+  errorSuccess() {
+    this.toastr.warning('Mauvais email, veuillez entrer une adresse valide');
   }
 
   ngOnInit() {
