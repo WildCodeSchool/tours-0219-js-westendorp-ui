@@ -51,9 +51,9 @@ export class MonCompteComponent implements OnInit {
       },         (error: any) => { this.showError(); });
   }
 
-  updatePassWord(id: string, content: Login) {
-    console.log(id, content);
-    this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
+  updatePassWord(email: string, content: Login) {
+    console.log(email, content);
+    this.service.updatePassWord(email, content).subscribe((newPass: Login) => {
       this.showSuccessMdp();
       this.router.navigateByUrl('admin');
     });
