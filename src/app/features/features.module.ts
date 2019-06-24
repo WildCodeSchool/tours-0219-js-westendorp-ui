@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { MonCompteComponent } from './mon-compte/mon-compte.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 
 @NgModule({
   declarations: [ActualityComponent,
@@ -27,6 +28,7 @@ import { TimelineComponent } from './timeline/timeline.component';
     CommonModule,
     CoreModule,
     RouterModule,
+    AnimateOnScrollModule.forRoot(),
   ],
 })
 export class FeaturesModule { }

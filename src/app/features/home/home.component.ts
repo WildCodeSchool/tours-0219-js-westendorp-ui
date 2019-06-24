@@ -16,25 +16,10 @@ import {
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [
-    trigger('scrollAnimation', [
-      state('show', style({
-        opacity: 1,
-        transform: 'translateX(0)',
-      })),
-      state('hide',   style({
-        opacity: 0,
-        transform: 'translateX(-100%)',
-      })),
-      transition('show => hide', animate('1000ms ease-out')),
-      transition('hide => show', animate('1500ms ease-in')),
-    ]),
-  ],
 })
 
 export class HomeComponent implements OnInit {
 
-  state = 'hide';
   public isLogin = !this.service.isLogin();
   newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
   articlesList: Article[] = [];
@@ -63,15 +48,6 @@ export class HomeComponent implements OnInit {
     this.editorService.article = this.newArticle;
     this.editorService.typeOfContent = 'title';
     this.editorService.typeEdition = true;
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const componentPosition = this.el.nativeElement.offsetTop;
-    const scrollPosition = window.pageYOffset;
-    if (scrollPosition >= componentPosition) {
-      this.state = 'show';
-    }
   }
 
   deleteCard(id) {
