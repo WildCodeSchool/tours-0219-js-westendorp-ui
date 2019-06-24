@@ -17,44 +17,17 @@
 
 .nav-item {
   cursor: pointer;
+  right: 15%;
+  margin-right: 50px;
 }
-
-
-.nav-link-1 {
-  transition: 0.3s ease;
-  background: transparent;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 15px;
-  text-decoration: none;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  padding: 13px 0;
-  margin: 0 40px;
-}
-
 
 .back-nav-bar{
   height: 55px;
 }
 
-.navbar-brand{
-  cursor: pointer;
-}
 
 .active-nav{
   border-top: 3px solid #3498DB;
   border-bottom: 3px solid #3498DB;
   padding: 6px 0;
-}
-
-
-img{
-  vertical-align: middle;
-    border-style: none;
-}
-
-
-.container {
-    max-width: 1388px;
 }
