@@ -261,9 +261,9 @@ blockquote {
   transform: scale(1.1);
   border-radius: 50%;
 }
-.rotate {
+.scale {
   transition: all 0.5s ease-in-out;
 }
-.rotate:hover {
+.scale:hover {
   transition: all 1s ease-in-out;
 }
