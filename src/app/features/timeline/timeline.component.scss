@@ -57,7 +57,7 @@ header {
 
 	&::before {
     content: '';
-		background: white  ;
+		background: gray  ;
 		width: 5px;
 		height: 90%;
 		position: absolute;
@@ -255,4 +255,15 @@ blockquote {
 		}
 	}
 
+}
+
+.box:hover {
+  transform: scale(1.1);
+  border-radius: 50%;
+}
+.rotate {
+  transition: all 0.5s ease-in-out;
+}
+.rotate:hover {
+  transition: all 1s ease-in-out;
 }
