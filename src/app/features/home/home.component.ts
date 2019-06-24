@@ -1,16 +1,9 @@
-import { Component, OnInit,  HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { ArticlesService } from 'src/app/core/http/articles.service';
 import { ToastrService } from 'ngx-toastr';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
 
 @Component({
   selector: 'app-home',
