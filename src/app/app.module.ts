@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,3 +1,4 @@
+<div class="hide-on-init" animateOnScroll animationName="animated fadeIn slow">
 <a routerLink="/admin/editor">
   <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
@@ -12,3 +13,5 @@
 </div>
 <app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">
 </app-ranking-button>
+</div>
+

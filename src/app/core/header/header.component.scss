@@ -9,56 +9,25 @@
   opacity: 0.8;
 }
 
-.navbar-brand {
-  height: 5%;
-  width: 5.1%;
+.logo {
+  width: 90px;
   margin-right: 6%;
+  cursor: pointer;
 }
 
 .nav-item {
   cursor: pointer;
-}
-
-
-.nav-link-1 {
-  transition: 0.3s ease;
-  background: transparent;
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 15px;
-  text-decoration: none;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  padding: 13px 0;
-  margin: 0 40px;
-}
-
-.nav-link-1:hover {
-  border-top: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
-  padding: 6px 0;
+  right: 15%;
+  margin-right: 50px;
 }
 
 .back-nav-bar{
   height: 55px;
 }
 
-.navbar-brand{
-  cursor: pointer;
-}
 
 .active-nav{
   border-top: 3px solid #3498DB;
   border-bottom: 3px solid #3498DB;
   padding: 6px 0;
-}
-
-img{
-  vertical-align: middle;
-    border-style: none;
-}
-
-
-.container {
-    max-width: 1388px;
 }
