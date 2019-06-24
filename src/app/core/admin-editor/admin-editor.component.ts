@@ -18,13 +18,20 @@ export class AdminEditorComponent implements OnInit {
   hideCreate: boolean;
   hideSubmit: boolean;
   hiddenBtn = true;
+  config: any;
 
   constructor(
     private editorService: EditorService,
     private articlesService: ArticlesService,
     private _location: Location,
     private toastr: ToastrService,
-  ) { }
+  ) {
+    this.config = {
+      height: 300,
+      skin: 'kama',
+    };
+
+  }
 
   ngOnInit() {
     this.article = this.editorService.article;
