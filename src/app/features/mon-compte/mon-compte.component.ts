@@ -36,7 +36,6 @@ export class MonCompteComponent implements OnInit {
     this.service.login(f.value.email, f.value.password)
       .subscribe((data) => {
         if (data) {
-          console.log(f, f.value, f.value.mdp);
           if (this.countMdp === 0) {
             this.hiddenFormMdp = true;
             this.nextFormMdp = false;
@@ -51,9 +50,8 @@ export class MonCompteComponent implements OnInit {
       },         (error: any) => { this.showError(); });
   }
 
-  updatePassWord(id: string, content: Login) {
-    console.log(id, content);
-    this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
+  updatePassWord(email: string, content: Login) {
+    this.service.updatePassWord(email, content).subscribe((newPass: Login) => {
       this.showSuccessMdp();
       this.router.navigateByUrl('admin');
     });
@@ -72,7 +70,6 @@ export class MonCompteComponent implements OnInit {
   }
 
   newId(g) {
-    console.log(g);
     this.service.login(g.value.email, g.value.password)
       .subscribe((data) => {
         if (data) {
@@ -84,7 +81,6 @@ export class MonCompteComponent implements OnInit {
   }
 
   updateId(id: string, content: Login) {
-    console.log(id, content);
     this.service.updatePassWord(id, content).subscribe((newPass: Login) => {
       this.showSuccessId();
       this.router.navigateByUrl('admin');

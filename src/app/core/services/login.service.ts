@@ -12,6 +12,8 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
   urlApi = `${environment.apiUrl}/auth/signin`;
+  urlReset = `${environment.apiUrl}/auth/forget`;
+  urlMail = `${environment.apiUrl}/auth/validemail`;
   public api = `${environment.apiUrl}`;
   public user: boolean;
 
@@ -34,9 +36,15 @@ export class LoginService {
     sessionStorage.clear();
     this.user = false;
   }
+  resetPass() {
+    return this.http.post<any>(this.urlReset, {});
+  }
 
-  updatePassWord(id: string, loginForm: Login): Observable<Login> {
-    console.log(id, loginForm);
-    return this.http.put<Login>(`${this.api}/auth/${id}`, loginForm);
+  checkemail(email: string) {
+    return this.http.post<any>(this.urlMail, { email });
+  }
+
+  updatePassWord(email: string, loginForm: Login): Observable<Login> {
+    return this.http.put<Login>(`${this.api}/auth/${email}`, loginForm);
   }
 }

@@ -21,6 +21,11 @@ import { ToastrModule } from 'ngx-toastr';
     FeaturesModule,
     HttpClientModule,
     FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 2500,
+      positionClass: 'toast-top-center',
+      preventDuplicates: false,
+    }),
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['http://localhost:3000'],

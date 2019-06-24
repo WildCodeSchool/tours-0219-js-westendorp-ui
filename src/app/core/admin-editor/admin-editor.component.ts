@@ -23,7 +23,7 @@ export class AdminEditorComponent implements OnInit {
     private editorService: EditorService,
     private articlesService: ArticlesService,
     private _location: Location,
-    private toastr: ToastrService
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
