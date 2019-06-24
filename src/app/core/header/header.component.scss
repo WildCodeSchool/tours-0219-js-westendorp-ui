@@ -11,6 +11,7 @@
 
 .logo {
   width: 90px;
+  height: 45px;
   margin-right: 6%;
   cursor: pointer;
 }
@@ -18,7 +19,6 @@
 .nav-item {
   cursor: pointer;
   right: 15%;
-  margin-right: 40px;
 }
 
 .back-nav-bar{
@@ -30,4 +30,10 @@
   border-top: 3px solid #3498DB;
   border-bottom: 3px solid #3498DB;
   padding: 6px 0;
+}
+
+@media screen and (max-width: 940px) {
+  .logo {
+    margin-left: 40%;
+  }
 }
