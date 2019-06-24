@@ -48,7 +48,8 @@ export class LoginModalComponent implements OnInit {
           this.showSuccessLog();
           this.router.navigateByUrl('admin');
           this.modalService.dismissAll();
-        }, (error: any) => { this.showError(); });
+        },
+        (error: any) => { this.showError(); });
   }
 
   showSuccessLog() {
@@ -60,7 +61,6 @@ export class LoginModalComponent implements OnInit {
   }
 
   checkMail(g) {
-    console.log('cococo');
     this.islogin.checkemail(g.value.email)
     .subscribe(
       (data: string) => {
