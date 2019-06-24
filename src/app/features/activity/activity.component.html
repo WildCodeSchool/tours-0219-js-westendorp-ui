@@ -1,3 +1,6 @@
+<a routerLink="/admin/editor">
+  <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
+</a>
 <div class="m-5">
   <app-cards *ngIf="topArticleIndex > -1" [article]='articlesList[topArticleIndex]' [index]="topArticleIndex"
     (deleteCard)="deleteCard($event)"></app-cards>
@@ -7,9 +10,6 @@
   <i class="fa fa-users" aria-hidden="true" style="font-size:65px"></i>
   <i class="fa fa-wrench" aria-hidden="true" style="font-size:65px"></i>
 </div>
-<a routerLink="/admin/editor">
-  <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
-</a>
 <div class="row">
     <ng-container *ngFor="let article of articlesList; let i = index">
       <app-cards class="col-sm-4" *ngIf="i !== topArticleIndex" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
