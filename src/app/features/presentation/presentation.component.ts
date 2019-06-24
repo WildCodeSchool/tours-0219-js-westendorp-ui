@@ -13,10 +13,10 @@ import { ToastrService } from 'ngx-toastr';
 export class PresentationComponent implements OnInit {
 
   public isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
-  articlesList: Article[] = [];
+  public newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
+  public articlesList: Article[] = [];
   public isSameRank = false;
-  topArticleIndex: number;
+  public topArticleIndex: number;
 
   constructor(
     private service: LoginService,

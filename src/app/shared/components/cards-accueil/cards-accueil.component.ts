@@ -13,7 +13,6 @@ export class CardsAccueilComponent implements OnInit {
 
   htmlStr: string;
   public isLogin = !this.service.isLogin();
-  articlesList: Article[] = [];
 
   @Input() public article: Article;
   @Input() public index;
