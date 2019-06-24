@@ -9,7 +9,7 @@ import {
   state,
   style,
   animate,
-  transition
+  transition,
 } from '@angular/animations';
 
 @Component({
@@ -20,16 +20,16 @@ import {
     trigger('scrollAnimation', [
       state('show', style({
         opacity: 1,
-        transform: "translateX(0)"
+        transform: 'translateX(0)',
       })),
       state('hide',   style({
         opacity: 0,
-        transform: "translateX(-100%)"
+        transform: 'translateX(-100%)',
       })),
       transition('show => hide', animate('1000ms ease-out')),
-      transition('hide => show', animate('1500ms ease-in'))
-    ])
-  ]
+      transition('hide => show', animate('1500ms ease-in')),
+    ]),
+  ],
 })
 
 export class HomeComponent implements OnInit {
@@ -76,7 +76,6 @@ export class HomeComponent implements OnInit {
     }
 
   }
-
 
   deleteCard(id) {
     this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
