@@ -7,7 +7,7 @@
 </div>
 <div class="row d-flex justify-content-center">
     <ng-container *ngFor="let article of articlesList; let i = index">
-      <app-cards class="col-sm-12 " *ngIf="i !== topArticleIndex" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+      <app-cards animateOnScroll animationName="animated fadeIn slow" class="col-sm-12 mt-3 hide-on-init" *ngIf="i !== topArticleIndex" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
     </ng-container>
 </div>
 <app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">

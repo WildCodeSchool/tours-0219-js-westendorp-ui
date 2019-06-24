@@ -1,3 +1,4 @@
+<div class="hide-on-init" animateOnScroll animationName="animated fadeIn slow">
 <a routerLink="/admin/editor">
   <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
@@ -22,9 +23,10 @@
 </div>
 <div class="row">
     <ng-container *ngFor="let article of articlesList; let i = index">
-      <app-cards class="col-sm-4" *ngIf="i !== topArticleIndex" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+      <app-cards animateOnScroll animationName="animated fadeIn slow" class="col-sm-4 hide-on-init" *ngIf="i !== topArticleIndex" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
     </ng-container>
 </div>
 
 <app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">
 </app-ranking-button>
+</div>
