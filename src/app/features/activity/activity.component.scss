@@ -2,8 +2,7 @@
     font-size: 24px;
     margin-left: 2%;
 }
- 
-  
+
 h1{
   text-align: center;
   padding-top: 20px;
@@ -27,4 +26,20 @@ i{
   border-radius: 50%;
   padding: 30px;
   box-shadow: 7px 11px 22px #aaa;
+}
+
+.box {
+  margin: 50px auto;
+  width: 150px;
+  height: 150px;
+}
+.box:hover {
+  transform: rotate(360deg);
+  border-radius: 50%;
+}
+.rotate {
+  transition: all 0.5s ease-in-out;
+}
+.rotate:hover {
+  transition: all 1s ease-in-out;
 }
