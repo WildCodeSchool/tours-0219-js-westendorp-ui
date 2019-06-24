@@ -69,12 +69,9 @@ export class HomeComponent implements OnInit {
   checkScroll() {
     const componentPosition = this.el.nativeElement.offsetTop;
     const scrollPosition = window.pageYOffset;
-
     if (scrollPosition >= componentPosition) {
       this.state = 'show';
-    } else {
     }
-
   }
 
   deleteCard(id) {
