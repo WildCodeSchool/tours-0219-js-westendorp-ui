@@ -1,30 +1,30 @@
 <div class='back-nav-bar'></div>
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
     <img src="/assets/image/newLogo.png" class="logo" [routerLink]="[ '' ]">
+    <div>
+        <button class="navbar-toggler ml-3" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" (click)="isShown = !isShown" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     <div class="container-fluid px-0">
       <div class="row w-100">
-        <div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation" (click)="isShown = !isShown" >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div>
-          <div class="collapse justify-content-end navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mt-2 mt-lg-0 col">
+        <div class='col-12'>
+          <div class="collapse navbar-collapse row" [ngClass]="{ 'show': isShown }" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mt-2 mt-lg-0">
               <li class="nav-item">
-                <a class="nav-link text-white" (click)="isShown = false" [routerLink]="[ '/home' ]" routerLinkActive="active-nav">Accueil</a>
+                <a class="nav-link text-white mr-5" (click)="isShown = false" [routerLink]="[ '/home' ]" routerLinkActive="active-nav">Accueil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" (click)="isShown = false" [routerLink]="[ '/presentation' ]" routerLinkActive="active-nav">Présentation</a>
+                <a class="nav-link text-white mr-5" (click)="isShown = false" [routerLink]="[ '/presentation' ]" routerLinkActive="active-nav">Présentation</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" (click)="isShown = false" [routerLink]="[ '/activites' ]" routerLinkActive="active-nav">Nos activités</a>
+                <a class="nav-link text-white mr-5" (click)="isShown = false" [routerLink]="[ '/activites' ]" routerLinkActive="active-nav">Nos activités</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" (click)="isShown = false" [routerLink]="[ '/produits' ]" routerLinkActive="active-nav">Nos Produits</a>
+                <a class="nav-link text-white mr-5" (click)="isShown = false" [routerLink]="[ '/produits' ]" routerLinkActive="active-nav">Nos Produits</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" (click)="isShown = false" [routerLink]="[ '/techniques' ]" routerLinkActive="active-nav">Techniques et
+                <a class="nav-link text-white mr-5" (click)="isShown = false" [routerLink]="[ '/techniques' ]" routerLinkActive="active-nav">Techniques et
                     réglementations</a>
               </li>
               <li class="nav-item">

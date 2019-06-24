@@ -12,12 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CardsComponent implements OnInit {
 
-  htmlStr: string;
-  isLogin = !this.service.isLogin();
-  articlesList: Article[] = [];
+  public htmlStr: string;
+  public isLogin = !this.service.isLogin();
 
   @Input() public article: Article;
-  @Input() public index;
+  @Input() public index: number;
 
   @Output()
   deleteCard: EventEmitter<any> = new EventEmitter();
