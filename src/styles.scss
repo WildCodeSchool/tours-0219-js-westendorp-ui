@@ -1,59 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: whitesmoke !important;
+  background-color: whitesmoke !important;
 }
 
 .animated {
-    visibility: visible !important;
+  visibility: visible !important;
+}
+
+.hide-on-init {
+  visibility: hidden;
+}
+
+.animated.slow {
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s;
+}
+
+
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
-  .hide-on-init {
-    visibility: hidden;
+
+  to {
+    opacity: 1;
   }
-  
-  @-webkit-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
   }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+
+  to {
+    opacity: 1;
   }
-  
-  .fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn ;
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
   }
-  
-  .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+
+  to {
+    opacity: 1;
   }
-  
-  .animated.slow {
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
   }
-  
-  @media (print), (prefers-reduced-motion: reduce) {
-    .animated {
-      -webkit-animation-duration: 1ms !important;
-      animation-duration: 1ms !important;
-      -webkit-transition-duration: 1ms !important;
-      transition-duration: 1ms !important;
-      -webkit-animation-iteration-count: 1 !important;
-      animation-iteration-count: 1 !important;
-    }
+
+  to {
+    opacity: 1;
   }
+}
