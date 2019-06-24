@@ -3,8 +3,8 @@
 <a routerLink="/admin/editor">
   <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
-<div class="box" [@scrollAnimation]="state">
 <div *ngFor="let article of articlesList; let i = index" class="cards1">
+  <div class="box" [@scrollAnimation]="state">
   <app-cards-accueil class="m-5" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"
     [ngClass]="{ 'no-border': article.rank===1}"></app-cards-accueil>
 </div>

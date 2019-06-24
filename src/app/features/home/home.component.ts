@@ -9,7 +9,7 @@ import {
   state,
   style,
   animate,
-  transition
+  transition,
 } from '@angular/animations';
 
 @Component({
