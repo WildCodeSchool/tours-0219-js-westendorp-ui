@@ -11,6 +11,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AdminEditorComponent } from './admin-editor/admin-editor.component';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { BrowserModule } from '@angular/platform-browser';
     AngularFontAwesomeModule,
     BrowserModule,
     CKEditorModule,
+    BrowserAnimationsModule,
 
   ],
 
