@@ -29,9 +29,12 @@ export class AdminEditorComponent implements OnInit {
     this.config = {
       height: 300,
       skin: 'kama',
+      extraPlugins: 'image2,autogrow,magicline,horizontalrule,scayt,uploadimage,uploadwidget,uploadfile',
+      removePlugins: 'image',
+      
     };
-
-  }
+      this.config.uploadUrl = 'https://ibb.co/7KzKmgG';
+  };
 
   ngOnInit() {
     this.article = this.editorService.article;
