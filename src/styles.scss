@@ -11,6 +11,27 @@ body {
       -moz-transition: none !important;
       -o-transition: none !important;
       transition: none !important;
+      .hide-on-init{
+        visibility: visible
+      }
+      .animated{
+        -webkit-animation-fill-mode: none;
+        animation-fill-mode: none;
+        -webkit-transform-style: none;
+        transform-style: none;
+        &.slow {
+          -webkit-animation: none;
+          /* Safari, Chrome and Opera > 12.1 */
+          -moz-animation: none;
+          /* Firefox < 16 */
+          -ms-animation: nones;
+          /* Internet Explorer */
+          -o-animation: none;
+          /* Opera < 12.1 */
+          animation: none;
+          -webkit-transform:none;
+          transform: none;
+        }
     }
 }}
 
@@ -25,7 +46,7 @@ body {
 .animated {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-transform-style: preserve-3d;
+  -webkit-transform-style: none;
   transform-style: preserve-3d;
   &.slow {
     -webkit-animation: fadein 2s;
