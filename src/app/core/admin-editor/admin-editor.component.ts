@@ -32,7 +32,7 @@ export class AdminEditorComponent implements OnInit {
       extraPlugins: 'image2,autogrow,magicline,horizontalrule,scayt,uploadimage,uploadwidget,uploadfile',
       removePlugins: 'image',
       filebrowserImageBrowseUrl: '/browser/browse.php?type=image',
-      filebrowserImageUploadUrl: 'localhost:3000/upload',
+      filebrowserImageUploadUrl: 'http://localhost:3000/upload',
     };
   }
 
