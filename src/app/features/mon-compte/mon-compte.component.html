@@ -27,11 +27,11 @@
         <div class="md-form form-group">
           <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel" [hidden]='hiddMdp' name="email" #mail="ngModel" [ngModel] required email>
           <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormId" placeholder="Tapez votre mot de passe" name="password" #mdp="ngModel" [ngModel] required>
-          <input mdbInput type="password" class="form-control" id="inputPassword4MD" [hidden]="showFormId" placeholder="Tapez votre nouvel identifiant" name="email" #mdp="ngModel" [ngModel] required>
+          <input mdbInput type="email" class="form-control" id="inputPassword4MD" [hidden]="showFormId" placeholder="Tapez votre nouvel identifiant" name="email" #mdp="ngModel" [ngModel] required>
           <label for="inputEmail4MD"></label>
         </div>
         <button class='btn btn-primary' [hidden]="hiddenFormId" type='submit'>Suivant</button>
-        <button class='btn btn-warning' [hidden]="showFormId" (click)='updateId(g.value.password, g.value)'>Enregistrer</button>
+        <button class='btn btn-warning' [hidden]="showFormId" type='button' (click)='updateId(g.value.password, g.value)'>Enregistrer</button>
       </div>
     </div>
   </form>
