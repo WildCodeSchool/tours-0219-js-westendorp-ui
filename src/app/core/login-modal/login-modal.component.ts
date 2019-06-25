@@ -66,7 +66,7 @@ export class LoginModalComponent implements OnInit {
       (data: string) => {
         if (data) {
           this.checkemail.checkemail(data);
-          this.sendPass();
+          this.sendPass(g);
           this.showSuccess();
         }
       },
@@ -77,8 +77,8 @@ export class LoginModalComponent implements OnInit {
 
   }
 
-  sendPass() {
-    this.islogin.resetPass().subscribe((u) => {
+  sendPass(g) {
+    this.islogin.resetPass(g.value.email).subscribe((u) => {
       this.urlReset = u;
     });
   }

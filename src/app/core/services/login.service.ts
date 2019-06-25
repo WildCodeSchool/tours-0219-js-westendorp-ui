@@ -36,8 +36,8 @@ export class LoginService {
     sessionStorage.clear();
     this.user = false;
   }
-  resetPass() {
-    return this.http.post<any>(this.urlReset, {});
+  resetPass(email: string) {
+    return this.http.post<any>(this.urlReset, { email });
   }
 
   checkemail(email: string) {
