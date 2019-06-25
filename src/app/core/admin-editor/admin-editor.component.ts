@@ -31,10 +31,10 @@ export class AdminEditorComponent implements OnInit {
       skin: 'kama',
       extraPlugins: 'image2,autogrow,magicline,horizontalrule,scayt,uploadimage,uploadwidget,uploadfile',
       removePlugins: 'image',
-      
+      filebrowserImageBrowseUrl: '/browser/browse.php?type=image',
+      filebrowserImageUploadUrl: 'localhost:3000/upload',
     };
-      this.config.uploadUrl = 'https://ibb.co/7KzKmgG';
-  };
+  }
 
   ngOnInit() {
     this.article = this.editorService.article;
