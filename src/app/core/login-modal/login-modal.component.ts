@@ -31,6 +31,10 @@ export class LoginModalComponent implements OnInit {
     this.modalService.open(content, { size: 'lg' });
   }
 
+  close(content){
+    this.modalService.dismissAll(content);
+  }
+
   hiddenForm() {
     this.hidden = true;
     this.show = false;
