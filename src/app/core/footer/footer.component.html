@@ -1,4 +1,55 @@
-<footer class="d-flex-justify-content-between">
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+    <h3>CE Westendorp</h3>
+    <div class="footer-links">
+      <div class="row">
+      <a [routerLink]="[ '/home' ]" class="link-1">Accueil</a>
+      <a [routerLink]="[ '/presentation' ]">Présentation</a>
+      <a [routerLink]="[ '/activites' ]">Nos activités</a>
+    </div>
+    <div class="row">
+      <a [routerLink]="[ '/produits' ]">Nos produits</a>
+      <a [routerLink]="[ '/techniques' ]">Techniques et réglementations</a>
+      <a [routerLink]="[ '/actualites' ]">Actualités</a>
+    </div>
+  </div>  
+  </div>
+
+
+  <div class="footer-center">
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>Z.I. des Sablons, Chemin de l'Orange</span> 45130, Meung sur Loire, France</p>
+    </div>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>02.38.44.33.42</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:crew@ce-westendorp.com">crew@ce-westendorp.com</a></p>
+    </div>
+    <p class="footer-company-name">CE Westendorp © 2019</p>
+  </div>
+
+
+  <div class="footer-right">
+    <p class="footer-company-about">
+      <span>Plan du site</span>
+      <span> Mentions légales</span>
+    </p>
+    <div class="footer-icons">
+      <app-login-modal></app-login-modal>
+    </div>
+  </div>
+
+</footer>
+
+
+
+
+<!-- <footer class="d-flex-justify-content-between">
   <div class='container-fluid'>
     <div class='row'>
       <div class="link col-md-4">
@@ -18,4 +69,4 @@
         </div>
         </div>
       </div>
-    </footer>
+    </footer> -->
