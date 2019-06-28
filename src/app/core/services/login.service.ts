@@ -44,8 +44,7 @@ export class LoginService {
     return this.http.post<any>(this.urlMail, { email });
   }
 
-  updatePassWord(id: string, loginForm: Login): Observable<Login> {
-    console.log(id, loginForm);
-    return this.http.put<Login>(`${this.api}/auth/${id}`, loginForm);
+  updatePassWord(email: string, loginForm: Login): Observable<Login> {
+    return this.http.put<Login>(`${this.api}/auth/${email}`, loginForm);
   }
 }

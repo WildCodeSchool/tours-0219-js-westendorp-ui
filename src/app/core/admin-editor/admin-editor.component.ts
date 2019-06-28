@@ -3,6 +3,7 @@ import { EditorService } from '../../core/services/editor.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { ArticlesService } from '../http/articles.service';
 import { Location } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-admin-editor',
   templateUrl: './admin-editor.component.html',
@@ -22,6 +23,7 @@ export class AdminEditorComponent implements OnInit {
     private editorService: EditorService,
     private articlesService: ArticlesService,
     private _location: Location,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -49,6 +51,7 @@ export class AdminEditorComponent implements OnInit {
   updateArticle(id: string, content: Article) {
     this.articlesService.updateArticle(id, content).subscribe((newArticle: Article) => {
       this.article = newArticle;
+      this.toastr.success('Article mis à jour');
       this.backClick();
     });
   }
@@ -68,6 +71,7 @@ export class AdminEditorComponent implements OnInit {
 
   createArticle(article) {
     this.articlesService.createArticle(article).subscribe(() => { });
+    this.toastr.success('Article créé');
     this.backClick();
   }
 

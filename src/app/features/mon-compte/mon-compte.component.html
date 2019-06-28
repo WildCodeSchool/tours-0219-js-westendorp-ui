@@ -5,7 +5,7 @@
       <div class="col-md-6">
 
         <div class="md-form form-group">
-          <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel" name="email" #mail="ngModel" [ngModel] required email>
+          <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel" [hidden]='hiddId' name="email" #mail="ngModel" [ngModel] required email>
           <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormMdp" placeholder="Tapez votre mot de passe actuel" name="password" #mdp="ngModel" [ngModel] required>
           <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="nextFormMdp" placeholder="Vérification, veuillez ressaisir votre mot de passe actuel" name="password" #mdp="ngModel" [ngModel] required>
           <input mdbInput type="password" class="form-control" id="inputPassword4MD" [hidden]="submitFormMdp" placeholder="Tapez votre nouveau mot de passe" name="password" #mdp="ngModel" [ngModel] required>
@@ -25,7 +25,7 @@
       <div class="col-md-6">
 
         <div class="md-form form-group">
-          <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel" name="email" #mail="ngModel" [ngModel] required email>
+          <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel" [hidden]='hiddMdp' name="email" #mail="ngModel" [ngModel] required email>
           <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormId" placeholder="Tapez votre mot de passe" name="password" #mdp="ngModel" [ngModel] required>
           <input mdbInput type="password" class="form-control" id="inputPassword4MD" [hidden]="showFormId" placeholder="Tapez votre nouvel identifiant" name="email" #mdp="ngModel" [ngModel] required>
           <label for="inputEmail4MD"></label>

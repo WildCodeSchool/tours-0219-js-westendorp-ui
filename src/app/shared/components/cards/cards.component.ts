@@ -3,6 +3,7 @@ import { ArticlesService } from 'src/app/core/http/articles.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cards',
@@ -25,6 +26,7 @@ export class CardsComponent implements OnInit {
     private articlesService: ArticlesService,
     private service: LoginService,
     private editorService: EditorService,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -42,11 +44,16 @@ export class CardsComponent implements OnInit {
   }
 
   deleteActivity(id) {
-    this.articlesService.deleteArticle(id).subscribe(
+    const result = confirm('Voulez-vous vraiment supprimer cet article ?');
+    if (result) {
+      this.articlesService.deleteArticle(id).subscribe(
       (articles) => {
+        this.toastr.success('Article supprimé');
         this.deleteCard.emit(id);
       },
     );
+    } else {
+      this.toastr.error('Article non supprimé');
+    }
   }
-
 }

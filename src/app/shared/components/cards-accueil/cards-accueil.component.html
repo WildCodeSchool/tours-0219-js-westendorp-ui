@@ -1,20 +1,22 @@
 <div class="card" [ngClass]="{'no-border': article.rank===1}">
   <div class="card-body">
-      <a routerLink="/admin/editor" >
-        <i class="fa fa-edit"  [hidden]='isLogin' (click)='sendActivity(article, "title")'>Ajouter/modifier un titre</i></a>
+    <a routerLink="/admin/editor">
+      <i class="fa fa-edit" [hidden]='isLogin' (click)='sendActivity(article, "title")'>Ajouter/modifier un
+        titre</i></a>
     <h5 class="card-title" [innerHTML]=" article.title | keepHtml">
     </h5>
     <p class="card-text" [innerHTML]=" article.content | keepHtml"></p>
     <a routerLink="/admin/editor">
-       <button  class="btn btn-outline-dark edit-btn" [hidden]='isLogin' (click)='sendActivity(article, "body")'>Editer le contenu </button>
+      <button class="btn btn-outline-dark edit-btn" [hidden]='isLogin' (click)='sendActivity(article, "body")'>Editer le
+        contenu </button>
     </a>
     <button class="btn btn-outline-danger del-btn" [hidden]='isLogin' (click)='deleteActivity(article._id)'>Supprimer
       l'article</button>
   </div>
-  <div [hidden]='isLogin'> 
-  <label for="rank-{{index}}">Article n°</label>
-  <div class="d-flex justify-content-center">
-    <input class="text-center" name="article-{{i}}" type="number" id="rank-{{index}}" [(ngModel)]="article.rank">
+  <div [hidden]='isLogin'>
+    <label for="rank-{{index}}">Article n°{{ article.rank }}</label>
+    <div class="d-flex justify-content-center">
+      <input class="text-center" name="article-{{i}}" type="number" id="rank-{{index}}" [(ngModel)]="article.rank">
+    </div>
   </div>
-</div>
 </div>

@@ -14,13 +14,13 @@
             <span class="text-danger text-center" *ngIf="mail.errors.required">Le champs "Email" est requis</span>
           </div>
           <p class='pt-4'>Mot de passe :</p>
-          <input type='text' name="mdp" #mdp="ngModel" [ngModel] required>
+          <input type='password' name="mdp" #mdp="ngModel" [ngModel] required>
           <div *ngIf="mdp.errors && f.submitted">
             <span class="text-danger text-center" *ngIf="mdp.errors.required">Le champs "Mot de passe" est requis</span>
           </div>
           <div d-flex justify-content-center>
             <button class='btn btn-outline-primary login-btn' type="submit">connexion</button>
-            <button class='mdp-oublie btn btn-outline-success' (click)="hiddenForm()">mot de passe oublié ?</button>
+            <button class='mdp-oublie btn btn-outline-success' type='button' (click)="hiddenForm()">mot de passe oublié ?</button>
           </div>
         </div>
       </div>

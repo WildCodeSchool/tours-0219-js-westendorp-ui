@@ -45,13 +45,22 @@ export class LoginModalComponent implements OnInit {
     this.islogin.login(f.value.email, f.value.mdp)
       .subscribe(
         (data) => {
+          this.showSuccessLog();
           this.router.navigateByUrl('admin');
           this.modalService.dismissAll();
-        });
+        },
+        (error: any) => { this.showError(); });
+  }
+
+  showSuccessLog() {
+    this.toastr.success('Vous êtes connecté(e)');
+  }
+
+  showError() {
+    this.toastr.error('identifiants incorrects');
   }
 
   checkMail(g) {
-    console.log('cococo');
     this.islogin.checkemail(g.value.email)
     .subscribe(
       (data: string) => {
