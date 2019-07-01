@@ -4,38 +4,6 @@ body {
   background-color: whitesmoke !important;
 }
 
-@media not all and (min-resolution:.001dpcm)
-{ @supports (-webkit-appearance:none) {
-    .safari_only { 
-      -webkit-transition: none !important;
-      -moz-transition: none !important;
-      -o-transition: none !important;
-      transition: none !important;
-      .hide-on-init{
-        visibility: visible
-      }
-      .animated{
-        -webkit-animation-fill-mode: none;
-        animation-fill-mode: none;
-        -webkit-transform-style: none;
-        transform-style: none;
-        &.slow {
-          -webkit-animation: none;
-          /* Safari, Chrome and Opera > 12.1 */
-          -moz-animation: none;
-          /* Firefox < 16 */
-          -ms-animation: nones;
-          /* Internet Explorer */
-          -o-animation: none;
-          /* Opera < 12.1 */
-          animation: none;
-          -webkit-transform:none;
-          transform: none;
-        }
-    }
-}}
-}
-
 .animated {
   visibility: visible !important;
 }
@@ -49,6 +17,8 @@ body {
   animation-fill-mode: both;
   -webkit-transform-style: none;
   transform-style: preserve-3d;
+  backface-visibility: hidden;
+
   &.slow {
     -webkit-animation: fadein 2s;
     /* Safari, Chrome and Opera > 12.1 */
@@ -59,8 +29,10 @@ body {
     -o-animation: fadein 2s;
     /* Opera < 12.1 */
     animation: fadein 2s;
-    -webkit-transform:translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 }
 
@@ -111,7 +83,8 @@ body {
 }
 
 
-@media (print), (prefers-reduced-motion: reduce) {
+@media (print),
+(prefers-reduced-motion: reduce) {
   .animated {
     -webkit-animation-duration: 1ms !important;
     animation-duration: 1ms !important;
@@ -122,6 +95,6 @@ body {
   }
 }
 
-*{
+* {
   font-family: 'Poppins', sans-serif;
 }
