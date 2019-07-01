@@ -6,6 +6,7 @@
       <h5 class="card-title" [innerHTML]=" article.title | keepHtml">
       </h5>
       <p class="card-text" [innerHTML]=" article.content | keepHtml"></p>
+      <div class="container text-center">
       <a routerLink="/admin/editor">
         <button class="btn btn-outline-info edit-btn" [hidden]='isLogin' (click)='sendActivity(article, "body")'>Editer
           le contenu </button>
@@ -13,9 +14,10 @@
       <button class="btn btn-outline-danger del-btn" [hidden]='isLogin' (click)='deleteActivity(article._id)'>Supprimer
         l'article</button>
     </div>
+  </div>
     <div [hidden]='isLogin'>
       <label class="d-flex justify-content-center" for="rank-{{index}}">Article n°{{ article.rank }}</label>
-      <div class="d-flex justify-content-center">
+      <div class="text-center">
         <input class="text-center" name="article-{{i}}" type="number" [(ngModel)]="article.rank">
       </div>
     </div>
