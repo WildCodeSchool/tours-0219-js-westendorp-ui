@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardsAccueilComponent } from './components/cards-accueil/cards-accueil.component';
 import { RouterModule } from '@angular/router';
 import { RankingButtonComponent } from './components/ranking-button/ranking-button.component';
+import { RankingValidatorDirective } from './directives/ranking-validator.directive';
 @NgModule({
   declarations: [
     EscapeHtmlPipe,
@@ -15,6 +16,7 @@ import { RankingButtonComponent } from './components/ranking-button/ranking-butt
     CardsComponent,
     CardsAccueilComponent,
     RankingButtonComponent,
+    RankingValidatorDirective,
   ],
   imports: [
     CommonModule,
