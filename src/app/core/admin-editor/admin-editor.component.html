@@ -5,10 +5,10 @@
       <Button class='btn btn-success mt-3' (click)='createArticle(this.article)'>Enregistrer</Button>
     </div>
     <div [ngClass]="{'btn-cache': hiddenBtn}" class='col-3' [hidden]='hideCreate'>
-      <Button class='btn btn-primary mt-3' (click)='goToContent()'>Modifier contenu</Button>
+      <Button class='btn btn-primary mt-3 mr-5' (click)='goToContent()'>Modifier contenu</Button>
     </div>
     <div class='col-2'>
-      <Button class='btn btn-danger mt-3' (click)='backClick()'>Annuler</Button>
+      <Button class='btn btn-danger mt-3 ml-4' (click)='backClick()'>Annuler</Button>
     </div>
     <div class='col-6 mt-4' [hidden]='hideCreate'>
       <label class='list-section' for="section-select">Choisissez une section:</label>
