@@ -46,7 +46,7 @@ export class CardsAccueilComponent implements OnInit {
       this.articlesService.deleteArticle(id).subscribe(
         (articles) => {
           this.toastr.success('Article supprimé');
-          this.deleteCard.emit([id, index]);
+          this.deleteCard.emit([id, index + 1]);
         },
       );
     } else {

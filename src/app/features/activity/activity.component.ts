@@ -12,11 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ActivityComponent implements OnInit {
 
+  public lastRank: number;
   public isLogin = !this.service.isLogin();
-  newArticle: Article = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
-  articlesList: Article[] = [];
+  public newArticle: Article;
+  public articlesList: Article[] = [];
   public isSameRank = false;
-  topArticleIndex: number;
 
   constructor(
     private service: LoginService,
@@ -28,10 +28,8 @@ export class ActivityComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getArticlesBySections('activity').subscribe((articles: Article[]) => {
       this.articlesList = articles;
-      this.topArticleIndex = this.articlesList.findIndex(a => a.rank === 1);
-      if (this.topArticleIndex < 0 && this.articlesList.length > 0) {
-        this.topArticleIndex = 0;
-      }
+      this.lastRank = articles[articles.length - 1].rank + 1;
+      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
     });
   }
 
@@ -39,6 +37,7 @@ export class ActivityComponent implements OnInit {
     this.editorService.article = this.newArticle;
     this.editorService.typeOfContent = 'title';
     this.editorService.typeEdition = true;
+    console.log(this.lastRank);
   }
 
   deleteCard(id) {
