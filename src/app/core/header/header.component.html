@@ -48,6 +48,8 @@
 
 
 <div class="container shadow p-3 bg-white rounded">
-  <router-outlet></router-outlet>
+  <main [@fadeAnimation]="getRouterOutletState(o)">
+    <router-outlet #o="outlet"></router-outlet>
+  </main>
 </div>
 <app-footer></app-footer>
