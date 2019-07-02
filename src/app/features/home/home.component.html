@@ -4,8 +4,8 @@
   <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
 <div class="cards1 " *ngFor="let article of articlesList; let i = index" >
-  <app-cards-accueil class="card m-5 hide-on-init" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"
-    [ngClass]="{ 'no-border': article.rank===1}" animateOnScroll animationName="animated fadeIn slow"></app-cards-accueil>
+  <app-cards-accueil class="card m-5" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"
+    [ngClass]="{ 'no-border': article.rank===1}"></app-cards-accueil>
 </div>
 <h2 class="d-flex justify-content-center m-5">Rejoignez notre réseau !</h2>
 <div class="d-flex justify-content-around box scale">
