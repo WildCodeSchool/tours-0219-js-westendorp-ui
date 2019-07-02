@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ActualityComponent implements OnInit {
 
   public isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
+  newArticle: Article = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
   articlesList: Article[] = [];
   public isSameRank = false;
   topArticleIndex: number;
@@ -41,8 +41,8 @@ export class ActualityComponent implements OnInit {
     this.editorService.typeEdition = true;
   }
 
-  deleteCard(index) {
-    this.articlesList.splice(index, 1);
+  deleteCard(id) {
+    this.articlesList.splice(id[1], 1);
   }
 
   onUpdateRank($event) {
@@ -66,6 +66,16 @@ export class ActualityComponent implements OnInit {
         this.isSameRank = false;
       });
     }
+  }
+
+  compare(a: Article, b: Article) {
+    let comparison = 0;
+    if (a.rank > b.rank) {
+      comparison = 1;
+    } else if (a.rank < b.rank) {
+      comparison = -1;
+    }
+    return comparison;
   }
 
 }

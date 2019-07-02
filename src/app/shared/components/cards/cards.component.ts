@@ -42,15 +42,15 @@ export class CardsComponent implements OnInit {
     this.editorService.typeEdition = false;
   }
 
-  deleteActivity(id) {
+  deleteActivity(id, index) {
     const result = confirm('Voulez-vous vraiment supprimer cet article ?');
     if (result) {
       this.articlesService.deleteArticle(id).subscribe(
-      (articles) => {
-        this.toastr.success('Article supprimé');
-        this.deleteCard.emit(id);
-      },
-    );
+        (articles) => {
+          this.toastr.success('Article supprimé');
+          this.deleteCard.emit([id, index]);
+        },
+      );
     } else {
       this.toastr.error('Article non supprimé');
     }

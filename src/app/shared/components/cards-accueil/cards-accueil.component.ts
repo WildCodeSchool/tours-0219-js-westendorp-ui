@@ -16,7 +16,6 @@ export class CardsAccueilComponent implements OnInit {
 
   @Input() public article: Article;
   @Input() public index;
-
   @Output()
   deleteCard: EventEmitter<any> = new EventEmitter();
 
@@ -39,10 +38,10 @@ export class CardsAccueilComponent implements OnInit {
     this.editorService.typeEdition = false;
   }
 
-  deleteActivity(id) {
+  deleteActivity(id, index) {
     this.articlesService.deleteArticle(id).subscribe(
       (articles) => {
-        this.deleteCard.emit(id);
+        this.deleteCard.emit([id, index]);
       },
     );
   }

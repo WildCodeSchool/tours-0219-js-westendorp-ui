@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class PresentationComponent implements OnInit {
 
   public isLogin = !this.service.isLogin();
-  public newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
+  newArticle: Article = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
   public articlesList: Article[] = [];
   public isSameRank = false;
   public topArticleIndex: number;
@@ -42,7 +42,7 @@ export class PresentationComponent implements OnInit {
   }
 
   deleteCard(id) {
-    this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
+    this.articlesList.splice(id[1], 1);
   }
 
   onUpdateRank($event) {

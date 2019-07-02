@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class TimelineComponent implements OnInit {
 
   isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'nouveau titre', 'nouveau texte', undefined, '', '', '', null);
+  newArticle: Article = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
   articlesList: Article[] = [];
   topArticleIndex: number;
   public isSameRank = false;
@@ -38,7 +38,7 @@ export class TimelineComponent implements OnInit {
   }
 
   deleteCard(id) {
-    this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
+    this.articlesList.splice(id[1], 1);
   }
 
   onUpdateRank($event) {
