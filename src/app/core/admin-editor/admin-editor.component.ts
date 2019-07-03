@@ -18,13 +18,22 @@ export class AdminEditorComponent implements OnInit {
   hideCreate: boolean;
   hideSubmit: boolean;
   hiddenBtn = true;
+  config: any;
 
   constructor(
     private editorService: EditorService,
     private articlesService: ArticlesService,
     private _location: Location,
     private toastr: ToastrService,
-  ) { }
+  ) {
+    this.config = {
+      height: 300,
+      skin: 'kama',
+      extraPlugins: 'image2,autogrow,magicline,horizontalrule,scayt,uploadimage,uploadwidget,uploadfile',
+      removePlugins: 'image',
+    };
+    this.config.uploadUrl = 'https://ibb.co/7KzKmgG';
+  }
 
   ngOnInit() {
     this.article = this.editorService.article;
@@ -70,9 +79,12 @@ export class AdminEditorComponent implements OnInit {
   }
 
   createArticle(article) {
-    this.articlesService.createArticle(article).subscribe(() => { });
-    this.toastr.success('Article créé');
-    this.backClick();
+    this.articlesService.createArticle(article).subscribe((newArticle: Article) => {
+      if (newArticle) {
+        this.toastr.success('Article créé');
+        this.backClick();
+      }
+    });
   }
 
   onFilesAdded(files: File[]) {

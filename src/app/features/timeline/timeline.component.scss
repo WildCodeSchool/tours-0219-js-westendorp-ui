@@ -57,7 +57,7 @@ header {
 
 	&::before {
     content: '';
-		background: white  ;
+		background: gray  ;
 		width: 5px;
 		height: 90%;
 		position: absolute;
@@ -73,8 +73,9 @@ header {
 	&:nth-child(even) {
 
 		.timeline-content {
-			float: right;
-			padding: 40px 30px 10px 30px;
+      float: right;
+      padding-top: 20px;
+			// padding: 40px 30px 10px 30px;
 
 			.date {
 				right: auto;
@@ -104,9 +105,9 @@ header {
 
 
 .timeline-content {
+  padding-top: 20px;
 	position: relative;
 	width: 45%;
-	padding: 10px 30px;
 	border-radius: 4px;
 	background: #f5f5f5;
 	box-shadow: 30px 25px 35px -15px black;
@@ -255,4 +256,15 @@ blockquote {
 		}
 	}
 
+}
+
+.box:hover {
+  transform: scale(1.1);
+  border-radius: 50%;
+}
+.scale {
+  transition: all 0.5s ease-in-out;
+}
+.scale:hover {
+  transition: all 1s ease-in-out;
 }

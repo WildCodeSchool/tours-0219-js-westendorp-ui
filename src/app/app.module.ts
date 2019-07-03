@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+
+export function jwtTokenGetter() {
+  return sessionStorage.getItem('token');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     JwtModule.forRoot({
       config: {
         whitelistedDomains: ['http://localhost:3000'],
-        tokenGetter: () => {
-          return sessionStorage.getItem('token');
-        },
+        tokenGetter: jwtTokenGetter,
       },
     }),
     BrowserAnimationsModule,

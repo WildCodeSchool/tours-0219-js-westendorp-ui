@@ -13,3 +13,15 @@ button {
 .no-border {
   border: none;
 }
+
+.box:hover {
+  transform: scale(1.15);
+  border-radius: 50%;
+}
+.scale {
+  transition: all 0.5s ease-in-out;
+}
+.scale:hover {
+  transition: all 1s ease-in-out;
+}
+

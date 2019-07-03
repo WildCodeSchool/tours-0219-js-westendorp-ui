@@ -1,45 +1,23 @@
-import { Component, OnInit,  HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { LoginService } from 'src/app/core/services/login.service';
 import { EditorService } from 'src/app/core/services/editor.service';
 import { Article } from 'src/app/shared/models/article.model';
 import { ArticlesService } from 'src/app/core/http/articles.service';
 import { ToastrService } from 'ngx-toastr';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [
-    trigger('scrollAnimation', [
-      state('show', style({
-        opacity: 1,
-        transform: 'translateX(0)',
-      })),
-      state('hide',   style({
-        opacity: 0,
-        transform: 'translateX(-100%)',
-      })),
-      transition('show => hide', animate('1000ms ease-out')),
-      transition('hide => show', animate('1500ms ease-in')),
-    ]),
-  ],
 })
 
 export class HomeComponent implements OnInit {
 
-  state = 'hide';
   public isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
+  newArticle: Article;
   articlesList: Article[] = [];
   public isSameRank = false;
-  topArticleIndex: number;
+  public lastRank: number;
 
   constructor(
     private service: LoginService,
@@ -52,10 +30,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getArticlesBySections('home').subscribe((articles: Article[]) => {
       this.articlesList = articles;
-      this.topArticleIndex = this.articlesList.findIndex(a => a.rank === 1);
-      if (this.topArticleIndex < 0 && this.articlesList.length > 0) {
-        this.topArticleIndex = 0;
-      }
+      this.lastRank = articles[articles.length - 1].rank + 1;
+      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
     });
   }
 
@@ -65,20 +41,8 @@ export class HomeComponent implements OnInit {
     this.editorService.typeEdition = true;
   }
 
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const componentPosition = this.el.nativeElement.offsetTop;
-    const scrollPosition = window.pageYOffset;
-
-    if (scrollPosition >= componentPosition) {
-      this.state = 'show';
-    } else {
-    }
-
-  }
-
   deleteCard(id) {
-    this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
+    this.articlesList.splice(id, 1);
   }
 
   onUpdateRank($event) {

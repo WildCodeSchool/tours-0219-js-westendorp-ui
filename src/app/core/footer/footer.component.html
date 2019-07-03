@@ -1,21 +1,53 @@
-<footer class="d-flex-justify-content-between">
-  <div class='container-fluid'>
-    <div class='row'>
-      <div class="link col-4">
-        <a href="">Plan du site</a><br>
-        <a href="">Mentions legale</a>
+<footer class="container-fluid d-flex  justify-content-center mt-4">
+  <div class="row mt-3">
+    <div class="col-sm-3">
+      <div class="row justify-content-md-start justify-content-center">
+        <h3>CE Westendorp</h3>
       </div>
-      <div class="copyright col-4">
-        <p>Contactez nous :
-          Tel: 02.38.44.33.42</p><p> Email : crew@ce-westendorp.com</p>
-          <p>© 2019 Copyright:
-            <a href="https://westendorp.com"> Westendorp.com</a></p>
-          </div>
-          <div class='col-4 address'>
-          <p>Z.I. des Sablons, Chemin de l'Orange</p>
-              <p>45130, Meung sur Loire, France</p>
-          <app-login-modal></app-login-modal>
+      <div class="row justify-content-md-start justify-content-center">
+        <div>
+          <a [routerLink]="[ '/home' ]">Accueil| </a>
+          <a [routerLink]="[ '/presentation' ]">Présentation| </a>
+          <a [routerLink]="[ '/activites' ]">Nos activités| </a>
         </div>
+        <div>
+          <a [routerLink]="[ '/produits' ]">Nos produits| </a>
+          <a [routerLink]="[ '/techniques' ]">Techniques et réglementations| </a>
+          <a [routerLink]="[ '/actualites' ]">Actualités| </a>
         </div>
       </div>
-    </footer>
+    </div>
+
+
+    <div class="col-sm footer-center ">
+      <div class="row">
+      <div class="col-sm text-center">
+        <i class="fa fa-map-marker"></i>
+        <p>Z.I. des Sablons, Chemin de l'Orange</p>
+        <p>45130, Meung sur Loire, France</p>
+      </div>
+      <div class="col-sm-3 text-center">
+      <i class="fa fa-phone"></i>
+        <p>02.38.44.33.42</p>
+      </div>
+      <div class="col-sm-4 text-center">
+      <i class="fa fa-envelope"></i>
+        <p><a href="mailto:crew@ce-westendorp.com">crew@ce-westendorp.com</a></p>
+    </div>
+  </div>
+  </div>
+
+
+    <div class="col-sm-2">
+      <div class="row justify-content-center">
+        <p>Plan du site</p>
+      </div>
+      <div class="row justify-content-center">
+        <p> Mentions légales</p>
+      </div>
+      <div class="row justify-content-center">
+        <app-login-modal></app-login-modal>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -12,12 +12,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CardsComponent implements OnInit {
 
-  htmlStr: string;
-  isLogin = !this.service.isLogin();
-  articlesList: Article[] = [];
+  public htmlStr: string;
+  public isLogin = !this.service.isLogin();
 
   @Input() public article: Article;
-  @Input() public index;
+  @Input() public index: number;
 
   @Output()
   deleteCard: EventEmitter<any> = new EventEmitter();
@@ -43,15 +42,15 @@ export class CardsComponent implements OnInit {
     this.editorService.typeEdition = false;
   }
 
-  deleteActivity(id) {
+  deleteActivity(id, index) {
     const result = confirm('Voulez-vous vraiment supprimer cet article ?');
     if (result) {
       this.articlesService.deleteArticle(id).subscribe(
-      (articles) => {
-        this.toastr.success('Article supprimé');
-        this.deleteCard.emit(id);
-      },
-    );
+        (articles) => {
+          this.toastr.success('Article supprimé');
+          this.deleteCard.emit(index + 1);
+        },
+      );
     } else {
       this.toastr.error('Article non supprimé');
     }
