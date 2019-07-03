@@ -1,8 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ArticlesService } from 'src/app/core/http/articles.service';
-import { Article } from 'src/app/shared/models/article.model';
-import { LoginService } from 'src/app/core/services/login.service';
-import { EditorService } from 'src/app/core/services/editor.service';
+import { ArticlesService } from '../../../core/http/articles.service';
+import { Article } from '../../../shared/models/article.model';
+import { LoginService } from '../../../core/services/login.service';
+import { EditorService } from '../../../core/services/editor.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

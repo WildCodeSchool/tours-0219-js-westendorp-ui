@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Article } from '../../models/article.model';
-import { ArticlesService } from 'src/app/core/http/articles.service';
+import { ArticlesService } from '../../../core/http/articles.service';
 
 @Component({
   selector: 'app-ranking-button',
