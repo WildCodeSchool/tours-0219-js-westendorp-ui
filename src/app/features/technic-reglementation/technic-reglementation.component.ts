@@ -26,7 +26,7 @@ export class TechnicReglementationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticlesBySections('products').subscribe((articles: Article[]) => {
+    this.articlesService.getArticlesBySections('technic-reglementation').subscribe((articles: Article[]) => {
       this.articlesList = articles;
       this.lastRank = articles[articles.length - 1].rank + 1;
       this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
