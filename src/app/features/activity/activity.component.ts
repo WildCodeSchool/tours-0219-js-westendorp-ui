@@ -29,7 +29,8 @@ export class ActivityComponent implements OnInit {
     this.articlesService.getArticlesBySections('activity').subscribe((articles: Article[]) => {
       this.articlesList = articles;
       this.lastRank = articles[articles.length - 1].rank + 1;
-      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
+      this.newArticle = new Article(
+        undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'activity', '', this.lastRank);
     });
   }
 

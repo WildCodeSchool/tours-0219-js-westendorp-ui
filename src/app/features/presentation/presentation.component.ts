@@ -29,7 +29,8 @@ export class PresentationComponent implements OnInit {
     this.articlesService.getArticlesBySections('presentation').subscribe((articles: Article[]) => {
       this.articlesList = articles;
       this.lastRank = articles[articles.length - 1].rank + 1;
-      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
+      this.newArticle = new Article(
+        undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'presentation', '', this.lastRank);
     });
   }
 
@@ -40,7 +41,7 @@ export class PresentationComponent implements OnInit {
   }
 
   deleteCard(id) {
-    this.articlesList.splice(id, 1);
+    this.articlesList.splice(id - 1, 1);
   }
 
   onUpdateRank($event) {
