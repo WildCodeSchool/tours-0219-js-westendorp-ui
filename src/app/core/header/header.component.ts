@@ -8,7 +8,8 @@ import { fadeAnimation } from './animation';
   animations: [fadeAnimation]
 })
 export class HeaderComponent implements OnInit {
-
+  
+  isShown = false;
 
   constructor() { }
   public getRouterOutletState(outlet) {
