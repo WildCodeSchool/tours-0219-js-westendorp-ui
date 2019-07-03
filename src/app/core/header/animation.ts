@@ -18,7 +18,7 @@ export const fadeAnimation = trigger('fadeAnimation', [
         left: 0,
         bottom: 0,
         width: '100%',
-        minHeight: '100vh'
+        minHeight: '100vh',
       }),
     ]),
     query(':leave', animateChild(), { optional: true }),

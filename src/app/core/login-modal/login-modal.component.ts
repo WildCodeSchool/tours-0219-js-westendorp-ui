@@ -31,7 +31,7 @@ export class LoginModalComponent implements OnInit {
     this.modalService.open(content, { size: 'lg' });
   }
 
-  close(content){
+  close(content) {
     this.modalService.dismissAll(content);
   }
 

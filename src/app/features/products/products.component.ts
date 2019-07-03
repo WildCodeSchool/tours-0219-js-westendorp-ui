@@ -29,7 +29,8 @@ export class ProductsComponent implements OnInit {
     this.articlesService.getArticlesBySections('products').subscribe((articles: Article[]) => {
       this.articlesList = articles;
       this.lastRank = articles[articles.length - 1].rank + 1;
-      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'products', '', this.lastRank);
+      this.newArticle = new Article(
+        undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'products', '', this.lastRank);
     });
   }
 

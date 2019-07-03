@@ -16,22 +16,22 @@ import {
 })
 export class HeaderComponent implements OnInit {
   show = true;
-  
-  
+  isShown = false;
+
   constructor(private router: Router) {
     router.events.subscribe((event: Event) => {
       console.log(event);
-        
+
       if (event instanceof NavigationStart) {
         this.show = false;
-        
+
       }
 
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           this.show = true;
-        },300);
-        
+        },         300);
+
       }
 
       if (event instanceof NavigationError) {
@@ -45,5 +45,5 @@ export class HeaderComponent implements OnInit {
     return outlet.isActivated ? outlet.activatedRoute : '';
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

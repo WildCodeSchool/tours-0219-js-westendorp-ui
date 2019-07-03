@@ -39,7 +39,7 @@ const routes: Routes = [
       { path: 'techniques', component: TechnicReglementationComponent },
       { path: 'produits', component: ProductsComponent },
       { path: 'actualites', component: ActualityComponent },
-      { path: 'activites', component: ActivityComponent},
+      { path: 'activites', component: ActivityComponent },
       { path: 'login', component: LoginModalComponent },
     ],
   },
