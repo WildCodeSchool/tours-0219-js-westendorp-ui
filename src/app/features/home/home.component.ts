@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   }
 
   deleteCard(id) {
-    this.articlesList.splice(id[1], 1);
+    this.articlesList.splice(id, 1);
   }
 
   onUpdateRank($event) {
