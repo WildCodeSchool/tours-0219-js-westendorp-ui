@@ -13,10 +13,10 @@ import { ToastrService } from 'ngx-toastr';
 export class TechnicReglementationComponent implements OnInit {
 
   public isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', null);
-  articlesList: Article[] = [];
+  public newArticle: Article;
+  public articlesList: Article[] = [];
   public isSameRank = false;
-  topArticleIndex: number;
+  public lastRank: number;
 
   constructor(
     private service: LoginService,
@@ -26,12 +26,10 @@ export class TechnicReglementationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticlesBySections('technic-reglementation').subscribe((articles: Article[]) => {
+    this.articlesService.getArticlesBySections('products').subscribe((articles: Article[]) => {
       this.articlesList = articles;
-      this.topArticleIndex = this.articlesList.findIndex(a => a.rank === 1);
-      if (this.topArticleIndex < 0 && this.articlesList.length > 0) {
-        this.topArticleIndex = 0;
-      }
+      this.lastRank = articles[articles.length - 1].rank + 1;
+      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
     });
   }
 
@@ -42,7 +40,7 @@ export class TechnicReglementationComponent implements OnInit {
   }
 
   deleteCard(id) {
-    this.articlesList.splice(this.articlesList.findIndex(a => a.id === id), 1);
+    this.articlesList.splice(id, 1);
   }
 
   onUpdateRank($event) {

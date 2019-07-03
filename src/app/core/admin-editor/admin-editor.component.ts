@@ -79,9 +79,12 @@ export class AdminEditorComponent implements OnInit {
   }
 
   createArticle(article) {
-    this.articlesService.createArticle(article).subscribe(() => { });
-    this.toastr.success('Article créé');
-    this.backClick();
+    this.articlesService.createArticle(article).subscribe((newArticle: Article) => {
+      if (newArticle) {
+        this.toastr.success('Article créé');
+        this.backClick();
+      }
+    });
   }
 
   onFilesAdded(files: File[]) {

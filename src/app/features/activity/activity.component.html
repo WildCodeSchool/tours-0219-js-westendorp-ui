@@ -3,7 +3,7 @@
   <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
 </a>
 <div class="m-5">
-  <app-cards *ngIf="topArticleIndex > -1" [article]='articlesList[topArticleIndex]' [index]="topArticleIndex"
+  <app-cards [article]='articlesList[0]'
     (deleteCard)="deleteCard($event)"></app-cards>
 </div>
 <div class="d-flex justify-content-around m-5">
@@ -22,8 +22,8 @@
 </div>
 </div>
 <div class="row">
-    <ng-container *ngFor="let article of articlesList; let i = index">
-      <app-cards class="col-sm-4" *ngIf="i !== topArticleIndex" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+    <ng-container *ngFor="let article of articlesList | slice:1; let i = index;">
+      <app-cards class="col-sm-4" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
     </ng-container>
 </div>
 

@@ -11,7 +11,7 @@
       <button class="btn btn-outline-dark edit-btn" [hidden]='isLogin' (click)='sendActivity(article, "body")'>Editer le
         contenu </button>
     </a>
-    <button class="btn btn-outline-danger del-btn" [hidden]='isLogin' (click)='deleteActivity(article.id)'>Supprimer
+    <button class="btn btn-outline-danger del-btn" [hidden]='isLogin' (click)='deleteActivity(article.id, index)'>Supprimer
       l'article</button>
   </div>
 </div>

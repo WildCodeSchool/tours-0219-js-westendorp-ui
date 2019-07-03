@@ -13,10 +13,10 @@ import { ToastrService } from 'ngx-toastr';
 export class ActualityComponent implements OnInit {
 
   public isLogin = !this.service.isLogin();
-  newArticle: Article = new Article('', 'Titre de l\'article', 'Contenu de l\'article', undefined ,  '', '',  '', null);
-  articlesList: Article[] = [];
+  public newArticle: Article;
+  public articlesList: Article[] = [];
   public isSameRank = false;
-  topArticleIndex: number;
+  public lastRank: number;
 
   constructor(
     private service: LoginService,
@@ -28,10 +28,8 @@ export class ActualityComponent implements OnInit {
   ngOnInit() {
     this.articlesService.getArticlesBySections('actuality').subscribe((articles: Article[]) => {
       this.articlesList = articles;
-      this.topArticleIndex = this.articlesList.findIndex(a => a.rank === 1);
-      if (this.topArticleIndex < 0 && this.articlesList.length > 0) {
-        this.topArticleIndex = 0;
-      }
+      this.lastRank = articles[articles.length - 1].rank + 1;
+      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
     });
   }
 
@@ -41,8 +39,8 @@ export class ActualityComponent implements OnInit {
     this.editorService.typeEdition = true;
   }
 
-  deleteCard(index) {
-    this.articlesList.splice(index, 1);
+  deleteCard(id) {
+    this.articlesList.splice(id, 1);
   }
 
   onUpdateRank($event) {
@@ -66,6 +64,16 @@ export class ActualityComponent implements OnInit {
         this.isSameRank = false;
       });
     }
+  }
+
+  compare(a: Article, b: Article) {
+    let comparison = 0;
+    if (a.rank > b.rank) {
+      comparison = 1;
+    } else if (a.rank < b.rank) {
+      comparison = -1;
+    }
+    return comparison;
   }
 
 }
