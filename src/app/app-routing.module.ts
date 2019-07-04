@@ -20,12 +20,36 @@ const routes: Routes = [
     path: 'admin', canActivate: [AuthGuard], component: NavbarAdminComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full', canActivate: [AuthGuard] },
-      { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-      { path: 'presentation', component: PresentationComponent, canActivate: [AuthGuard] },
-      { path: 'techniques', component: TechnicReglementationComponent, canActivate: [AuthGuard] },
-      { path: 'produits', component: ProductsComponent, canActivate: [AuthGuard] },
-      { path: 'actualites', component: ActualityComponent, canActivate: [AuthGuard] },
-      { path: 'activites', component: ActivityComponent, canActivate: [AuthGuard] },
+      {
+        path: 'home', component: HomeComponent, canActivate: [AuthGuard],
+        data: { query: 'home' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'presentation', component: PresentationComponent, canActivate: [AuthGuard],
+        data: { query: 'presentation' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'techniques', component: TechnicReglementationComponent, canActivate: [AuthGuard],
+        data: { query: 'technic-reglementation' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'produits', component: ProductsComponent, canActivate: [AuthGuard],
+        data: { query: 'products' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'actualites', component: ActualityComponent, canActivate: [AuthGuard],
+        data: { query: 'actuality' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'activites', component: ActivityComponent, canActivate: [AuthGuard],
+        data: { query: 'activity' },
+        resolve: { articles: ResolverService },
+      },
       { path: 'editor', component: AdminEditorComponent, canActivate: [AuthGuard] },
       { path: 'profile', component: MonCompteComponent, canActivate: [AuthGuard] },
     ],
