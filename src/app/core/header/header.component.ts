@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
   show = true;
   isShown = false;
 
-  constructor(private router: Router) {
+  constructor(router: Router) {
     router.events.subscribe((event: Event) => {
       if (event instanceof NavigationStart) {
         this.show = false;
@@ -28,9 +28,6 @@ export class HeaderComponent implements OnInit {
         setTimeout(() => {
           this.show = true;
         },         300);
-      }
-
-      if (event instanceof NavigationError) {
       }
     });
   }
