@@ -3,9 +3,13 @@ footer{
   color: antiquewhite;
 }
 
-a{
+a:hover{
   text-decoration: none;
-  color: antiquewhite;
+  color: grey;
+  
+}
+a{
+  color:white;
 }
 
 .footer-center {
@@ -26,4 +30,10 @@ a{
     font-size: 17px;
     line-height: 38px;
   }
+}
+
+.mention{
+  position: relative;
+  top:20px;
+
 }

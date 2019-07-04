@@ -6,14 +6,14 @@
       </div>
       <div class="row justify-content-md-start justify-content-center">
         <div>
-          <a [routerLink]="[ '/home' ]">Accueil| </a>
-          <a [routerLink]="[ '/presentation' ]">Présentation| </a>
-          <a [routerLink]="[ '/activites' ]">Nos activités| </a>
+          <a [routerLink]="[ '/home' ]">Accueil | </a>
+          <a [routerLink]="[ '/presentation' ]">Présentation | </a>
+          <a [routerLink]="[ '/activites' ]">Nos activités | </a>
         </div>
         <div>
-          <a [routerLink]="[ '/produits' ]">Nos produits| </a>
-          <a [routerLink]="[ '/techniques' ]">Techniques et réglementations| </a>
-          <a [routerLink]="[ '/actualites' ]">Actualités| </a>
+          <a [routerLink]="[ '/produits' ]">Nos produits | </a>
+          <a [routerLink]="[ '/techniques' ]">Techniques et réglementations | </a>
+          <a [routerLink]="[ '/actualites' ]">Actualités | </a>
         </div>
       </div>
     </div>
@@ -39,14 +39,11 @@
 
 
     <div class="col-sm-2">
-      <div class="row justify-content-center">
-        <p>Plan du site</p>
-      </div>
-      <div class="row justify-content-center">
+        <div class="row justify-content-center">
+            <app-login-modal></app-login-modal>
+          </div>
+      <div class="row justify-content-center mention">
         <p><a href="assets/mentions-legales-westendorp.pdf">Mentions légales</a></p>
-      </div>
-      <div class="row justify-content-center">
-        <app-login-modal></app-login-modal>
       </div>
     </div>
   </div>
