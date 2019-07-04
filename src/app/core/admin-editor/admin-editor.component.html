@@ -1,28 +1,28 @@
 <ckeditor name="editor1" [config]="config" [(ngModel)]="article[type]"></ckeditor>
 <div class='container d-flex justify-content-center'>
   <div class='row'>
-    <div class='col-3' [hidden]='hideSubmit'>
-      <Button class='btn btn-success mt-3 mr-5' (click)='createArticle(this.article)'>Enregistrer</Button>
+    <div class='col-4' [hidden]='hideSubmit'>
+      <Button class='btn btn-success mt-3 register' (click)='createArticle(this.article)'>Enregistrer</Button>
     </div>
-    <div [ngClass]="{'btn-cache': hiddenBtn}" class='col-3' [hidden]='hideCreate'>
-      <Button class='btn btn-primary mt-3 mr-5' (click)='goToContent()'>Modifier contenu</Button>
+    <div class='col-3' [hidden]='hideCreate'>
+      <Button class='btn btn-primary mt-3' (click)='goToContent()'>Continuer</Button>
     </div>
     <div class='col-2'>
-      <Button class='btn btn-danger mt-3 ml-5' (click)='backClick()'>Annuler</Button>
+      <Button class='btn btn-danger mt-3 annuler' (click)='backClick()'>Annuler</Button>
     </div>
-    <div class='col-6 mt-4' [hidden]='hideCreate'>
-      <label class='list-section' for="section-select">Choisissez une section:</label>
+    <div class='col-6 selection' [hidden]='hideCreate'>
+      <label class='list-section' for="section-select">Section selectionné:</label>
       <select id="section-select" [(ngModel)]="article.section" (change)="enableNextStep()">
         <option value=""> Quelle section ?</option>
-        <option value="activity">Activité</option>
-        <option value="actuality">Actualité</option>
         <option value="home">Accueil</option>
         <option value="presentation">Présentation</option>
+        <option value="activity">Activité</option>
         <option value="products">Produits</option>
         <option value="technic-reglementation">Technique et réglementation</option>
+        <option value="actuality">Actualité</option>
       </select>
     </div>
   </div>
-  <Button class='btn btn-success mb-5 mt-3 ml-4' [hidden]='hideModif'
+  <Button class='btn btn-success mb-5 mt-3' [hidden]='hideModif'
     (click)='updateArticle( this.article.id, this.article)'>Modifier</Button>
 </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/core/services/login.service';
-import { Login } from 'src/app/shared/models/login.model';
-import { count } from 'rxjs/operators';
+import { LoginService } from '../../core/services/login.service';
+import { Login } from '../../shared/models/login.model';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 

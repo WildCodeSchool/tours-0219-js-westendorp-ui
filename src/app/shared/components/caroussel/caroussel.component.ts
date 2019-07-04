@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MediasService } from 'src/app/core/http/medias.service';
+import { MediasService } from '../../../core/http/medias.service';
 import { Media } from '../../models/media.model';
 
 @Component({

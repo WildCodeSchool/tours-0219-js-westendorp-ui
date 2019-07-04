@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from 'src/app/core/services/login.service';
-import { EditorService } from 'src/app/core/services/editor.service';
-import { Article } from 'src/app/shared/models/article.model';
-import { ArticlesService } from 'src/app/core/http/articles.service';
+import { LoginService } from '../../core/services/login.service';
+import { EditorService } from '../../core/services/editor.service';
+import { Article } from '../../shared/models/article.model';
+import { ArticlesService } from '../../core/http/articles.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -29,7 +29,8 @@ export class PresentationComponent implements OnInit {
     this.articlesService.getArticlesBySections('presentation').subscribe((articles: Article[]) => {
       this.articlesList = articles;
       this.lastRank = articles[articles.length - 1].rank + 1;
-      this.newArticle = new Article(undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', '', '', this.lastRank);
+      this.newArticle = new Article(
+        undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'presentation', '', this.lastRank);
     });
   }
 
@@ -40,7 +41,7 @@ export class PresentationComponent implements OnInit {
   }
 
   deleteCard(id) {
-    this.articlesList.splice(id, 1);
+    this.articlesList.splice(id - 1, 1);
   }
 
   onUpdateRank($event) {
