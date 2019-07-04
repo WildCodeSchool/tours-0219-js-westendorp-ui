@@ -20,18 +20,14 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) {
     router.events.subscribe((event: Event) => {
-      console.log(event);
-
       if (event instanceof NavigationStart) {
         this.show = false;
-
       }
 
       if (event instanceof NavigationEnd) {
         setTimeout(() => {
           this.show = true;
         },         300);
-
       }
 
       if (event instanceof NavigationError) {

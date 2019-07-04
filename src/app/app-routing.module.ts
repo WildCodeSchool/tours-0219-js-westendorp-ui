@@ -12,6 +12,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AdminEditorComponent } from './core/admin-editor/admin-editor.component';
 import { MonCompteComponent } from './features/mon-compte/mon-compte.component';
+import { ResolverService } from './core/resolvers/resolver.service';
 
 const routes: Routes = [
 
@@ -34,12 +35,36 @@ const routes: Routes = [
     path: '', component: HeaderComponent,
     children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'presentation', component: PresentationComponent },
-      { path: 'techniques', component: TechnicReglementationComponent },
-      { path: 'produits', component: ProductsComponent },
-      { path: 'actualites', component: ActualityComponent },
-      { path: 'activites', component: ActivityComponent },
+      {
+        path: 'home', component: HomeComponent,
+        data: { query: 'home' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'presentation', component: PresentationComponent,
+        data: { query: 'presentation' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'techniques', component: TechnicReglementationComponent,
+        data: { query: 'technic-reglementation' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'produits', component: ProductsComponent,
+        data: { query: 'products' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'actualites', component: ActualityComponent,
+        data: { query: 'actuality' },
+        resolve: { articles: ResolverService },
+      },
+      {
+        path: 'activites', component: ActivityComponent,
+        data: { query: 'activity' },
+        resolve: { articles: ResolverService },
+      },
       { path: 'login', component: LoginModalComponent },
     ],
   },

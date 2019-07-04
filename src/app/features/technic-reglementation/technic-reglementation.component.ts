@@ -4,6 +4,7 @@ import { EditorService } from '../../core/services/editor.service';
 import { Article } from '../../shared/models/article.model';
 import { ArticlesService } from '../../core/http/articles.service';
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-technic-reglementation',
@@ -23,12 +24,13 @@ export class TechnicReglementationComponent implements OnInit {
     private editorService: EditorService,
     private articlesService: ArticlesService,
     private toastrService: ToastrService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.articlesService.getArticlesBySections('technic-reglementation').subscribe((articles: Article[]) => {
-      this.articlesList = articles;
-      this.lastRank = articles[articles.length - 1].rank + 1;
+    this.route.data.subscribe((data: Data) => {
+      this.articlesList = data.articles;
+      this.lastRank = data.articles[data.articles.length - 1].rank + 1;
       this.newArticle = new Article(
         undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'technic-reglementation', '', this.lastRank);
     });
