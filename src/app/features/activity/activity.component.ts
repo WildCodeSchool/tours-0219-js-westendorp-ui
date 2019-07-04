@@ -40,7 +40,6 @@ export class ActivityComponent implements OnInit {
     this.editorService.article = this.newArticle;
     this.editorService.typeOfContent = 'title';
     this.editorService.typeEdition = true;
-    console.log(this.lastRank);
   }
 
   deleteCard(id) {

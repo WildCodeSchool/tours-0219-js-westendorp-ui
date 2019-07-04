@@ -31,9 +31,6 @@ export class HeaderComponent implements OnInit {
       }
 
       if (event instanceof NavigationError) {
-        // this.show = true;
-        // Present error to user
-        console.log(event.error);
       }
     });
   }
