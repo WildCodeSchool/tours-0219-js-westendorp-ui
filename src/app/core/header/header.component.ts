@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(router: Router) {
     router.events.subscribe((event: Event) => {
-
       if (event instanceof NavigationStart) {
         this.show = false;
       }
