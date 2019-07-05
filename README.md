@@ -1,54 +1,46 @@
-## Structure du projet
-- [Features folder](/src/app/features/README.md)
-- [Core folder](/src/app/core/README.md)
-- [Shared folder](/src/app/shared/README.md)
+<h1 align="center">Welcome to westendorp-ui 👋</h1>
+<p>
+  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/WildCodeSchool/tours-0219-js-westendorp-ui">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
+  </a>
+</p>
+
+> Site internet de l&#39;entreprise CE-Westendorp
+
+### 🏠 [Homepage](home.component.html)
+
+## Install
+
+```sh
+npm install
 ```
-|-- app
-     |-- features
-        |-- [+] home
-        |-- [+] sales
-        |-- [+] profile
-        |-- features.module.ts
-     |-- core
-        |-- [+] authentication
-        |-- [+] footer
-        |-- [+] guards
-        |-- [+] http
-        |-- [+] interceptors
-        |-- [+] services
-        |-- [+] header
-        |-- core.module.ts
-     |-- shared
-        |-- [+] components
-        |-- [+] directives
-        |-- [+] pipes
-        |-- [+] models
-    ...
+
+## Usage
+
+```sh
+npm run start
 ```
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Run tests
 
-## Development server SSR
+```sh
+npm run test
+```
 
-Run `npm run build:ssr && npm run serve:ssr` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Author
 
-## Code scaffolding
+👤 **Wild Code School**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Github: [@https://github.com/WildCodeSchool](https://github.com/https://github.com/WildCodeSchool)
 
-## Build
+## 🤝 Contributing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/WildCodeSchool/tours-0219-js-westendorp-ui/issues).
 
-## Build SSR
+## Show your support
 
-Run `npm run build:ssr` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Give a ⭐️ if this project helped you!
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
