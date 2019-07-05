@@ -8,7 +8,7 @@
 
 > Site internet de l&#39;entreprise CE-Westendorp
 
-### 🏠 [Homepage](home.component.html)
+### 🏠 [Homepage](https://ce-westendorp.com)
 
 ## Install
 
