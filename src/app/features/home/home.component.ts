@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit {
     this.editorService.typeEdition = true;
   }
 
-  deleteCard(id) {
-    this.articlesList.splice(id, 1);
+  deleteCard(index) {
+    this.articlesList.splice(index, 1);
   }
 
   onUpdateRank($event) {

@@ -44,7 +44,7 @@ export class CardsAccueilComponent implements OnInit {
     const result = confirm('Voulez-vous vraiment supprimer cet article ?');
     if (result) {
       this.articlesService.deleteArticle(id).subscribe(
-        (articles) => {
+        () => {
           this.toastr.success('Article supprimé');
           this.deleteCard.emit(index);
         },
