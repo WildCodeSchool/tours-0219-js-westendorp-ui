@@ -12,8 +12,8 @@
           <label for="inputEmail4MD"></label>
         </div>
         <button class='btn btn-primary' [hidden]="hiddenFormMdp" type="submit">Suivant</button>
-        <button class='btn btn-success'[hidden]="nextFormMdp" type="submit">Validé</button>
-        <button class='btn btn-warning' [hidden]="submitFormMdp" (click)='updatePassWord(f.value.email, f.value)'>Enregistrer</button>
+        <button class='btn btn-success'[hidden]="nextFormMdp" type="submit">Valider</button>
+        <button class='btn btn-warning' [hidden]="submitFormMdp" type="button" (click)='updatePassWord(f.value.email, f.value)'>Enregistrer</button>
       </div>
     </div>
   </form>
