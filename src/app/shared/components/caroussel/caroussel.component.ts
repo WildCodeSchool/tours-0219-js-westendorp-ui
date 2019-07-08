@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MediasService } from '../../../core/http/medias.service';
-import { Media } from '../../models/media.model';
 
 @Component({
   selector: 'app-caroussel',
@@ -8,13 +6,9 @@ import { Media } from '../../models/media.model';
   styleUrls: ['./caroussel.component.scss'],
 })
 export class CarousselComponent implements OnInit {
-  images: Media[] = [];
-  constructor(private mediasService: MediasService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.mediasService.getMediaByType('image').subscribe((res: Media[]) => {
-      this.images = res;
-    });
   }
 
 }
