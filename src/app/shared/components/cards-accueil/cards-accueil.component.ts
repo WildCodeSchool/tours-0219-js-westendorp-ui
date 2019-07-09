@@ -20,6 +20,9 @@ export class CardsAccueilComponent implements OnInit {
   @Output()
   deleteCard: EventEmitter<any> = new EventEmitter();
 
+  openModalDelete: EventEmitter<boolean> = new EventEmitter();
+  closeModalDelete: EventEmitter<boolean> = new EventEmitter();
+
   constructor(
     private articlesService: ArticlesService,
     private service: LoginService,
@@ -28,6 +31,10 @@ export class CardsAccueilComponent implements OnInit {
   ) { }
 
   ngOnInit() {}
+
+  openDeleteModal(){
+    this.openModalDelete.emit(true);
+  }
 
   sendActivity(article: Article, type: string) {
     this.editorService.contentSubject.next(article);
@@ -40,17 +47,14 @@ export class CardsAccueilComponent implements OnInit {
     this.editorService.typeEdition = false;
   }
 
-  deleteActivity(id, index) {
-    const result = confirm('Voulez-vous vraiment supprimer cet article ?');
-    if (result) {
-      this.articlesService.deleteArticle(id).subscribe(
+  deleteActivity(arg) {
+    console.log(arg, arg[0], arg[1])
+      this.articlesService.deleteArticle(arg[0]).subscribe(
         () => {
           this.toastr.success('Article supprimé');
-          this.deleteCard.emit(index);
+          this.deleteCard.emit(arg[1]);
+          this.closeModalDelete.emit(true);
         },
       );
-    } else {
-      this.toastr.error('Article non supprimé');
     }
-  }
 }
