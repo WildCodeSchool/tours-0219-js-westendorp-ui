@@ -3,6 +3,7 @@ import { LoginService } from '../../core/services/login.service';
 import { Login } from '../../shared/models/login.model';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { ValidatorFn, AbstractControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-mon-compte',
@@ -26,7 +27,7 @@ export class MonCompteComponent implements OnInit {
     public service: LoginService,
     private toastr: ToastrService,
     private router: Router,
-    ) { }
+  ) { }
 
   ngOnInit() {
   }
@@ -35,21 +36,19 @@ export class MonCompteComponent implements OnInit {
     this.service.login(f.value.email, f.value.password)
       .subscribe((data) => {
         if (data) {
-          if (this.countMdp === 0) {
-            this.hiddenFormMdp = true;
-            this.nextFormMdp = false;
-            this.countMdp += 1;
-          } else if (this.countMdp === 1) {
-            this.nextFormMdp = true;
-            this.submitFormMdp = false;
-            this.hiddId = true;
-            this.countMdp += 1;
-          }
+          this.hiddenFormMdp = true;
+          this.submitFormMdp = false;
+          this.hiddId = true;
         }
-      },         (error: any) => { this.showError(); });
+      },
+        (error: any) => this.showError());
   }
 
-  updatePassWord(email: string, content: Login) {
+  updatePassWord(email: string, newPassword: string) {
+    const content: Login = {
+      email: email,
+      password: newPassword,
+    }
     this.service.updatePassWord(email, content).subscribe((newPass: Login) => {
       this.showSuccessMdp();
       this.router.navigateByUrl('admin');
@@ -76,7 +75,7 @@ export class MonCompteComponent implements OnInit {
           this.showFormId = false;
           this.hiddMdp = true;
         }
-      },         (error: any) => { this.showError(); });
+      }, (error: any) => { this.showError(); });
   }
 
   updateId(id: string, content: Login) {
@@ -85,4 +84,21 @@ export class MonCompteComponent implements OnInit {
       this.router.navigateByUrl('admin');
     });
   }
+  validatePassword(): ValidatorFn {
+    return (control: AbstractControl) => {
+      let isValid = false;
+      if (control && control instanceof FormGroup) {
+        let group = control as FormGroup;
+        if (group.controls['passwordA'] && group.controls['passwordB']) {
+          isValid = group.controls['passwordA'].value == group.controls['passwordB'].value;
+        }
+      }
+      if (isValid) {
+        return null;
+      } else {
+        return { 'passwordCheck': 'failed' }
+      }
+    }
+  }
+
 }

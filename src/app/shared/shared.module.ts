@@ -8,8 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardsAccueilComponent } from './components/cards-accueil/cards-accueil.component';
 import { RouterModule } from '@angular/router';
 import { RankingButtonComponent } from './components/ranking-button/ranking-button.component';
-import { RankingValidatorDirective } from './directives/ranking-validator.directive';
-import { ModalDeleteCardsComponent } from './components/modal-delete-cards/modal-delete-cards.component';
+import { CheckPasswordDirective } from './directives/check-password.directive';
 @NgModule({
   declarations: [
     EscapeHtmlPipe,
@@ -17,8 +16,7 @@ import { ModalDeleteCardsComponent } from './components/modal-delete-cards/modal
     CardsComponent,
     CardsAccueilComponent,
     RankingButtonComponent,
-    RankingValidatorDirective,
-    ModalDeleteCardsComponent,
+    CheckPasswordDirective,
   ],
   imports: [
     CommonModule,
@@ -32,6 +30,7 @@ import { ModalDeleteCardsComponent } from './components/modal-delete-cards/modal
     CardsComponent,
     CardsAccueilComponent,
     RankingButtonComponent,
+    CheckPasswordDirective,
   ],
 })
 export class SharedModule { }

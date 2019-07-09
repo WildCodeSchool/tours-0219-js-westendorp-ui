@@ -1,19 +1,46 @@
 <body>
-    <form (ngSubmit)="newMdp(f)" #f="ngForm">
+  <form (ngSubmit)="newMdp(f)" #f="ngForm">
     <h2>Modifier votre mot de passe</h2>
-    <div class="form-row">
-      <div class="col-md-6">
-
+    <div class="form-row d-flex justify-content-center">
+      <div class="col-md-6 text-center">
         <div class="md-form form-group">
-          <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel" [hidden]='hiddId' name="email" #mail="ngModel" [ngModel] required email>
-          <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormMdp" placeholder="Tapez votre mot de passe actuel" name="password" #mdp="ngModel" [ngModel] required>
-          <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="nextFormMdp" placeholder="Vérification, veuillez ressaisir votre mot de passe actuel" name="password" #mdp="ngModel" [ngModel] required>
-          <input mdbInput type="password" class="form-control" id="inputPassword4MD" [hidden]="submitFormMdp" placeholder="Tapez votre nouveau mot de passe" name="password" #mdp="ngModel" [ngModel] required>
-          <label for="inputEmail4MD"></label>
+          <input mdbInput type="email" class="form-control" id="inputEmail4MD"
+            placeholder="Tapez votre identifiant actuel" [hidden]='hiddId' name="email" #mail="ngModel" [ngModel]
+            required email>
+          <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormMdp"
+            placeholder="Tapez votre mot de passe actuel" name="password" #mdp="ngModel" [ngModel] required>
+          <form #passwordsForm='ngForm'>
+            <div ngModelGroup="passwords" #passwords="ngModelGroup" appCheckPassword>
+              <div class="form-group" [hidden]="submitFormMdp">
+                <label for="InputPassword1"></label>
+                <input type="password" class="form-control" id="InputPassword1"
+                  placeholder="Veuillez saisir votre nouveau mot de passe" #passwordA="ngModel" name="passwordA"
+                  required id="passwordA" [ngModel]>
+              </div>
+              <div class="form-group mt-1" [hidden]="submitFormMdp">
+                <label for="InputPassword2"></label>
+                <input type="password" class="form-control" id="InputPassword2"
+                  placeholder="Vérification, veuillez ressaisir votre nouveau mot de passe" #passwordB="ngModel"
+                  name="passwordB" required id="passwordB" [ngModel] required>
+              </div>
+            </div>
+            <div *ngIf="passwordB.invalid && (passwordA.dirty || passwordA.touched)" class="alert alert-secondary text-center m-5">
+              Merci de confirmer votre nouveau mot de passe.
+            </div>
+            <div *ngIf="passwords.errors?.passwordCheck && (passwordB.dirty || passwordB.touched)"
+              class="alert alert-danger text-center m-5">
+              Les mots de passe ne correspondent pas.
+            </div>
+            <div *ngIf="!passwords.errors?.passwordCheck && passwordA.touched"
+            class="alert alert-success text-center m-5">
+            Les mots de passe correspondent.
+          </div>
+          </form>
         </div>
         <button class='btn btn-primary' [hidden]="hiddenFormMdp" type="submit">Suivant</button>
         <button class='btn btn-success'[hidden]="nextFormMdp" type="submit">Valider</button>
-        <button class='btn btn-warning' [hidden]="submitFormMdp" type="button" (click)='updatePassWord(f.value.email, f.value)'>Enregistrer</button>
+        <button class='btn btn-warning' [hidden]="submitFormMdp" [disabled]="passwords.errors?.passwordCheck" type="button"
+          (click)='updatePassWord(f.value.email, passwordA.value)'>Enregistrer</button>
       </div>
     </div>
   </form>
@@ -21,19 +48,22 @@
 
   <form (ngSubmit)="newId(g)" #g="ngForm">
     <h2>Modifier votre identifiant</h2>
-    <div class="form-row">
-      <div class="col-md-6">
-
+    <div class="form-row d-flex justify-content-center">
+      <div class="col-md-6 text-center">
         <div class="md-form form-group">
-          <input mdbInput type="email" class="form-control" id="inputEmail4MD" placeholder="Tapez votre identifiant actuel" [hidden]='hiddMdp' name="email" #mail="ngModel" [ngModel] required email>
-          <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormId" placeholder="Tapez votre mot de passe" name="password" #mdp="ngModel" [ngModel] required>
-          <input mdbInput type="email" class="form-control" id="inputPassword4MD" [hidden]="showFormId" placeholder="Tapez votre nouvel identifiant" name="email" #mdp="ngModel" [ngModel] required>
+          <input mdbInput type="email" class="form-control" id="inputEmail4MD"
+            placeholder="Tapez votre identifiant actuel" [hidden]='hiddMdp' name="email" #mail="ngModel" [ngModel]
+            required email>
+          <input mdbInput type="password" class="form-control" id="inputEmail4MD" [hidden]="hiddenFormId"
+            placeholder="Tapez votre mot de passe" name="password" #mdp="ngModel" [ngModel] required>
+          <input mdbInput type="email" class="form-control" id="inputPassword4MD" [hidden]="showFormId"
+            placeholder="Tapez votre nouvel identifiant" name="email" #mdp="ngModel" [ngModel] required>
           <label for="inputEmail4MD"></label>
         </div>
         <button class='btn btn-primary' [hidden]="hiddenFormId" type='submit'>Suivant</button>
-        <button class='btn btn-warning' [hidden]="showFormId" type='button' (click)='updateId(g.value.password, g.value)'>Enregistrer</button>
+        <button class='btn btn-warning' [hidden]="showFormId" type='button'
+          (click)='updateId(g.value.password, g.value)'>Enregistrer</button>
       </div>
     </div>
   </form>
 </body>
-
