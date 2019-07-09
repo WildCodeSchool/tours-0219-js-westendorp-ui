@@ -11,7 +11,7 @@
         <button class="btn btn-outline-info edit-btn" [hidden]='isLogin' (click)='sendActivity(article, "body")'>Editer
           le contenu </button>
       </a>
-      <button class="btn btn-outline-danger del-btn" [hidden]='isLogin' (click)='deleteActivity(article.id, index)'>Supprimer
+      <button class="btn btn-outline-danger del-btn" [hidden]='isLogin' (click)='openDeleteModal()'>Supprimer
         l'article</button>
     </div>
   </div>
@@ -22,5 +22,6 @@
       </div>
     </div>
   </div>
-<app-modal-delete-cards></app-modal-delete-cards>
+  <app-modal-delete-cards [openModalDelete] = "openModalDelete" [closeModalDelete] = "closeModalDelete" [idCard] = "article.id" [indexCard]="index" (deleteCard)="deleteActivity($event)"></app-modal-delete-cards>
+
 

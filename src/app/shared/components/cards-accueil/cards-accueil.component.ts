@@ -48,7 +48,6 @@ export class CardsAccueilComponent implements OnInit {
   }
 
   deleteActivity(arg) {
-    console.log(arg, arg[0], arg[1])
       this.articlesService.deleteArticle(arg[0]).subscribe(
         () => {
           this.toastr.success('Article supprimé');
