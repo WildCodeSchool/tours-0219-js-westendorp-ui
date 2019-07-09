@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardsAccueilComponent } from './components/cards-accueil/cards-accueil.component';
 import { RouterModule } from '@angular/router';
 import { RankingButtonComponent } from './components/ranking-button/ranking-button.component';
-import { RankingValidatorDirective } from './directives/ranking-validator.directive';
+import { CheckPasswordDirective } from './directives/check-password.directive';
 @NgModule({
   declarations: [
     EscapeHtmlPipe,
@@ -16,7 +16,7 @@ import { RankingValidatorDirective } from './directives/ranking-validator.direct
     CardsComponent,
     CardsAccueilComponent,
     RankingButtonComponent,
-    RankingValidatorDirective,
+    CheckPasswordDirective,
   ],
   imports: [
     CommonModule,
@@ -30,6 +30,7 @@ import { RankingValidatorDirective } from './directives/ranking-validator.direct
     CardsComponent,
     CardsAccueilComponent,
     RankingButtonComponent,
+    CheckPasswordDirective,
   ],
 })
 export class SharedModule { }
