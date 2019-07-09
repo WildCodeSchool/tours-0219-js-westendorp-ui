@@ -11,8 +11,6 @@ import { ValidatorFn, AbstractControl, FormGroup } from '@angular/forms';
   styleUrls: ['./mon-compte.component.scss'],
 })
 export class MonCompteComponent implements OnInit {
-  password1: string;
-  password2: string;
   hiddenFormMdp = false;
   nextFormMdp = true;
   submitFormMdp = true;
@@ -46,7 +44,11 @@ export class MonCompteComponent implements OnInit {
         (error: any) => this.showError());
   }
 
-  updatePassWord(email: string, content: Login) {
+  updatePassWord(email: string, newPassword: string) {
+    const content: Login = {
+      email: email,
+      password: newPassword,
+    }
     this.service.updatePassWord(email, content).subscribe((newPass: Login) => {
       this.showSuccessMdp();
       this.router.navigateByUrl('admin');
