@@ -1,0 +1,9 @@
+<ng-template #content>
+  <div class="modal-body">
+    <p>Voulez vous vraiment supprimer cet article ?</p>
+  </div>
+  <div class="modal-footer">
+      <button type="button" class="btn btn-warning" (click)="close(content)">Annuler</button>
+    <button type="button" class="btn btn-danger" (click)="deleteOneCard(idCard, indexCard)">Supprimer</button>
+  </div>
+</ng-template>

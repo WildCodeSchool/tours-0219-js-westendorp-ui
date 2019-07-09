@@ -9,6 +9,7 @@ import { CardsAccueilComponent } from './components/cards-accueil/cards-accueil.
 import { RouterModule } from '@angular/router';
 import { RankingButtonComponent } from './components/ranking-button/ranking-button.component';
 import { CheckPasswordDirective } from './directives/check-password.directive';
+import { ModalDeleteCardsComponent } from './components/modal-delete-cards/modal-delete-cards.component';
 @NgModule({
   declarations: [
     EscapeHtmlPipe,
@@ -17,6 +18,7 @@ import { CheckPasswordDirective } from './directives/check-password.directive';
     CardsAccueilComponent,
     RankingButtonComponent,
     CheckPasswordDirective,
+    ModalDeleteCardsComponent,
   ],
   imports: [
     CommonModule,

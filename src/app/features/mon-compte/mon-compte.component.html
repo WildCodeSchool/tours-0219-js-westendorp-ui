@@ -38,6 +38,7 @@
           </form>
         </div>
         <button class='btn btn-primary' [hidden]="hiddenFormMdp" type="submit">Suivant</button>
+        <button class='btn btn-success'[hidden]="nextFormMdp" type="submit">Valider</button>
         <button class='btn btn-warning' [hidden]="submitFormMdp" [disabled]="passwords.errors?.passwordCheck" type="button"
           (click)='updatePassWord(f.value.email, passwordA.value)'>Enregistrer</button>
       </div>

@@ -21,38 +21,41 @@ export class CardsComponent implements OnInit {
   @Output()
   deleteCard: EventEmitter<any> = new EventEmitter();
 
+  openModalDelete: EventEmitter<boolean> = new EventEmitter();
+  closeModalDelete: EventEmitter<boolean> = new EventEmitter();
+
   constructor(
     private articlesService: ArticlesService,
     private service: LoginService,
     private editorService: EditorService,
     private toastr: ToastrService,
-  ) { }
+    ) { }
 
-  ngOnInit() {
-  }
-
-  sendActivity(article: Article, type: string) {
-    this.editorService.contentSubject.next(article);
-    this.editorService.article = article;
-    if (type === 'title') {
-      this.editorService.typeOfContent = 'title';
-    } else {
-      this.editorService.typeOfContent = 'content';
+    ngOnInit() {
     }
-    this.editorService.typeEdition = false;
-  }
 
-  deleteActivity(id, index) {
-    const result = confirm('Voulez-vous vraiment supprimer cet article ?');
-    if (result) {
-      this.articlesService.deleteArticle(id).subscribe(
+    openDeleteModal(){
+      this.openModalDelete.emit(true);
+    }
+
+    sendActivity(article: Article, type: string) {
+      this.editorService.contentSubject.next(article);
+      this.editorService.article = article;
+      if (type === 'title') {
+        this.editorService.typeOfContent = 'title';
+      } else {
+        this.editorService.typeOfContent = 'content';
+      }
+      this.editorService.typeEdition = false;
+    }
+
+    deleteActivity(arg) {
+      this.articlesService.deleteArticle(arg[0]).subscribe(
         (articles) => {
           this.toastr.success('Article supprimé');
-          this.deleteCard.emit(index + 1);
+          this.deleteCard.emit(arg[1] + 1);
+          this.closeModalDelete.emit(true);
         },
-      );
-    } else {
-      this.toastr.error('Article non supprimé');
+        );
+      }
     }
-  }
-}
