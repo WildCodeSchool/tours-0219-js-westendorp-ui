@@ -4,6 +4,7 @@ import { Article } from '../../shared/models/article.model';
 import { ArticlesService } from '../http/articles.service';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-admin-editor',
   templateUrl: './admin-editor.component.html',
@@ -31,8 +32,9 @@ export class AdminEditorComponent implements OnInit {
       skin: 'kama',
       extraPlugins: 'image2,autogrow,magicline,horizontalrule,scayt,uploadimage,uploadwidget,uploadfile',
       removePlugins: 'image',
+      filebrowserImageBrowseUrl: `${environment.apiUrl}/upload/browse`,
+      filebrowserImageUploadUrl: `${environment.apiUrl}/upload`,
     };
-    this.config.uploadUrl = 'https://ibb.co/7KzKmgG';
   }
 
   ngOnInit() {
