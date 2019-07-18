@@ -1,0 +1,29 @@
+.card{
+    text-align: center;
+    width: 100%;
+    box-shadow: 1px 5px 8px #555;
+}
+
+.edit-btn{
+  margin-right: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.del-btn{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.no-border {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+input{
+  border-radius:10px;
+  width:10%;
+  border-color: gray;
+}

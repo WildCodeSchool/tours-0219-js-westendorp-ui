@@ -1,0 +1,50 @@
+.navbar-nav  {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar {
+  background-color: #262626;
+  background-size: 100%;
+  opacity: 0.8;
+}
+
+.logo {
+  width: 90px;
+  height: 45px;
+  margin-right: 6%;
+  cursor: pointer;
+}
+
+.nav-item {
+  cursor: pointer;
+  right: 15%;
+}
+
+.back-nav-bar{
+  height: 55px;
+}
+
+
+.active-nav{
+  border-top: 3px solid #3498DB;
+  border-bottom: 3px solid #3498DB;
+  padding: 6px 0;
+}
+
+.navbar-collapse{
+  padding-left: 10%;
+}
+
+@media screen and (max-width: 940px) {
+  .logo {
+    margin-left: 40%;
+  }
+}
+
+a{
+  font-size: .9rem;
+}
+.container{
+  min-height:100vh;
+}

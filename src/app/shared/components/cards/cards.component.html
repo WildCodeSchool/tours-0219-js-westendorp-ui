@@ -1,0 +1,27 @@
+  <div class="card" *ngIf="article">
+    <div class="card-body">
+      <a routerLink="/admin/editor">
+        <i class="fa fa-edit" (click)='sendActivity(article, "title")' [hidden]='isLogin'>Ajouter/modifier un
+          titre</i></a>
+      <h5 class="card-title" [innerHTML]=" article.title | keepHtml">
+      </h5>
+      <p class="card-text" [innerHTML]=" article.content | keepHtml"></p>
+      <div class="container text-center">
+      <a routerLink="/admin/editor">
+        <button class="btn btn-outline-info edit-btn" [hidden]='isLogin' (click)='sendActivity(article, "body")'>Editer
+          le contenu </button>
+      </a>
+      <button class="btn btn-outline-danger del-btn" [hidden]='isLogin' (click)='openDeleteModal()'>Supprimer
+        l'article</button>
+    </div>
+  </div>
+    <div [hidden]='isLogin' class="mb-4">
+      <label class="d-flex justify-content-center" for="rank-{{index}}">Article n°{{ article.rank }}</label>
+      <div class="text-center">
+        <input class="text-center" name="article-{{i}}" type="number" [(ngModel)]="article.rank">
+      </div>
+    </div>
+  </div>
+  <app-modal-delete-cards [openModalDelete] = "openModalDelete" [closeModalDelete] = "closeModalDelete" [idCard] = "article.id" [indexCard]="index" (deleteCard)="deleteActivity($event)"></app-modal-delete-cards>
+
+

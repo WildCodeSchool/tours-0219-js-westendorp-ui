@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 22px;
+}
+
+button {
+  margin-left: 50px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.no-border {
+  border: none;
+}
+
+.box:hover {
+  transform: scale(1.15);
+  border-radius: 50%;
+}
+.scale {
+  transition: all 0.5s ease-in-out;
+}
+.scale:hover {
+  transition: all 1s ease-in-out;
+}
+

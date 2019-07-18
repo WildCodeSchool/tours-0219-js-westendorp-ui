@@ -1,0 +1,14 @@
+<a routerLink="/admin/editor">
+  <button class="btn btn-outline-success" [hidden]='isLogin' (click)='createActivity()'>Créer un article</button>
+</a>
+<div>
+  <app-cards [article]='articlesList[0]'
+    (deleteCard)="deleteCard($event)"></app-cards>
+</div>
+<div class="row d-flex justify-content-center">
+  <ng-container *ngFor="let article of articlesList | slice:1; let i = index;">
+      <app-cards class="col-sm-12 mt-3" [article]='article' [index]='i' (deleteCard)="deleteCard($event)"></app-cards>
+    </ng-container>
+</div>
+<app-ranking-button [hidden]='isLogin' [articles]="articlesList" (updateRank)="onUpdateRank($event)">
+</app-ranking-button>

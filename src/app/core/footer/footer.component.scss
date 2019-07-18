@@ -1,0 +1,39 @@
+footer{
+  background-color: #262626;
+  color: antiquewhite;
+}
+
+a:hover{
+  text-decoration: none;
+  color: grey;
+  
+}
+a{
+  color:white;
+}
+
+.footer-center {
+  i {
+    background-color: gray;
+    color: black;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+
+  i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+  }
+}
+
+.mention{
+  position: relative;
+  top:20px;
+
+}
