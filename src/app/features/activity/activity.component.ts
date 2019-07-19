@@ -30,10 +30,14 @@ export class ActivityComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data: Data) => {
       this.articlesList = data.articles;
-      this.lastRank = data.articles[data.articles.length - 1].rank + 1;
-      this.newArticle = new Article(
-        undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'activity', '', this.lastRank);
+      if(this.articlesList.length>0){
+        this.lastRank = data.articles[data.articles.length - 1].rank + 1;
+      } else {
+        this.lastRank = 1;
+      }
     });
+    this.newArticle = new Article(
+      undefined, 'Titre de l\'article', 'Contenu de l\'article', undefined, '', 'activity', '', this.lastRank);
   }
 
   createActivity() {
